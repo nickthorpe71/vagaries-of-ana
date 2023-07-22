@@ -10,6 +10,11 @@ interface FriendRequestsProps {
     sessionId: string;
 }
 
+enum FriendRequestAction {
+    ACCEPT = "accept",
+    DENY = "deny",
+}
+
 const FriendRequests: FC<FriendRequestsProps> = ({
     incomingFriendRequests,
     sessionId,
@@ -19,18 +24,11 @@ const FriendRequests: FC<FriendRequestsProps> = ({
         IncomingFriendRequest[]
     >(incomingFriendRequests);
 
-    const acceptFriend = async (senderId: string) => {
-        await axios.post("/api/friends/accept", { id: senderId });
-
-        setFriendRequests((prev) =>
-            prev.filter((request) => request.senderId !== senderId)
-        );
-
-        router.refresh();
-    };
-
-    const denyFriend = async (senderId: string) => {
-        await axios.post("/api/friends/deny", { id: senderId });
+    const handleFriendRequest = async (
+        senderId: string,
+        action: FriendRequestAction
+    ) => {
+        await axios.post(`/api/friends/${action}`, { id: senderId });
 
         setFriendRequests((prev) =>
             prev.filter((request) => request.senderId !== senderId)
@@ -54,7 +52,12 @@ const FriendRequests: FC<FriendRequestsProps> = ({
                             {request.senderEmail}
                         </p>
                         <button
-                            onClick={() => acceptFriend(request.senderId)}
+                            onClick={() =>
+                                handleFriendRequest(
+                                    request.senderId,
+                                    FriendRequestAction.ACCEPT
+                                )
+                            }
                             aria-label='accept friend'
                             className='w-8 h-8 bg-indigo-600 hover:bg-indigo-700 grid place-items-center rounded-full transition hover:shadow-md'
                         >
@@ -62,7 +65,12 @@ const FriendRequests: FC<FriendRequestsProps> = ({
                         </button>
 
                         <button
-                            onClick={() => denyFriend(request.senderId)}
+                            onClick={() =>
+                                handleFriendRequest(
+                                    request.senderId,
+                                    FriendRequestAction.DENY
+                                )
+                            }
                             aria-label='deny friend'
                             className='w-8 h-8 bg-red-600 hover:bg-red-700 grid place-items-center rounded-full transition hover:shadow-md'
                         >
