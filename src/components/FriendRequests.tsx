@@ -23,11 +23,15 @@ const FriendRequests: FC<FriendRequestsProps> = ({
     const [friendRequests, setFriendRequests] = useState<
         IncomingFriendRequest[]
     >(incomingFriendRequests);
+    const [canRespond, setCanRespond] = useState<boolean>(true);
 
     const handleFriendRequest = async (
         senderId: string,
         action: FriendRequestAction
     ) => {
+        if (!canRespond) return;
+
+        setCanRespond(false);
         await axios.post(`/api/friends/${action}`, { id: senderId });
 
         setFriendRequests((prev) =>
@@ -35,6 +39,8 @@ const FriendRequests: FC<FriendRequestsProps> = ({
         );
 
         router.refresh();
+
+        setCanRespond(true);
     };
 
     return (
