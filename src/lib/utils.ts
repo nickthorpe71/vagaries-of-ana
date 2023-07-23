@@ -27,3 +27,22 @@ export function getEnv(key: string): string {
     }
     return value;
 }
+
+/**
+ * Constructs a chat URL segment (or identifier) by sorting two IDs and joining them with a double hyphen (`--`).
+ * This ensures consistent and unique chat URLs or identifiers for two given IDs regardless of their order.
+ *
+ * @param {string} id1 - The first identifier.
+ * @param {string} id2 - The second identifier.
+ * @returns {string} The constructed chat URL segment or identifier.
+ * @example
+ * // returns "123--456"
+ * chatHrefConstructor('456', '123');
+ *
+ * // returns "123--456"
+ * chatHrefConstructor('123', '456');
+ */
+export function chatHrefConstructor(id1: string, id2: string): string {
+    const sortedIds = [id1, id2].sort();
+    return `${sortedIds[0]}--${sortedIds[1]}`; // Fixed a typo in your original function here from [1] to sortedIds[1]
+}
