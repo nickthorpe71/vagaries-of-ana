@@ -5,12 +5,12 @@ import Link from "next/link";
 import { User } from "lucide-react";
 
 interface FriendRequestSidebarOptionsProps {
-    sessionId: string;
+    sessionUserId: string;
     initialUnseenRequestCount: number;
 }
 
 const FriendRequestSidebarOptions: FC<FriendRequestSidebarOptionsProps> = ({
-    sessionId,
+    sessionUserId,
     initialUnseenRequestCount,
 }) => {
     const [unseenRequestCount, setUnseenRequestCount] = useState<number>(
