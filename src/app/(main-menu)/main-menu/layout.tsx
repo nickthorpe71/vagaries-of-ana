@@ -2,18 +2,50 @@ import { ReactNode } from "react";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 // lib
 import { authOptions } from "@/lib/auth";
-import { Icons } from "@/components/Icons";
+import { Icons, Icon } from "@/components/Icons";
+
+// components
+import SignOutButton from "@/components/SignOutButton";
+import FriendRequestSidebarOptions from "@/components/FriendRequestSidebarOptions";
+
+// helpers
+import { fetchRedis } from "@/helpers/redis";
 
 interface LayoutProps {
     children: ReactNode;
 }
 
+interface SidebarOption {
+    id: number;
+    name: string;
+    href: string;
+    Icon: Icon;
+}
+
+const sidebarOptions: SidebarOption[] = [
+    {
+        id: 1,
+        name: "Add friend",
+        href: "/main-menu/add",
+        Icon: "UserPlus",
+    },
+];
+
 const Layout = async ({ children }: LayoutProps) => {
     const session = await getServerSession(authOptions);
     if (!session) return notFound();
+
+    // since this is a server component we can interact with the database directly
+    const unseenRequestCount = (
+        (await fetchRedis(
+            "smembers",
+            `user:${session.user.id}:incoming_friend_requests`
+        )) as User[]
+    ).length;
 
     return (
         <div className='w-full flex h-screen'>
@@ -54,7 +86,7 @@ const Layout = async ({ children }: LayoutProps) => {
                             </div>
 
                             <ul role='list' className='-mx-2 mt-2 space-y-1'>
-                                {/* {sidebarOptions.map((option) => {
+                                {sidebarOptions.map((option) => {
                                     const Icon = Icons[option.Icon];
                                     return (
                                         <li key={option.id}>
@@ -72,29 +104,29 @@ const Layout = async ({ children }: LayoutProps) => {
                                             </Link>
                                         </li>
                                     );
-                                })} */}
+                                })}
 
-                                {/* <li>
+                                <li>
                                     <FriendRequestSidebarOptions
                                         sessionId={session.user.id}
                                         initialUnseenRequestCount={
                                             unseenRequestCount
                                         }
                                     />
-                                </li> */}
+                                </li>
                             </ul>
                         </li>
 
                         <li className='-mx-6 mt-auto flex items-center'>
                             <div className='flex flex-1 items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900'>
                                 <div className='relative h-8 w-8 bg-gray-50'>
-                                    {/* <Image
+                                    <Image
                                         fill
                                         referrerPolicy='no-referrer'
                                         className='rounded-full'
                                         src={session.user.image || ""}
                                         alt='Your profile picture'
-                                    /> */}
+                                    />
                                 </div>
 
                                 <span className='sr-only'>Your profile</span>
@@ -111,7 +143,7 @@ const Layout = async ({ children }: LayoutProps) => {
                                 </div>
                             </div>
 
-                            {/* <SignOutButton className='h-full aspect-square' /> */}
+                            <SignOutButton className='h-full aspect-square' />
                         </li>
                     </ul>
                 </nav>
