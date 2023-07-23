@@ -96,6 +96,7 @@ const Messages: FC<MessagesProps> = ({
                             >
                                 <Image
                                     fill
+                                    sizes='(max-width: 640px) 1.5rem, 1.5rem'
                                     src={
                                         isCurrentUser
                                             ? (sessionImg as string)
