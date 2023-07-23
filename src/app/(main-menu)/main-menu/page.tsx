@@ -1,13 +1,10 @@
-import { FC } from "react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
-interface pageProps {}
-
-const page = async ({}) => {
+const MainMenuPage = async ({}) => {
     const session = await getServerSession(authOptions);
 
     return <pre>{JSON.stringify(session, null, 2)}</pre>;
 };
 
-export default page;
+export default MainMenuPage;
