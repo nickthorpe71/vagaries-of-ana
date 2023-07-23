@@ -10,7 +10,7 @@ import { authOptions } from "@/lib/auth";
 // helpers
 import { fetchRedis } from "@/helpers/redis";
 
-const page = async () => {
+const RequestPage = async () => {
     const session = await getServerSession(authOptions);
     if (!session) notFound();
 
@@ -20,20 +20,23 @@ const page = async () => {
         `user:${session.user.id}:incoming_friend_requests`
     )) as string[];
 
-    const incomingFriendRequests = await Promise.all(
-        incomingSenderIds.map(async (senderId) => {
-            const sender = (await fetchRedis(
-                "get",
-                `user:${senderId}`
-            )) as string;
-            const senderParsed = JSON.parse(sender) as User;
-
-            return {
-                senderId,
-                senderEmail: senderParsed.email,
-            };
-        })
+    // prepare all the keys to fetch
+    const keys: string[] = incomingSenderIds.map(
+        (senderId) => `user:${senderId}`
     );
+
+    // fetch all the values for those keys at once
+    const senders: any[] =
+        keys.length === 0 ? [] : await fetchRedis("mget", ...keys);
+
+    // process the fetched data
+    const incomingFriendRequests = senders.map((sender: any, index: number) => {
+        const senderParsed = JSON.parse(sender) as User;
+        return {
+            senderId: incomingSenderIds[index],
+            senderEmail: senderParsed.email,
+        };
+    });
 
     return (
         <main className='pt-8'>
@@ -48,4 +51,4 @@ const page = async () => {
     );
 };
 
-export default page;
+export default RequestPage;
