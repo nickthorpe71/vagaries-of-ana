@@ -17,7 +17,7 @@ import SidebarChatList from "@/components/SidebarChatList";
 import { fetchRedis } from "@/helpers/redis";
 import { getFriendsByUserId } from "@/helpers/get-friends-by-user-id";
 
-interface LayoutProps {
+interface SidebarLayoutProps {
     children: ReactNode;
 }
 
@@ -37,7 +37,7 @@ const sidebarOptions: SidebarOption[] = [
     },
 ];
 
-const Layout = async ({ children }: LayoutProps) => {
+const SidebarLayout = async ({ children }: SidebarLayoutProps) => {
     const session = await getServerSession(authOptions);
     if (!session) return notFound();
 
@@ -161,4 +161,4 @@ const Layout = async ({ children }: LayoutProps) => {
     );
 };
 
-export default Layout;
+export default SidebarLayout;
