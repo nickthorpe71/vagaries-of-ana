@@ -44,5 +44,17 @@ export function getEnv(key: string): string {
  */
 export function chatHrefConstructor(id1: string, id2: string): string {
     const sortedIds = [id1, id2].sort();
-    return `${sortedIds[0]}--${sortedIds[1]}`; // Fixed a typo in your original function here from [1] to sortedIds[1]
+    return `${sortedIds[0]}--${sortedIds[1]}`;
+}
+
+/**
+ * Converts a given key by replacing all colons (:) with double underscores (__).
+ * This is typically useful for transforming keys to be compliant with certain systems,
+ * like Pusher, which might have restrictions on characters used in keys.
+ *
+ * @param {string} key - The original key containing colons.
+ * @returns {string} The transformed key with colons replaced by double underscores.
+ */
+export function toPusherKey(key: string): string {
+    return key.replace(/:/g, "__");
 }
