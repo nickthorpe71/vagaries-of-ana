@@ -1,18 +1,21 @@
 import PusherServer from "pusher";
 import PusherClient from "pusher-js";
-import { getEnv } from "@/lib/utils";
 
 export const pusherServer = new PusherServer({
-    appId: getEnv("PUSHER_APP_ID"),
-    key: getEnv("NEXT_PUBLIC_PUSHER_APP_KEY"),
-    secret: getEnv("PUSHER_APP_SECRET"),
-    cluster: getEnv("us2"),
+    appId: process.env.PUSHER_APP_ID!,
+    key: process.env.NEXT_PUBLIC_PUSHER_APP_KEY!,
+    secret: process.env.PUSHER_APP_SECRET!,
+    cluster: "us2",
     useTLS: true, // encrypt traffic
 });
 
 export const pusherClient = new PusherClient(
-    getEnv("NEXT_PUBLIC_PUSHER_APP_KEY"),
+    process.env.NEXT_PUBLIC_PUSHER_APP_KEY!,
     {
-        cluster: getEnv("us2"),
+        cluster: "us2",
+        channelAuthorization: {
+            transport: "jsonp",
+            endpoint: "http://localhost:3000/",
+        },
     }
 );
