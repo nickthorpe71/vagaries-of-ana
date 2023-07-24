@@ -4,8 +4,9 @@ import { z } from "zod";
 // lib
 import { db } from "@/lib/db";
 import { addFriendValidator } from "@/lib/validations/add-friend";
-import { getEnv } from "@/lib/utils";
 import { authOptions } from "@/lib/auth";
+import { pusherServer } from "@/lib/pusher";
+import { toPusherKey } from "@/lib/utils";
 
 // helpers
 import { fetchRedis } from "@/helpers/redis";
@@ -23,7 +24,7 @@ export async function POST(req: Request) {
 
         const session = await getServerSession(authOptions);
 
-        // VALIDATIONS
+        // --- validation start ---
         // 401: Unauthorized
         if (!session) {
             return new Response("Unauthorized", {
@@ -69,8 +70,17 @@ export async function POST(req: Request) {
                 status: 400,
             });
         }
+        // --- validation end ---
 
-        // valid request
+        await pusherServer.trigger(
+            toPusherKey(`user:${idToAdd}:incoming_friend_requests`),
+            "incoming_friend_requests",
+            {
+                senderId: session.user.id,
+                senderEmail: session.user.email,
+            }
+        );
+
         db.sadd(`user:${idToAdd}:incoming_friend_requests`, session.user.id);
 
         return new Response("OK");
