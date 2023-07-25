@@ -30,7 +30,7 @@ const FriendRequests: FC<FriendRequestsProps> = ({
 
     // useCallback ensures the function retains the same reference
     // across re-renders unless one of it's dependencies changes
-    const responseEventHandler = useCallback(
+    const friendRequestHandler = useCallback(
         ({ senderId, senderEmail }: IncomingFriendRequest) => {
             setFriendRequests((prev) => [...prev, { senderId, senderEmail }]);
         },
@@ -40,7 +40,7 @@ const FriendRequests: FC<FriendRequestsProps> = ({
     usePusher({
         listenChannel: `user:${sessionId}:incoming_friend_requests`,
         responseEventName: "incoming_friend_requests",
-        responseEventHandler: responseEventHandler,
+        responseEventHandler: friendRequestHandler,
     });
 
     const handleFriendRequest = async (

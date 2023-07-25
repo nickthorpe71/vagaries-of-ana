@@ -42,7 +42,7 @@ export async function POST(req: Request) {
 
         const rawSender: string = (await fetchRedis(
             "get",
-            `user:${session.user.id}:username`
+            `user:${session.user.id}`
         )) as string;
         const sender: User = JSON.parse(rawSender) as User;
 
@@ -59,11 +59,22 @@ export async function POST(req: Request) {
 
         // --- validation end ---
 
-        // send message to all clients
+        // send message to all clients for this specific chat
         pusherServer.trigger(
             toPusherKey(`chat:${chatId}`),
-            "incoming-message",
+            "incoming_message",
             message
+        );
+
+        // send message to this client anytime any chat is updated
+        pusherServer.trigger(
+            toPusherKey(`user:${friendId}:chats`),
+            "new_message_notification",
+            {
+                ...message,
+                senderImage: sender.image,
+                senderName: sender.name,
+            }
         );
 
         // save message to db
@@ -74,6 +85,8 @@ export async function POST(req: Request) {
 
         return new Response("OK");
     } catch (error) {
+        console.error("=======================", error);
+
         if (error instanceof Error)
             return new Response(error.message, { status: 500 });
 

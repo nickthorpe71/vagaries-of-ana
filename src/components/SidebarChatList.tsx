@@ -1,12 +1,27 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
+
+// components
+import NewMessageToast from "@/components/NewMessageToast";
+
+// hooks
+import usePusher from "@/hooks/usePusher";
+
+// lib
 import { chatHrefConstructor } from "@/lib/utils";
+import { Message } from "@/lib/validations/message";
 
 interface SidebarChatListProps {
     sessionUserId: string;
     friends: User[];
+}
+
+interface MessageNotification extends Message {
+    senderImage: string;
+    senderName: string;
 }
 
 const SidebarChatList: FC<SidebarChatListProps> = ({
@@ -18,6 +33,55 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
 
     // this will only show the new message you've received while you are online
     const [unseenMessages, setUnseenMessages] = useState<Message[]>([]);
+
+    const newMessageNotificationHandler = useCallback(
+        (messageNotification: MessageNotification) => {
+            const shouldNotify: boolean =
+                pathname !==
+                `/main-menu/chat/${chatHrefConstructor(
+                    sessionUserId,
+                    messageNotification.senderId
+                )}`;
+
+            if (!shouldNotify) return;
+
+            toast.custom((t) => (
+                <NewMessageToast
+                    t={t}
+                    sessionId={sessionUserId}
+                    senderId={messageNotification.senderId}
+                    senderImg={messageNotification.senderImage}
+                    senderName={messageNotification.senderName}
+                    senderMessage={messageNotification.text}
+                />
+            ));
+
+            setUnseenMessages((prev: Message[]) => [
+                ...prev,
+                {
+                    id: messageNotification.id,
+                    senderId: messageNotification.senderId,
+                    text: messageNotification.text,
+                    timestamp: messageNotification.timestamp,
+                },
+            ]);
+        },
+        [pathname]
+    );
+    usePusher({
+        listenChannel: `user:${sessionUserId}:chats`,
+        responseEventName: "new_message_notification",
+        responseEventHandler: newMessageNotificationHandler,
+    });
+
+    const newFriendHandler = useCallback(() => {
+        router.refresh();
+    }, []);
+    usePusher({
+        listenChannel: `user:${sessionUserId}:friends`,
+        responseEventName: "new_friend",
+        responseEventHandler: newFriendHandler,
+    });
 
     useEffect(() => {
         if (pathname?.includes("chat"))

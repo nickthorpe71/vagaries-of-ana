@@ -32,14 +32,17 @@ const Messages: FC<MessagesProps> = ({
 
     // useCallback ensures the function retains the same reference
     // across re-renders unless one of it's dependencies changes
-    const responseEventHandler = useCallback((message: Message) => {
-        setMessages((prev) => [message, ...prev]);
-    }, []);
+    const messageHandler = useCallback(
+        (message: Message) => {
+            setMessages((prev) => [message, ...prev]);
+        },
+        [chatId]
+    );
 
     usePusher({
         listenChannel: `chat:${chatId}`,
-        responseEventName: "incoming-message",
-        responseEventHandler: responseEventHandler,
+        responseEventName: "incoming_message",
+        responseEventHandler: messageHandler,
     });
 
     return (
