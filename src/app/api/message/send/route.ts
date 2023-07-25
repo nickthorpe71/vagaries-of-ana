@@ -1,13 +1,15 @@
 import { getServerSession } from "next-auth";
 import { nanoid } from "nanoid";
 
+// helpers
+import { fetchRedis } from "@/helpers/redis";
+
 // lib
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { messageValidator, Message } from "@/lib/validations/message";
-
-// help
-import { fetchRedis } from "@/helpers/redis";
+import { pusherServer } from "@/lib/pusher";
+import { toPusherKey } from "@/lib/utils";
 
 export async function POST(req: Request) {
     try {
@@ -57,6 +59,14 @@ export async function POST(req: Request) {
 
         // --- validation end ---
 
+        // send message to all clients
+        pusherServer.trigger(
+            toPusherKey(`chat:${chatId}`),
+            "incoming-message",
+            message
+        );
+
+        // save message to db
         await db.zadd(`chat:${chatId}:messages`, {
             score: timestamp, // score is what the db uses to sort in zsets (sorted sets)
             member: JSON.stringify(message),

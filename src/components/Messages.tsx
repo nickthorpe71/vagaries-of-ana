@@ -1,12 +1,15 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useRef, useState, useCallback } from "react";
 import { format } from "date-fns";
 import Image from "next/image";
 
 // lib
 import { Message } from "@/lib/validations/message";
 import { cn } from "@/lib/utils";
+
+// hooks
+import usePusher from "@/hooks/usePusher";
 
 interface MessagesProps {
     initialMessages: Message[];
@@ -27,9 +30,17 @@ const Messages: FC<MessagesProps> = ({
 
     const scrollDownRef = useRef<HTMLDivElement | null>(null);
 
-    const formatTimestamp = (timestamp: number) => {
-        return format(timestamp, "HH:mm");
-    };
+    // useCallback ensures the function retains the same reference
+    // across re-renders unless one of it's dependencies changes
+    const responseEventHandler = useCallback((message: Message) => {
+        setMessages((prev) => [message, ...prev]);
+    }, []);
+
+    usePusher({
+        listenChannel: `chat:${chatId}`,
+        responseEventName: "incoming-message",
+        responseEventHandler: responseEventHandler,
+    });
 
     return (
         <div
@@ -82,7 +93,7 @@ const Messages: FC<MessagesProps> = ({
                                 >
                                     {message.text}{" "}
                                     <span className='ml-2 text-xs text-gray-400'>
-                                        {formatTimestamp(message.timestamp)}
+                                        {format(message.timestamp, "HH:mm")}
                                     </span>
                                 </span>
                             </div>
