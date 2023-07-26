@@ -66,7 +66,7 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
                 },
             ]);
         },
-        [pathname]
+        [pathname, sessionUserId]
     );
     usePusher({
         listenChannel: `user:${sessionUserId}:chats`,
@@ -76,7 +76,7 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
 
     const newFriendHandler = useCallback(() => {
         router.refresh();
-    }, []);
+    }, [router]);
     usePusher({
         listenChannel: `user:${sessionUserId}:friends`,
         responseEventName: "new_friend",
