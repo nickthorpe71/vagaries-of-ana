@@ -67,7 +67,7 @@ const SidebarLayout = async ({ children }: SidebarLayoutProps) => {
                     href='/main-menu'
                     className='flex h-16 shrink-0 items-center'
                 >
-                    <Icons.Logo className='h-8 w-auto' />
+                    <Icons.Logo />
                 </Link>
 
                 {friends.length > 0 ? (
