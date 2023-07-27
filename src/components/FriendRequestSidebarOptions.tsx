@@ -1,12 +1,11 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { User } from "lucide-react";
 
-// lib
-import { pusherClient } from "@/lib/pusher";
-import { toPusherKey } from "@/lib/utils";
+// hooks
+import usePusher from "@/hooks/usePusher";
 
 interface FriendRequestSidebarOptionsProps {
     sessionUserId: string;
@@ -21,38 +20,23 @@ const FriendRequestSidebarOptions: FC<FriendRequestSidebarOptionsProps> = ({
         initialUnseenRequestCount
     );
 
-    useEffect(() => {
-        pusherClient.subscribe(
-            toPusherKey(`user:${sessionUserId}:incoming_friend_requests`)
-        );
-        pusherClient.subscribe(toPusherKey(`user:${sessionUserId}:friends`));
+    const friendRequestHandler = useCallback(() => {
+        setUnseenRequestCount((prev) => prev + 1);
+    }, []);
+    usePusher({
+        listenChannel: `user:${sessionUserId}:incoming_friend_requests`,
+        responseEventName: "incoming_friend_requests",
+        responseEventHandler: friendRequestHandler,
+    });
 
-        const friendRequestHandler = () => {
-            setUnseenRequestCount((prev) => prev + 1);
-        };
-
-        const addedFriendHandler = () => {
-            setUnseenRequestCount((prev) => prev - 1);
-        };
-
-        pusherClient.bind("incoming_friend_requests", friendRequestHandler);
-        pusherClient.bind("new_friend", addedFriendHandler);
-
-        return () => {
-            pusherClient.unsubscribe(
-                toPusherKey(`user:${sessionUserId}:incoming_friend_requests`)
-            );
-            pusherClient.unsubscribe(
-                toPusherKey(`user:${sessionUserId}:friends`)
-            );
-
-            pusherClient.unbind("new_friend", addedFriendHandler);
-            pusherClient.unbind(
-                "incoming_friend_requests",
-                friendRequestHandler
-            );
-        };
-    }, [sessionUserId]);
+    const addedFriendHandler = useCallback(() => {
+        setUnseenRequestCount((prev) => prev - 1);
+    }, []);
+    usePusher({
+        listenChannel: `user:${sessionUserId}:friends`,
+        responseEventName: "new_friend",
+        responseEventHandler: addedFriendHandler,
+    });
 
     return (
         <Link

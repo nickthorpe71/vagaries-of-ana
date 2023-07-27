@@ -33,6 +33,7 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
 
     // this will only show the new message you've received while you are online
     const [unseenMessages, setUnseenMessages] = useState<Message[]>([]);
+    const [activeChats, setActiveChats] = useState<User[]>(friends);
 
     const newMessageNotificationHandler = useCallback(
         (messageNotification: MessageNotification) => {
@@ -74,9 +75,9 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
         responseEventHandler: newMessageNotificationHandler,
     });
 
-    const newFriendHandler = useCallback(() => {
-        router.refresh();
-    }, [router]);
+    const newFriendHandler = useCallback((newFriend: User) => {
+        setActiveChats((prev: User[]) => [...prev, newFriend]);
+    }, []);
     usePusher({
         listenChannel: `user:${sessionUserId}:friends`,
         responseEventName: "new_friend",
