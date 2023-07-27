@@ -53,14 +53,23 @@ const ChatPage = async ({ params }: ChatPageProps) => {
 
     const { chatId } = params;
     const { user } = session;
-    const [userId1, userId2] = chatId.split("--");
+    const [userId1, userId2]: string[] = chatId.split("--");
 
     // only allow users to access a chat that they are a part of
     if (user.id !== userId1 && user.id !== userId2) return notFound();
 
-    const chatPartnerId = user.id === userId1 ? userId2 : userId1;
-    const chatPartner = (await db.get(`user:${chatPartnerId}`)) as User;
-    const initialMessages = await getChatMessages(chatId);
+    const chatPartnerId: string = user.id === userId1 ? userId2 : userId1;
+    const chatPartnerRaw: string = await fetchRedis(
+        "get",
+        `user:${chatPartnerId}`
+    );
+    const chatPartner: User = JSON.parse(chatPartnerRaw);
+    const initialMessages: Array<{
+        id: string;
+        senderId: string;
+        text: string;
+        timestamp: number;
+    }> = await getChatMessages(chatId);
 
     return (
         <div className='flex-1 justify-between flex flex-col h-full max-h-[calc(100vh-6rem)]'>
