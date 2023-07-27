@@ -1,8 +1,14 @@
-import { fetchRedis } from "@/helpers/redis";
-import { authOptions } from "@/lib/auth";
-import { db } from "@/lib/db";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
+
+// lib
+import { authOptions } from "@/lib/auth";
+import { db } from "@/lib/db";
+import { pusherServer } from "@/lib/pusher";
+import { toPusherKey } from "@/lib/utils";
+
+// helpers
+import { fetchRedis } from "@/helpers/redis";
 
 export async function POST(req: Request) {
     try {
@@ -33,9 +39,14 @@ export async function POST(req: Request) {
             idToAdd
         );
 
-        if (!hasFriendRequest) {
+        if (!hasFriendRequest)
             return new Response("No friend request", { status: 400 });
-        }
+
+        pusherServer.trigger(
+            toPusherKey(`user:${idToAdd}:friends`),
+            "new_friend",
+            {}
+        );
 
         await Promise.all([
             db.sadd(`user:${session.user.id}:friends`, idToAdd),
