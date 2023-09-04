@@ -20,17 +20,17 @@ const FullViewVagary: FC<FullViewVagaryProps> = ({ data }) => {
         imgPath,
     } = data;
     return (
-        <div className='border border-gray-3 p-4 w-72 rounded-md bg-gray-1 text-gray-8'>
+        <div className='border border-gray-3 p-4 w-80 rounded-md bg-gray-1 text-gray-8'>
             <div className='h-16 flex items-center'>
                 <h2 className='text-xl font-bold mb-2'>{name}</h2>
             </div>
-            <div className='flex justify-center'>
-                <Image
-                    src={`/card-images/${imgPath}`}
-                    alt={name}
-                    className='w-64 h-64 mb-2'
-                />
-            </div>
+            <Image
+                src={`/card-images/${imgPath}`}
+                alt={name}
+                className='w-64 h-64 mb-2 m-auto'
+                width={256}
+                height={256}
+            />
             <div className='flex justify-between text-sm'>
                 <p className='mb-2'>
                     <strong className='text-blue-2'>Types:</strong>{" "}
