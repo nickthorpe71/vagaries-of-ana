@@ -1,22 +1,21 @@
-const fs = require('fs');
+const fs = require("fs");
 
 // Function to read a JSON file
 function readJSONFile(filename) {
-    const rawData = fs.readFileSync(filename, 'utf-8');
+    const rawData = fs.readFileSync(filename, "utf-8");
     return JSON.parse(rawData);
 }
 
 // Function to write data to a JSON file
 function writeJSONFile(filename, data) {
     const jsonData = JSON.stringify(data, null, 2);
-    fs.writeFileSync(filename, jsonData, 'utf-8');
+    fs.writeFileSync(filename, jsonData, "utf-8");
 }
 
 // Function to make changes to the data
 function modifyData(data) {
-
     if (!Array.isArray(data)) {
-        throw new Error('Data is not an array');
+        throw new Error("Data is not an array");
     }
 
     const targets = ["power", "defense", "stamina", "speed"];
@@ -37,8 +36,8 @@ function modifyData(data) {
     return data;
 }
 
-function removeWhiteSpace (str) {
-    return str.replace(/\s/g, '');
+function removeWhiteSpace(str) {
+    return str.replace(/\s/g, "");
 }
 
 function randInt(min, max) {
@@ -47,8 +46,8 @@ function randInt(min, max) {
 
 // Main function
 function main() {
-    const inputFilename = 'data/abilities.json';
-    const outputFilename = 'data/ucd.json';
+    const inputFilename = "data/abilities.json";
+    const outputFilename = "data/ucd.json";
 
     const data = readJSONFile(inputFilename);
     const modifiedData = modifyData(data);

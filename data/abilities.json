@@ -1,2116 +1,835 @@
 [
     {
-      "id": 0,
-      "name": "Crushing Wave",
-      "color": "Blue",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 0,
+        "name": "Crushing Wave",
+        "color": "Blue",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0]
         ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": true,
-      "staminaCost": 1,
-      "health": [
-        -8,
-        -11
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Inspired by simple streams, early learners of magic devised a spell. When used, it produces a tidal surge, reflecting a connection with the elements.",
-      "flavorText": "Inspired by simple streams, early learners of magic devised a spell. When used, it produces a tidal surge, reflecting a connection with the elements."
+        "aoe": [[0, 0]],
+        "hitAllInPath": true,
+        "staminaCost": 1,
+        "health": [-8, -11],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Inspired by simple streams, early learners of magic devised a spell. When used, it produces a tidal surge, reflecting a connection with the elements.",
+        "flavorText": "Inspired by simple streams, early learners of magic devised a spell. When used, it produces a tidal surge, reflecting a connection with the elements."
     },
     {
-      "id": 1,
-      "name": "Seduce ",
-      "color": "Blue",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 1,
+        "name": "Seduce ",
+        "color": "Blue",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 1,
-      "health": null,
-      "power": [
-        "-11",
-        "-13"
-      ],
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "In forbidden sorcery, a spell whispered among the defiant. With a mere utterance, foes are ensnared by haunting allure, their wills weakened and blades dulled. To cast is to tempt fate, binding the enemy in a dance of seduction.",
-      "flavorText": "In forbidden sorcery, a spell whispered among the defiant. With a mere utterance, foes are ensnared by haunting allure, their wills weakened and blades dulled. To cast is to tempt fate, binding the enemy in a dance of seduction."
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 1,
+        "health": null,
+        "power": ["-11", "-13"],
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "In forbidden sorcery, a spell whispered among the defiant. With a mere utterance, foes are ensnared by haunting allure, their wills weakened and blades dulled. To cast is to tempt fate, binding the enemy in a dance of seduction.",
+        "flavorText": "In forbidden sorcery, a spell whispered among the defiant. With a mere utterance, foes are ensnared by haunting allure, their wills weakened and blades dulled. To cast is to tempt fate, binding the enemy in a dance of seduction."
     },
     {
-      "id": 2,
-      "name": "Acid Rain",
-      "color": "Blue",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 2,
+        "name": "Acid Rain",
+        "color": "Blue",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          2
+        "aoe": [
+            [0, 0],
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0]
         ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          1
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          -1,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 1,
-      "health": [
-        -4,
-        -7
-      ],
-      "power": null,
-      "defense": [
-        "-10",
-        "-12"
-      ],
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Summons a corrosive rain that damages and weakens the defense of enemies.",
-      "flavorText": "The skies weep with toxic tears, corroding all that lies beneath."
+        "hitAllInPath": false,
+        "staminaCost": 1,
+        "health": [-4, -7],
+        "power": null,
+        "defense": ["-10", "-12"],
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Summons a corrosive rain that damages and weakens the defense of enemies.",
+        "flavorText": "The skies weep with toxic tears, corroding all that lies beneath."
     },
     {
-      "id": 3,
-      "name": "Ice Blast",
-      "color": "Blue",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 3,
+        "name": "Ice Blast",
+        "color": "Blue",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, 3],
+            [0, -1],
+            [0, -2],
+            [0, -3],
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [-1, 0],
+            [-2, 0],
+            [-3, 0]
         ],
-        [
-          0,
-          2
+        "aoe": [
+            [0, 0],
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0]
         ],
-        [
-          0,
-          3
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          0,
-          -3
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -3,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          1
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          -1,
-          0
-        ]
-      ],
-      "hitAllInPath": true,
-      "staminaCost": 2,
-      "health": [
-        -10,
-        -12
-      ],
-      "power": null,
-      "defense": null,
-      "speed": [
-        "-10",
-        "-15"
-      ],
-      "stamina": [
-        "-1",
-        "-3"
-      ],
-      "tooltip": "Unleashes a chilling blast that damages, slows, and reduces the stamina of enemies.",
-      "flavorText": "From the heart of winter, a cold so piercing it freezes both body and soul."
+        "hitAllInPath": true,
+        "staminaCost": 2,
+        "health": [-10, -12],
+        "power": null,
+        "defense": null,
+        "speed": ["-10", "-15"],
+        "stamina": ["-1", "-3"],
+        "tooltip": "Unleashes a chilling blast that damages, slows, and reduces the stamina of enemies.",
+        "flavorText": "From the heart of winter, a cold so piercing it freezes both body and soul."
     },
     {
-      "id": 4,
-      "name": "Frost Nova",
-      "color": "Blue",
-      "castPositions": [
-        [
-          0,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          1
+        "id": 4,
+        "name": "Frost Nova",
+        "color": "Blue",
+        "castPositions": [[0, 0]],
+        "aoe": [
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 2,
-      "health": [
-        -12,
-        -14
-      ],
-      "power": null,
-      "defense": null,
-      "speed": [
-        "-5",
-        "-10"
-      ],
-      "stamina": [
-        "0",
-        "-1"
-      ],
-      "tooltip": "Releases a burst of cold energy, damaging and slowing nearby enemies.",
-      "flavorText": "The air crystallizes, and in a heartbeat, all warmth is stolen."
+        "hitAllInPath": false,
+        "staminaCost": 2,
+        "health": [-12, -14],
+        "power": null,
+        "defense": null,
+        "speed": ["-5", "-10"],
+        "stamina": ["0", "-1"],
+        "tooltip": "Releases a burst of cold energy, damaging and slowing nearby enemies.",
+        "flavorText": "The air crystallizes, and in a heartbeat, all warmth is stolen."
     },
     {
-      "id": 5,
-      "name": "Vine Arrow",
-      "color": "Green",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 5,
+        "name": "Vine Arrow",
+        "color": "Green",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, 3],
+            [0, 4],
+            [0, 5],
+            [0, -1],
+            [0, -2],
+            [0, -3],
+            [0, -4],
+            [0, -5],
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [4, 0],
+            [5, 0],
+            [-1, 0],
+            [-2, 0],
+            [-3, 0],
+            [-4, 0],
+            [-5, 0]
         ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          3
-        ],
-        [
-          0,
-          4
-        ],
-        [
-          0,
-          5
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          0,
-          -3
-        ],
-        [
-          0,
-          -4
-        ],
-        [
-          0,
-          -5
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          4,
-          0
-        ],
-        [
-          5,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -3,
-          0
-        ],
-        [
-          -4,
-          0
-        ],
-        [
-          -5,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 1,
-      "health": [
-        -9,
-        -10
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Shoots a long-range arrow made of vines, damaging enemies in its path.",
-      "flavorText": "Nature's reach is long, and its aim is true."
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 1,
+        "health": [-9, -10],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Shoots a long-range arrow made of vines, damaging enemies in its path.",
+        "flavorText": "Nature's reach is long, and its aim is true."
     },
     {
-      "id": 6,
-      "name": "Oaken Strength",
-      "color": "Green",
-      "castPositions": [
-        [
-          0,
-          0
+        "id": 6,
+        "name": "Oaken Strength",
+        "color": "Green",
+        "castPositions": [
+            [0, 0],
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          1
-        ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 1,
-      "health": null,
-      "power": [
-        "-10",
-        "-14"
-      ],
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Empowers the caster or other target with the strength of ancient trees, boosting attack.",
-      "flavorText": "Have you ever wrestled an oak tree?"
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 1,
+        "health": null,
+        "power": ["-10", "-14"],
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Empowers the caster or other target with the strength of ancient trees, boosting attack.",
+        "flavorText": "Have you ever wrestled an oak tree?"
     },
     {
-      "id": 7,
-      "name": "Sacred Sap",
-      "color": "Green",
-      "castPositions": [
-        [
-          0,
-          0
+        "id": 7,
+        "name": "Sacred Sap",
+        "color": "Green",
+        "castPositions": [
+            [0, 0],
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          1
-        ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 2,
-      "health": [
-        15,
-        17
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Heals the target.",
-      "flavorText": "The essence of the sacred tree, a balm for all wounds"
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 2,
+        "health": [15, 17],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Heals the target.",
+        "flavorText": "The essence of the sacred tree, a balm for all wounds"
     },
     {
-      "id": 8,
-      "name": "Redwood Cleave",
-      "color": "Green",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 8,
+        "name": "Redwood Cleave",
+        "color": "Green",
+        "castPositions": [
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0]
         ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          -1,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 2,
-      "health": [
-        -20,
-        -24
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "A powerful melee attack, as mighty as a towering redwood.",
-      "flavorText": "With the force of nature's giants, cleave through foes."
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 2,
+        "health": [-20, -24],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "A powerful melee attack, as mighty as a towering redwood.",
+        "flavorText": "With the force of nature's giants, cleave through foes."
     },
     {
-      "id": 9,
-      "name": "Last Breath Spore",
-      "color": "Green",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 9,
+        "name": "Last Breath Spore",
+        "color": "Green",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, 3],
+            [0, -1],
+            [0, -2],
+            [0, -3],
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [-1, 0],
+            [-2, 0],
+            [-3, 0]
         ],
-        [
-          0,
-          2
+        "aoe": [
+            [0, 0],
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          3
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          0,
-          -3
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -3,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          1
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 3,
-      "health": [
-        -35,
-        -40
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Releases deadly spores that deal high damage to targets.",
-      "flavorText": "A breath so toxic, it's the last one many will take."
+        "hitAllInPath": false,
+        "staminaCost": 3,
+        "health": [-35, -40],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Releases deadly spores that deal high damage to targets.",
+        "flavorText": "A breath so toxic, it's the last one many will take."
     },
     {
-      "id": 10,
-      "name": "Dragons Breath",
-      "color": "Red",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 10,
+        "name": "Dragons Breath",
+        "color": "Red",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0]
         ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": true,
-      "staminaCost": 2,
-      "health": [
-        -10,
-        -20
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Exhales a fiery breath that may burn enemies.",
-      "flavorText": "The fury of dragons, channeled through the caster's lungs."
+        "aoe": [[0, 0]],
+        "hitAllInPath": true,
+        "staminaCost": 2,
+        "health": [-10, -20],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Exhales a fiery breath that may burn enemies.",
+        "flavorText": "The fury of dragons, channeled through the caster's lungs."
     },
     {
-      "id": 11,
-      "name": "Brimstone",
-      "color": "Red",
-      "castPositions": [
-        [
-          0,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          1
+        "id": 11,
+        "name": "Brimstone",
+        "color": "Red",
+        "castPositions": [[0, 0]],
+        "aoe": [
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 1,
-      "health": [
-        -8,
-        -16
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Calls down fiery rocks from the sky, damaging enemies around the caster.",
-      "flavorText": "From the layers of hell, fire and fury erupt."
+        "hitAllInPath": false,
+        "staminaCost": 1,
+        "health": [-8, -16],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Calls down fiery rocks from the sky, damaging enemies around the caster.",
+        "flavorText": "From the layers of hell, fire and fury erupt."
     },
     {
-      "id": 12,
-      "name": "Berzerk",
-      "color": "Red",
-      "castPositions": [
-        [
-          0,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 2,
-      "health": null,
-      "power": [
-        "5",
-        "13"
-      ],
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Engulfs the caster in rage, significantly boosting their attack.",
-      "flavorText": "In the heat of battle, let fury be your guide."
+        "id": 12,
+        "name": "Berzerk",
+        "color": "Red",
+        "castPositions": [[0, 0]],
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 2,
+        "health": null,
+        "power": ["5", "13"],
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Engulfs the caster in rage, significantly boosting their attack.",
+        "flavorText": "In the heat of battle, let fury be your guide."
     },
     {
-      "id": 13,
-      "name": "Enfeebling Haze",
-      "color": "Red",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 13,
+        "name": "Enfeebling Haze",
+        "color": "Red",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          2
+        "aoe": [
+            [0, 0],
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0]
         ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          1
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          -1,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 3,
-      "health": null,
-      "power": [
-        "-8",
-        "-16"
-      ],
-      "defense": [
-        "-8",
-        "-16"
-      ],
-      "speed": [
-        "-8",
-        "-16"
-      ],
-      "stamina": [
-        "-8",
-        "-16"
-      ],
-      "tooltip": "Fills the area with a weakening mist, reducing enemy attack, defense, speed, and stamina.",
-      "flavorText": "A haze that saps strength and clouds the mind."
+        "hitAllInPath": false,
+        "staminaCost": 3,
+        "health": null,
+        "power": ["-8", "-16"],
+        "defense": ["-8", "-16"],
+        "speed": ["-8", "-16"],
+        "stamina": ["-8", "-16"],
+        "tooltip": "Fills the area with a weakening mist, reducing enemy attack, defense, speed, and stamina.",
+        "flavorText": "A haze that saps strength and clouds the mind."
     },
     {
-      "id": 14,
-      "name": "Planet Splitter",
-      "color": "Red",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 14,
+        "name": "Planet Splitter",
+        "color": "Red",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, 3],
+            [0, 4],
+            [0, -1],
+            [0, -2],
+            [0, -3],
+            [0, -4],
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [4, 0],
+            [-1, 0],
+            [-2, 0],
+            [-3, 0],
+            [-4, 0]
         ],
-        [
-          0,
-          2
+        "aoe": [
+            [0, 0],
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          3
-        ],
-        [
-          0,
-          4
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          0,
-          -3
-        ],
-        [
-          0,
-          -4
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          4,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -3,
-          0
-        ],
-        [
-          -4,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          1
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "hitAllInPath": true,
-      "staminaCost": 5,
-      "health": [
-        -30,
-        -50
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Summons a meteor that deals devastating damage.",
-      "flavorText": "With the wrath of the cosmos, split the earth and scorch the foe."
+        "hitAllInPath": true,
+        "staminaCost": 5,
+        "health": [-30, -50],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Summons a meteor that deals devastating damage.",
+        "flavorText": "With the wrath of the cosmos, split the earth and scorch the foe."
     },
     {
-      "id": 15,
-      "name": "IronSkin",
-      "color": "Yellow",
-      "castPositions": [
-        [
-          0,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 1,
-      "health": null,
-      "power": null,
-      "defense": [
-        "10",
-        "10"
-      ],
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Fortifies the caster's skin, greatly enhancing defense.",
-      "flavorText": "As unyielding as forged metal, the caster stands resolute."
+        "id": 15,
+        "name": "IronSkin",
+        "color": "Yellow",
+        "castPositions": [[0, 0]],
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 1,
+        "health": null,
+        "power": null,
+        "defense": ["10", "10"],
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Fortifies the caster's skin, greatly enhancing defense.",
+        "flavorText": "As unyielding as forged metal, the caster stands resolute."
     },
     {
-      "id": 16,
-      "name": "Upheaval",
-      "color": "Yellow",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 16,
+        "name": "Upheaval",
+        "color": "Yellow",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": true,
-      "staminaCost": 1,
-      "health": [
-        10,
-        10
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Hurls a chunk of earth at the enemy, dealing damage.",
-      "flavorText": "From the ground beneath, a weapon is born."
+        "aoe": [[0, 0]],
+        "hitAllInPath": true,
+        "staminaCost": 1,
+        "health": [10, 10],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Hurls a chunk of earth at the enemy, dealing damage.",
+        "flavorText": "From the ground beneath, a weapon is born."
     },
     {
-      "id": 17,
-      "name": "Ancient Sand",
-      "color": "Yellow",
-      "castPositions": [
-        [
-          0,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          1
+        "id": 17,
+        "name": "Ancient Sand",
+        "color": "Yellow",
+        "castPositions": [[0, 0]],
+        "aoe": [
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 2,
-      "health": [
-        10,
-        10
-      ],
-      "power": null,
-      "defense": null,
-      "speed": [
-        "-10",
-        "-10"
-      ],
-      "stamina": null,
-      "tooltip": "Summons the sands of time to damage and slow the enemy.",
-      "flavorText": "A gust from ages past, eroding all in its path."
+        "hitAllInPath": false,
+        "staminaCost": 2,
+        "health": [10, 10],
+        "power": null,
+        "defense": null,
+        "speed": ["-10", "-10"],
+        "stamina": null,
+        "tooltip": "Summons the sands of time to damage and slow the enemy.",
+        "flavorText": "A gust from ages past, eroding all in its path."
     },
     {
-      "id": 18,
-      "name": "Mirror Shield",
-      "color": "Yellow",
-      "castPositions": [
-        [
-          0,
-          0
+        "id": 18,
+        "name": "Mirror Shield",
+        "color": "Yellow",
+        "castPositions": [
+            [0, 0],
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          1
-        ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 2,
-      "health": null,
-      "power": null,
-      "defense": [
-        "15",
-        "15"
-      ],
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Applies a powerful defensive buff to the target.",
-      "flavorText": "A barrier of reflection, turning foe's might against them."
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 2,
+        "health": null,
+        "power": null,
+        "defense": ["15", "15"],
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Applies a powerful defensive buff to the target.",
+        "flavorText": "A barrier of reflection, turning foe's might against them."
     },
     {
-      "id": 19,
-      "name": "Eternal Tao",
-      "color": "Yellow",
-      "castPositions": [
-        [
-          0,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 4,
-      "health": [
-        10,
-        10
-      ],
-      "power": [
-        "10",
-        "10"
-      ],
-      "defense": [
-        "10",
-        "10"
-      ],
-      "speed": [
-        "10",
-        "10"
-      ],
-      "stamina": null,
-      "tooltip": "Balances the caster's inner energies, boosting all stats.",
-      "flavorText": "In the dance of balance, harmony is achieved."
+        "id": 19,
+        "name": "Eternal Tao",
+        "color": "Yellow",
+        "castPositions": [[0, 0]],
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 4,
+        "health": [10, 10],
+        "power": ["10", "10"],
+        "defense": ["10", "10"],
+        "speed": ["10", "10"],
+        "stamina": null,
+        "tooltip": "Balances the caster's inner energies, boosting all stats.",
+        "flavorText": "In the dance of balance, harmony is achieved."
     },
     {
-      "id": 20,
-      "name": "Healing Light",
-      "color": "White",
-      "castPositions": [
-        [
-          0,
-          0
+        "id": 20,
+        "name": "Healing Light",
+        "color": "White",
+        "castPositions": [
+            [0, 0],
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          1
-        ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 1,
-      "health": [
-        10,
-        12
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Bathes the target in a radiant light, restoring health.",
-      "flavorText": "The gentle embrace of purity, mending wounds with grace."
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 1,
+        "health": [10, 12],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Bathes the target in a radiant light, restoring health.",
+        "flavorText": "The gentle embrace of purity, mending wounds with grace."
     },
     {
-      "id": 21,
-      "name": "Gale",
-      "color": "White",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 21,
+        "name": "Gale",
+        "color": "White",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, 3],
+            [0, -1],
+            [0, -2],
+            [0, -3],
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [-1, 0],
+            [-2, 0],
+            [-3, 0]
         ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          3
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          0,
-          -3
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -3,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": true,
-      "staminaCost": 1,
-      "health": [
-        -10,
-        -12
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Summons a fierce wind to damage enemies in its path.",
-      "flavorText": "The wrath of the skies, unleashed with a howl."
+        "aoe": [[0, 0]],
+        "hitAllInPath": true,
+        "staminaCost": 1,
+        "health": [-10, -12],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Summons a fierce wind to damage enemies in its path.",
+        "flavorText": "The wrath of the skies, unleashed with a howl."
     },
     {
-      "id": 22,
-      "name": "Spirit Walk",
-      "color": "White",
-      "castPositions": [
-        [
-          0,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 2,
-      "health": null,
-      "power": null,
-      "defense": null,
-      "speed": [
-        "10",
-        "12"
-      ],
-      "stamina": [
-        "1",
-        "1"
-      ],
-      "tooltip": "Turns the caster ethereal, increasing their speed and stamina.",
-      "flavorText": "Step lightly between realms, where matter holds no sway."
+        "id": 22,
+        "name": "Spirit Walk",
+        "color": "White",
+        "castPositions": [[0, 0]],
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 2,
+        "health": null,
+        "power": null,
+        "defense": null,
+        "speed": ["10", "12"],
+        "stamina": ["1", "1"],
+        "tooltip": "Turns the caster ethereal, increasing their speed and stamina.",
+        "flavorText": "Step lightly between realms, where matter holds no sway."
     },
     {
-      "id": 23,
-      "name": "Plasma Stream",
-      "color": "White",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 23,
+        "name": "Plasma Stream",
+        "color": "White",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, 3],
+            [0, -1],
+            [0, -2],
+            [0, -3],
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [-1, 0],
+            [-2, 0],
+            [-3, 0]
         ],
-        [
-          0,
-          2
+        "aoe": [
+            [0, 0],
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0]
         ],
-        [
-          0,
-          3
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          0,
-          -3
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -3,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          1
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          -1,
-          0
-        ]
-      ],
-      "hitAllInPath": true,
-      "staminaCost": 2,
-      "health": [
-        -10,
-        -12
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Channels a stream of searing plasma, damaging enemies.",
-      "flavorText": "From the heart of stars, a beam of pure energy."
+        "hitAllInPath": true,
+        "staminaCost": 2,
+        "health": [-10, -12],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Channels a stream of searing plasma, damaging enemies.",
+        "flavorText": "From the heart of stars, a beam of pure energy."
     },
     {
-      "id": 24,
-      "name": "Paradise",
-      "color": "White",
-      "castPositions": [
-        [
-          0,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
+        "id": 24,
+        "name": "Paradise",
+        "color": "White",
+        "castPositions": [[0, 0]],
+        "aoe": [
+            [0, 0],
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          1
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 3,
-      "health": [
-        20,
-        24
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": [
-        "1",
-        "1"
-      ],
-      "tooltip": "Invokes a heavenly aura, healing and purifying targets.",
-      "flavorText": "In moments of serenity, the world's pain fades away."
+        "hitAllInPath": false,
+        "staminaCost": 3,
+        "health": [20, 24],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": ["1", "1"],
+        "tooltip": "Invokes a heavenly aura, healing and purifying targets.",
+        "flavorText": "In moments of serenity, the world's pain fades away."
     },
     {
-      "id": 25,
-      "name": "Jesters Slap",
-      "color": "Black",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 25,
+        "name": "Jesters Slap",
+        "color": "Black",
+        "castPositions": [
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0]
         ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          -1,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 1,
-      "health": [
-        0,
-        -12
-      ],
-      "power": [
-        "0",
-        "-12"
-      ],
-      "defense": [
-        "0",
-        "-12"
-      ],
-      "speed": [
-        "0",
-        "-12"
-      ],
-      "stamina": null,
-      "tooltip": "A capricious attack that may randomly decrease any of the enemy's stats. The jest's outcome is unpredictable, sometimes leaving the foe untouched.",
-      "flavorText": "A jest in the dark, where laughter meets pain."
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 1,
+        "health": [0, -12],
+        "power": ["0", "-12"],
+        "defense": ["0", "-12"],
+        "speed": ["0", "-12"],
+        "stamina": null,
+        "tooltip": "A capricious attack that may randomly decrease any of the enemy's stats. The jest's outcome is unpredictable, sometimes leaving the foe untouched.",
+        "flavorText": "A jest in the dark, where laughter meets pain."
     },
     {
-      "id": 26,
-      "name": "Cannabilize Self",
-      "color": "Black",
-      "castPositions": [
-        [
-          0,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 2,
-      "health": [
-        0,
-        -20
-      ],
-      "power": null,
-      "defense": null,
-      "speed": null,
-      "stamina": [
-        "0",
-        "2"
-      ],
-      "tooltip": "The caster sacrafices health for stamina.",
-      "flavorText": "To feast on power, sometimes one must pay the price."
+        "id": 26,
+        "name": "Cannabilize Self",
+        "color": "Black",
+        "castPositions": [[0, 0]],
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 2,
+        "health": [0, -20],
+        "power": null,
+        "defense": null,
+        "speed": null,
+        "stamina": ["0", "2"],
+        "tooltip": "The caster sacrafices health for stamina.",
+        "flavorText": "To feast on power, sometimes one must pay the price."
     },
     {
-      "id": 27,
-      "name": "Mikor Curse",
-      "color": "Black",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 27,
+        "name": "Mikor Curse",
+        "color": "Black",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, -1],
+            [0, -2],
+            [1, 0],
+            [2, 0],
+            [-1, 0],
+            [-2, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1]
         ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": true,
-      "staminaCost": 3,
-      "health": null,
-      "power": [
-        "-5",
-        "-20"
-      ],
-      "defense": [
-        "-5",
-        "-20"
-      ],
-      "speed": [
-        "-5",
-        "-20"
-      ],
-      "stamina": null,
-      "tooltip": "Curses the targets, reducing power, defense, and speed in a large range.",
-      "flavorText": "Ancient words of malice, binding foes in torment."
+        "aoe": [[0, 0]],
+        "hitAllInPath": true,
+        "staminaCost": 3,
+        "health": null,
+        "power": ["-5", "-20"],
+        "defense": ["-5", "-20"],
+        "speed": ["-5", "-20"],
+        "stamina": null,
+        "tooltip": "Curses the targets, reducing power, defense, and speed in a large range.",
+        "flavorText": "Ancient words of malice, binding foes in torment."
     },
     {
-      "id": 28,
-      "name": "Blood Magic",
-      "color": "Black",
-      "castPositions": [
-        [
-          0,
-          0
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 3,
-      "health": [
-        40,
-        60
-      ],
-      "power": null,
-      "defense": [
-        "-10",
-        "-30"
-      ],
-      "speed": null,
-      "stamina": null,
-      "tooltip": "Sacrifices the caster's defense to unleash a powerful blood missile.",
-      "flavorText": "In the dance of life and death, blood is the rhythm."
+        "id": 28,
+        "name": "Blood Magic",
+        "color": "Black",
+        "castPositions": [[0, 0]],
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 3,
+        "health": [40, 60],
+        "power": null,
+        "defense": ["-10", "-30"],
+        "speed": null,
+        "stamina": null,
+        "tooltip": "Sacrifices the caster's defense to unleash a powerful blood missile.",
+        "flavorText": "In the dance of life and death, blood is the rhythm."
     },
     {
-      "id": 29,
-      "name": "Harvest Soul",
-      "color": "Black",
-      "castPositions": [
-        [
-          0,
-          1
+        "id": 29,
+        "name": "Harvest Soul",
+        "color": "Black",
+        "castPositions": [
+            [0, 1],
+            [0, 2],
+            [0, 3],
+            [0, 4],
+            [0, -1],
+            [0, -2],
+            [0, -3],
+            [0, -4],
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [4, 0],
+            [-1, 0],
+            [-2, 0],
+            [-3, 0],
+            [-4, 0],
+            [-1, 1],
+            [1, 1],
+            [-1, -1],
+            [1, -1],
+            [-2, 2],
+            [2, 2],
+            [-2, -2],
+            [2, -2]
         ],
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          3
-        ],
-        [
-          0,
-          4
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          0,
-          -3
-        ],
-        [
-          0,
-          -4
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          4,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          -3,
-          0
-        ],
-        [
-          -4,
-          0
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ],
-        [
-          -2,
-          2
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          -2,
-          -2
-        ],
-        [
-          2,
-          -2
-        ]
-      ],
-      "aoe": [
-        [
-          0,
-          0
-        ]
-      ],
-      "hitAllInPath": false,
-      "staminaCost": 4,
-      "health": [
-        -7,
-        -40
-      ],
-      "power": [
-        "-7",
-        "-40"
-      ],
-      "defense": [
-        "-7",
-        "-40"
-      ],
-      "speed": [
-        "-7",
-        "-40"
-      ],
-      "stamina": null,
-      "tooltip": "Rips the soul from the enemy, draining health and stats.",
-      "flavorText": "From the abyss, a hunger that never ends."
+        "aoe": [[0, 0]],
+        "hitAllInPath": false,
+        "staminaCost": 4,
+        "health": [-7, -40],
+        "power": ["-7", "-40"],
+        "defense": ["-7", "-40"],
+        "speed": ["-7", "-40"],
+        "stamina": null,
+        "tooltip": "Rips the soul from the enemy, draining health and stats.",
+        "flavorText": "From the abyss, a hunger that never ends."
     }
-  ]
+]
