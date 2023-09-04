@@ -19,8 +19,10 @@ const FullViewVagary: FC<FullViewVagaryProps> = ({ data }) => {
         imgPath,
     } = data;
     return (
-        <div className='border border-gray-3 p-4 w-80 rounded-md bg-gray-1 text-gray-8'>
-            <h2 className='text-xl font-bold mb-2'>{name}</h2>
+        <div className='border border-gray-3 p-4 w-72 rounded-md bg-gray-1 text-gray-8'>
+            <div className='h-16 flex items-center'>
+                <h2 className='text-xl font-bold mb-2'>{name}</h2>
+            </div>
             <div className='flex justify-center'>
                 <img
                     src={`/card-images/${imgPath}`}
@@ -37,7 +39,9 @@ const FullViewVagary: FC<FullViewVagaryProps> = ({ data }) => {
                     <strong className='text-blue-3'>Race:</strong> {race}
                 </p>
             </div>
-            <blockquote className='text-sm italic mb-2'>{loreText}</blockquote>
+            <blockquote className='text-sm italic mb-2 max-h-24 overflow-y-auto'>
+                {loreText}
+            </blockquote>
             {/* <p className='font-semibold mb-2 text-red-4'>Base Stats:</p> */}
             <ul className='list-disc list-inside mb-2 text-sm'>
                 <li>HP: {baseHP}</li>
