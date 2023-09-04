@@ -26,7 +26,8 @@
             "73": 28,
             "81": 19,
             "88": 29
-        }
+        },
+        "imgName": "lost-one/lost-one-standard_128x128.png"
     },
     {
         "id": 1,
@@ -50,7 +51,8 @@
             "64": 22,
             "68": 14,
             "72": 11
-        }
+        },
+        "imgName": "lost-one/lost-one-unification_128x128.png"
     },
     {
         "id": 2,
@@ -73,7 +75,8 @@
             "67": 27,
             "78": 28,
             "79": 29
-        }
+        },
+        "imgName": "lost-one/lost-one-wanderers_128x128.png"
     },
     {
         "id": 3,
@@ -96,7 +99,8 @@
             "80": 24,
             "83": 28,
             "85": 29
-        }
+        },
+        "imgName": "lost-one/lost-one-father_128x128.png"
     },
     {
         "id": 4,
@@ -125,7 +129,8 @@
             "68": 7,
             "70": 8,
             "72": 9
-        }
+        },
+        "imgName": "gremlore/gremlore-standard_128x128.png"
     },
     {
         "id": 5,
@@ -154,7 +159,8 @@
             "72": 24,
             "73": 29,
             "85": 7
-        }
+        },
+        "imgName": "leonixia/leonixia-standard_128x128.png"
     },
     {
         "id": 6,
@@ -183,7 +189,8 @@
             "73": 18,
             "81": 21,
             "82": 28
-        }
+        },
+        "imgName": "mace-the-mechanist/mace-standard_128x128.png"
     },
     {
         "id": 7,
@@ -206,7 +213,8 @@
             "49": 17,
             "53": 18,
             "62": 19
-        }
+        },
+        "imgName": "mace-the-mechanist/mace-speed_128x128.png"
     },
     {
         "id": 8,
@@ -229,7 +237,8 @@
             "63": 16,
             "66": 18,
             "73": 19
-        }
+        },
+        "imgName": "mace-the-mechanist/mace-power_128x128.png"
     },
     {
         "id": 9,
@@ -252,7 +261,8 @@
             "63": 15,
             "64": 17,
             "80": 19
-        }
+        },
+        "imgName": "mace-the-mechanist/mace-resilience_128x128.png"
     },
     {
         "id": 10,
@@ -275,7 +285,8 @@
             "66": 15,
             "80": 16,
             "90": 17
-        }
+        },
+        "imgName": "mace-the-mechanist/mace-stamina_128x128.png"
     },
     {
         "id": 11,
@@ -304,7 +315,8 @@
             "70": 7,
             "72": 8,
             "77": 9
-        }
+        },
+        "imgName": "mok-mona/mok-mona-standard_128x128.png"
     },
     {
         "id": 12,
@@ -327,7 +339,8 @@
             "65": 5,
             "67": 7,
             "87": 8
-        }
+        },
+        "imgName": "mok-mona/mok-mona-defender_128x128.png"
     },
     {
         "id": 13,
@@ -350,7 +363,8 @@
             "67": 3,
             "75": 6,
             "77": 9
-        }
+        },
+        "imgName": "mok-mona/mok-mona-power_128x128.png"
     },
     {
         "id": 14,
@@ -379,7 +393,8 @@
             "76": 25,
             "78": 3,
             "82": 4
-        }
+        },
+        "imgName": "zepp/zepp-standard_128x128.png"
     },
     {
         "id": 15,
@@ -402,7 +417,8 @@
             "78": 18,
             "80": 2,
             "85": 3
-        }
+        },
+        "imgName": "zepp/zepp-clockwork_128x128.png"
     },
     {
         "id": 16,
@@ -425,7 +441,8 @@
             "65": 13,
             "70": 14,
             "74": 24
-        }
+        },
+        "imgName": "zepp/zepp-upside-down_128x128.png"
     },
     {
         "id": 17,
@@ -448,7 +465,8 @@
             "88": 26,
             "89": 29,
             "90": 4
-        }
+        },
+        "imgName": "zepp/zepp-whisperer_128x128.png"
     },
     {
         "id": 18,
@@ -477,7 +495,8 @@
             "74": 6,
             "81": 7,
             "90": 9
-        }
+        },
+        "imgName": "nobo/nobo-standard_128x128.png"
     },
     {
         "id": 19,
@@ -500,7 +519,8 @@
             "46": 7,
             "54": 8,
             "59": 9
-        }
+        },
+        "imgName": "nobo/nobo-awakening_128x128.png"
     },
     {
         "id": 20,
@@ -523,7 +543,8 @@
             "62": 14,
             "67": 7,
             "82": 8
-        }
+        },
+        "imgName": "nobo/nobo-verdant-vanguard_128x128.png"
     },
     {
         "id": 21,
@@ -546,7 +567,8 @@
             "65": 5,
             "69": 6,
             "86": 9
-        }
+        },
+        "imgName": "nobo/nobo-tranquil-tempest_128x128.png"
     },
     {
         "id": 22,
@@ -569,7 +591,8 @@
             "76": 18,
             "79": 5,
             "89": 7
-        }
+        },
+        "imgName": "nobo/nobo-horizon-hunter_128x128.png"
     },
     {
         "id": 23,
@@ -592,7 +615,8 @@
             "75": 6,
             "83": 7,
             "86": 9
-        }
+        },
+        "imgName": "nobo/nobo-celestial-seeker_128x128.png"
     },
     {
         "id": 24,
@@ -621,7 +645,8 @@
             "68": 7,
             "71": 8,
             "86": 9
-        }
+        },
+        "imgName": "noyaba/noyaba-standard_128x128.png"
     },
     {
         "id": 25,
@@ -650,7 +675,8 @@
             "65": 19,
             "70": 25,
             "90": 8
-        }
+        },
+        "imgName": "zueso/zueso-standard_128x128.png"
     },
     {
         "id": 26,
@@ -673,7 +699,8 @@
             "66": 26,
             "67": 27,
             "87": 29
-        }
+        },
+        "imgName": "zueso/zueso-pact_128x128.png"
     },
     {
         "id": 27,
@@ -696,7 +723,8 @@
             "75": 18,
             "81": 19,
             "85": 24
-        }
+        },
+        "imgName": "zueso/zueso-salvation_128x128.png"
     },
     {
         "id": 28,
@@ -719,7 +747,8 @@
             "74": 25,
             "78": 28,
             "89": 29
-        }
+        },
+        "imgName": "zueso/zueso-demon_128x128.png"
     },
     {
         "id": 29,
@@ -748,7 +777,8 @@
             "61": 3,
             "86": 4,
             "89": 7
-        }
+        },
+        "imgName": "diamond/diamond-standard_128x128.png"
     },
     {
         "id": 30,
@@ -771,7 +801,8 @@
             "86": 13,
             "88": 3,
             "90": 4
-        }
+        },
+        "imgName": "diamond/diamond-uprising_128x128.png"
     },
     {
         "id": 31,
@@ -794,7 +825,8 @@
             "69": 13,
             "76": 14,
             "90": 4
-        }
+        },
+        "imgName": "diamond/diamond-sanctuary_128x128.png"
     },
     {
         "id": 32,
@@ -823,7 +855,8 @@
             "74": 23,
             "82": 24,
             "84": 8
-        }
+        },
+        "imgName": "steele-wing-shaman/steele-wing-shaman-standard_128x128.png"
     },
     {
         "id": 33,
@@ -852,7 +885,8 @@
             "67": 25,
             "77": 5,
             "86": 9
-        }
+        },
+        "imgName": "norobattus/norobattus-standard_128x128.png"
     },
     {
         "id": 34,
@@ -881,7 +915,8 @@
             "75": 27,
             "76": 28,
             "90": 3
-        }
+        },
+        "imgName": "etsul/etsul-standard_128x128.png"
     },
     {
         "id": 35,
@@ -910,7 +945,8 @@
             "60": 6,
             "67": 7,
             "70": 8
-        }
+        },
+        "imgName": "yvne/yvne-standard_128x128.png"
     },
     {
         "id": 36,
@@ -939,7 +975,8 @@
             "61": 21,
             "64": 26,
             "67": 5
-        }
+        },
+        "imgName": "deerg/deerg-standard_128x128.png"
     },
     {
         "id": 37,
@@ -968,7 +1005,8 @@
             "72": 29,
             "88": 3,
             "89": 9
-        }
+        },
+        "imgName": "regna/regna-standard_128x128.png"
     },
     {
         "id": 38,
@@ -997,7 +1035,8 @@
             "71": 19,
             "72": 5,
             "79": 8
-        }
+        },
+        "imgName": "ynot-tulg/ynot-tulg-standard_128x128.png"
     },
     {
         "id": 39,
@@ -1026,7 +1065,8 @@
             "56": 3,
             "62": 4,
             "80": 6
-        }
+        },
+        "imgName": "tholas/tholas-standard_128x128.png"
     },
     {
         "id": 40,
@@ -1055,7 +1095,8 @@
             "55": 29,
             "64": 3,
             "90": 7
-        }
+        },
+        "imgName": "sargo/sargo-standard_128x128.png"
     },
     {
         "id": 41,
@@ -1078,7 +1119,8 @@
             "59": 23,
             "63": 3,
             "76": 4
-        }
+        },
+        "imgName": "sargo/sargo-answers_128x128.png"
     },
     {
         "id": 42,
@@ -1101,7 +1143,8 @@
             "85": 2,
             "87": 3,
             "89": 4
-        }
+        },
+        "imgName": "sargo/sargo-reign_128x128.png"
     },
     {
         "id": 43,
@@ -1130,7 +1173,8 @@
             "78": 7,
             "82": 8,
             "85": 9
-        }
+        },
+        "imgName": "valight/valight-standard_128x128.png"
     },
     {
         "id": 44,
@@ -1153,7 +1197,8 @@
             "53": 28,
             "59": 29,
             "62": 5
-        }
+        },
+        "imgName": "valight/valight-redemption_128x128.png"
     },
     {
         "id": 45,
@@ -1182,7 +1227,8 @@
             "69": 7,
             "77": 8,
             "82": 9
-        }
+        },
+        "imgName": "klackix/klackix-birth_128x128"
     },
     {
         "id": 46,
@@ -1205,7 +1251,8 @@
             "48": 7,
             "51": 8,
             "86": 9
-        }
+        },
+        "imgName": "klackix/klackix-standard_128x128.png"
     },
     {
         "id": 47,
@@ -1234,7 +1281,8 @@
             "77": 5,
             "81": 8,
             "84": 9
-        }
+        },
+        "imgName": "damned-soldier/damned-soldier-standard_128x128.png"
     },
     {
         "id": 48,
@@ -1263,7 +1311,8 @@
             "66": 28,
             "68": 3,
             "83": 5
-        }
+        },
+        "imgName": "queens-merchant/queens-merchant-standard_128x128.png"
     },
     {
         "id": 49,
@@ -1292,7 +1341,8 @@
             "60": 23,
             "88": 24,
             "90": 29
-        }
+        },
+        "imgName": "enlightened-guard/enlightened-guard-standard_128x128.png"
     },
     {
         "id": 50,
@@ -1321,7 +1371,8 @@
             "80": 5,
             "87": 6,
             "89": 7
-        }
+        },
+        "imgName": "magma-homunculus/magma-homunculus-standard_128x128.png"
     },
     {
         "id": 51,
@@ -1350,7 +1401,8 @@
             "70": 3,
             "71": 4,
             "84": 7
-        }
+        },
+        "imgName": "seaking/seaking-standard_128x128.png"
     },
     {
         "id": 52,
@@ -1379,7 +1431,8 @@
             "64": 27,
             "65": 28,
             "82": 4
-        }
+        },
+        "imgName": "demi-demon/demi-demon-standard_128x128.png"
     },
     {
         "id": 53,
@@ -1408,7 +1461,8 @@
             "53": 6,
             "68": 7,
             "85": 9
-        }
+        },
+        "imgName": "haru/haru-standard_128x128.png"
     },
     {
         "id": 54,
@@ -1437,7 +1491,8 @@
             "76": 24,
             "89": 25,
             "90": 4
-        }
+        },
+        "imgName": "reliquam-dancer/reliquam-dancer-standard_128x128.png"
     },
     {
         "id": 55,
@@ -1466,7 +1521,8 @@
             "73": 29,
             "81": 4,
             "83": 8
-        }
+        },
+        "imgName": "shashara/shashara-standard_128x128"
     },
     {
         "id": 56,
@@ -1495,7 +1551,8 @@
             "81": 28,
             "87": 29,
             "90": 9
-        }
+        },
+        "imgName": "lester/lester-standard_128x128.png"
     },
     {
         "id": 57,
@@ -1518,7 +1575,8 @@
             "65": 23,
             "72": 24,
             "81": 3
-        }
+        },
+        "imgName": "lester/lester-dimensional-odyssey_128x128.png"
     },
     {
         "id": 58,
@@ -1541,6 +1599,7 @@
             "66": 22,
             "70": 23,
             "90": 24
-        }
+        },
+        "imgName": "lester/lester-nexus-of-realities_128x128.png"
     }
 ]
