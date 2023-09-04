@@ -15,7 +15,7 @@ type Vagary = {
     moveMap: {
         [key: string]: number;
     };
-    imgName: string;
+    imgPath: string;
 };
 
 type Ability = {

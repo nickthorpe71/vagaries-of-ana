@@ -164,7 +164,7 @@
     },
     {
         "id": 6,
-        "name": "Mace The Mechanist: No augmentation",
+        "name": "Mace The Mechanist",
         "types": ["Red", "Yellow"],
         "race": "Enlightened",
         "timelineBranchesFrom": [],
@@ -194,7 +194,7 @@
     },
     {
         "id": 7,
-        "name": "Mace The Mechanist: Speed augmentation",
+        "name": "Mace The Mechanist: Speed Augmentation",
         "types": ["Red", "Yellow"],
         "race": "Enlightened",
         "timelineBranchesFrom": [6],
@@ -218,7 +218,7 @@
     },
     {
         "id": 8,
-        "name": "Mace The Mechanist: Power augmentation",
+        "name": "Mace The Mechanist: Power Augmentation",
         "types": ["Red", "Yellow"],
         "race": "Enlightened",
         "timelineBranchesFrom": [6],
@@ -242,7 +242,7 @@
     },
     {
         "id": 9,
-        "name": "Mace The Mechanist: Resilience augmentation",
+        "name": "Mace The Mechanist: Resilience Augmentation",
         "types": ["Red", "Yellow"],
         "race": "Enlightened",
         "timelineBranchesFrom": [6],
@@ -266,7 +266,7 @@
     },
     {
         "id": 10,
-        "name": "Mace The Mechanist: Stamina augmentation",
+        "name": "Mace The Mechanist: Stamina Augmentation",
         "types": ["Red", "Yellow"],
         "race": "Enlightened",
         "timelineBranchesFrom": [6],
@@ -1174,7 +1174,7 @@
             "82": 8,
             "85": 9
         },
-        "imgPath": "valight/valight-standard_128x128.png"
+        "imgPath": "commander-valight/valight-standard_128x128.png"
     },
     {
         "id": 44,
@@ -1198,7 +1198,7 @@
             "59": 29,
             "62": 5
         },
-        "imgPath": "valight/valight-redemption_128x128.png"
+        "imgPath": "commander-valight/valight-redemption_128x128.png"
     },
     {
         "id": 45,
@@ -1228,7 +1228,7 @@
             "77": 8,
             "82": 9
         },
-        "imgPath": "klackix/klackix-birth_128x128"
+        "imgPath": "klackix/klackix-birth_128x128.png"
     },
     {
         "id": 46,
@@ -1522,7 +1522,7 @@
             "81": 4,
             "83": 8
         },
-        "imgPath": "shashara/shashara-standard_128x128"
+        "imgPath": "shashara/shashara-standard_128x128.png"
     },
     {
         "id": 56,

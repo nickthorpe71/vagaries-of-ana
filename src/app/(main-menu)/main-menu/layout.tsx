@@ -36,6 +36,12 @@ const sidebarOptions: SidebarOption[] = [
         href: "/main-menu/add",
         Icon: "UserPlus",
     },
+    {
+        id: 2,
+        name: "Vagaries",
+        href: "/main-menu/vagaries",
+        Icon: "UserPlus",
+    },
 ];
 
 const SidebarLayout = async ({ children }: SidebarLayoutProps) => {
