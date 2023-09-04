@@ -18,9 +18,20 @@ function modifyData(data) {
         throw new Error("Data is not an array");
     }
 
+    const targets = ["power", "defense", "stamina", "speed"];
+
     for (let i = 0; i < data.length; i++) {
-        const name = data[i].name.toLowerCase().replace(/\s/g, "-");
-        data[i].imgName = `${name}/${name}_128x128.png`;
+        for (let j = 0; j < targets.length; j++) {
+            const stat = data[i][targets[j]];
+
+            if (stat === null) {
+                continue;
+            }
+
+            data[i][targets[j]] = data[i][targets[j]].map((item) =>
+                Number(item)
+            );
+        }
     }
 
     return data;
@@ -36,7 +47,7 @@ function randInt(min, max) {
 
 // Main function
 function main() {
-    const inputFilename = "data/base-cards.json";
+    const inputFilename = "data/abilities.json";
     const outputFilename = "data/ucd.json";
 
     const data = readJSONFile(inputFilename);
