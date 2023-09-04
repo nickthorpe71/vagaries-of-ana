@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image from "next/image";
 
 interface FullViewVagaryProps {
     data: Vagary;
@@ -24,7 +25,7 @@ const FullViewVagary: FC<FullViewVagaryProps> = ({ data }) => {
                 <h2 className='text-xl font-bold mb-2'>{name}</h2>
             </div>
             <div className='flex justify-center'>
-                <img
+                <Image
                     src={`/card-images/${imgPath}`}
                     alt={name}
                     className='w-64 h-64 mb-2'
