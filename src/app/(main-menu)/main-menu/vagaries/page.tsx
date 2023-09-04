@@ -19,7 +19,7 @@ const RequestPage = async () => {
             <h1 className='font-bold text-5xl mb-8'>All Vagaries</h1>
             <ul className='flex gap-3 flex-wrap'>
                 {baseCards.map((card: Vagary) => (
-                    <li>
+                    <li key={`card--${card.id}--${card.name}`}>
                         <FullViewVagary data={card} />
                     </li>
                 ))}
