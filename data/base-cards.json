@@ -1,0 +1,1750 @@
+[
+    {
+      "id": 0,
+      "name": "The Lost One",
+      "types": ["White","Black"],
+      "race": "Unknown",
+      "timelineBranchesFrom": [],
+      "loreText": "Having braved and survived the cryptic trials of Ana in days long past, the Lost One embarks on a timeless quest. Journeying across myriad realms and distant worlds, he is ever in pursuit of truth's most profound secrets and the boundless knowledge that lies hidden in the interstices of reality.",
+      "timelineBecomesAvailableAtLevel": [],
+      "timelineBranchesTo": [1,2],
+      "stamina": 3,
+      "baseHP": 110,
+      "basePower": 110,
+      "baseDefense": 105,
+      "baseSpeed": 100,
+      "moveMap": {
+        "1": 21,
+        "7": 25,
+        "15": 17,
+        "23": 23,
+        "31": 27,
+        "42": 22,
+        "54": 20,
+        "60": 26,
+        "67": 24,
+        "73": 28,
+        "81": 19,
+        "88": 29
+      }
+    },
+    {
+      "id": 1,
+      "name": "The Lost One: Unification timeline",
+      "types": ["White","Red"],
+      "race": "Human",
+      "timelineBranchesFrom": [0],
+      "loreText": "Rejecting the pristine purity of his nature, the Lost One chooses the raw complexity of a mortal existence. In a fateful confrontation, he encounters the enigmatic Gremlore. With a boldness that echoes through the ages, he devours Gremlore in a single, voracious bite, a deed that restores his once-lost humanity.",
+      "timelineBecomesAvailableAtLevel": [36],
+      "timelineBranchesTo": [],
+      "stamina": 3,
+      "baseHP": 100,
+      "basePower": 100,
+      "baseDefense": 90,
+      "baseSpeed": 70,
+      "moveMap": {
+        "36": 12,
+        "45": 10,
+        "52": 26,
+        "59": 24,
+        "64": 22,
+        "68": 14,
+        "72": 11
+      }
+    },
+    {
+      "id": 2,
+      "name": "The Lost One: Wanderers timeline",
+      "types": ["White","Black"],
+      "race": "Unknown",
+      "timelineBranchesFrom": [0],
+      "loreText": "Breaking free from the familiar embrace of Ana, the Lost One's insatiable curiosity draws him into the vast expanse of the cosmos. Roaming through alien terrains and slipping through rifts to uncharted dimensions, he becomes a nomad of both space and time, forever seeking, forever exploring.",
+      "timelineBecomesAvailableAtLevel": [32],
+      "timelineBranchesTo": "3",
+      "stamina": 4,
+      "baseHP": 100,
+      "basePower": 100,
+      "baseDefense": 100,
+      "baseSpeed": 100,
+      "moveMap": {
+        "32": 23,
+        "45": 24,
+        "54": 26,
+        "67": 27,
+        "78": 28,
+        "79": 29
+      }
+    },
+    {
+      "id": 3,
+      "name": "The Lost One: Father of fallen timeline",
+      "types": ["White","Black"],
+      "race": "Unknown",
+      "timelineBranchesFrom": [2],
+      "loreText": "After countless lifetimes of wandering, an eerie revelation dawns upon the Lost One. Accustomed to the spectral whispers of those he's defeated, he begins to see himself not as their end, but as their sanctuary. With solemn determination, he gathers the souls of the fallen, creating within himself a haven where they might find a semblance of peace and purpose.",
+      "timelineBecomesAvailableAtLevel": [60],
+      "timelineBranchesTo": [],
+      "stamina": 3,
+      "baseHP": 105,
+      "basePower": 135,
+      "baseDefense": 100,
+      "baseSpeed": 85,
+      "moveMap": {
+        "69": 20,
+        "75": 21,
+        "79": 23,
+        "80": 24,
+        "83": 28,
+        "85": 29
+      }
+    },
+    {
+      "id": 4,
+      "name": "Gremlore",
+      "types": ["Black"],
+      "race": "Unknown",
+      "timelineBranchesFrom": [],
+      "loreText": "From the dank underbelly of New Light City's sewers, Gremlore emerges, yearning for acceptance he never receives. For him, his grotesque appearance is both a curse and a shield, pushing away any chance of love or understanding. In the labyrinthine tunnels beneath the bustling streets, his anguish echoes, making him a creature to be both pitied and feared.",
+      "timelineBecomesAvailableAtLevel": [],
+      "timelineBranchesTo": [],
+      "stamina": 3,
+      "baseHP": 70,
+      "basePower": 70,
+      "baseDefense": 90,
+      "baseSpeed": 110,
+      "moveMap": {
+        "1": 10,
+        "3": 16,
+        "26": 13,
+        "32": 2,
+        "41": 25,
+        "46": 26,
+        "53": 27,
+        "56": 28,
+        "61": 29,
+        "68": 7,
+        "70": 8,
+        "72": 9
+      }
+    },
+    {
+      "id": 5,
+      "name": "Leonixia",
+      "types": ["Red"],
+      "race": "Steele Wing",
+      "timelineBranchesFrom": [],
+      "loreText": "Atop the lofty peaks of Boulder Crest Canyon, where the thin air holds ancient whispers, the Steele Wing Tribe reigned supreme. Leonixia, the Phoenix Princess, was their jewel and fiercest defender. With feathers forged in steel and a spirit that blazed like the midday sun, she ruled the skies, a testament to the indomitable spirit of her people.",
+      "timelineBecomesAvailableAtLevel": [],
+      "timelineBranchesTo": [],
+      "stamina": 4,
+      "baseHP": 70,
+      "basePower": 80,
+      "baseDefense": 70,
+      "baseSpeed": 100,
+      "moveMap": {
+        "1": 0,
+        "4": 12,
+        "5": 14,
+        "10": 1,
+        "27": 10,
+        "29": 11,
+        "44": 13,
+        "61": 17,
+        "67": 23,
+        "72": 24,
+        "73": 29,
+        "85": 7
+      }
+    },
+    {
+      "id": 6,
+      "name": "Mace The Mechanist: No augmentation",
+      "types": ["Red","Yellow"],
+      "race": "Enlightened",
+      "timelineBranchesFrom": [],
+      "loreText": "A hunter with an unyielding vendetta. This man bore an enmity not for his fellow beings, but for the machines that dared to mimic life. His blade, crafted from old-world steel, a cleaver imbued with both rage and precision, became the nightmare of many. Each nick and notch on its blade tells a tale of gore and fallen titans, a lasting tribute to a man's defiance against the cogs of time.",
+      "timelineBecomesAvailableAtLevel": [],
+      "timelineBranchesTo": [7,8,9,10],
+      "stamina": 3,
+      "baseHP": 80,
+      "basePower": 80,
+      "baseDefense": 80,
+      "baseSpeed": 80,
+      "moveMap": {
+        "1": 10,
+        "8": 19,
+        "12": 11,
+        "34": 12,
+        "35": 13,
+        "36": 14,
+        "52": 15,
+        "54": 16,
+        "59": 17,
+        "73": 18,
+        "81": 21,
+        "82": 28
+      }
+    },
+    {
+      "id": 7,
+      "name": "Mace The Mechanist: Speed augmentation",
+      "types": ["Red","Yellow"],
+      "race": "Enlightened",
+      "timelineBranchesFrom": [6],
+      "loreText": "Time seemed to bend around Mace, the world blurring in his wake. Augmented with the pinnacle of speed enhancements, he became a blur on the battlefield, striking foes before they could even register his presence.",
+      "timelineBecomesAvailableAtLevel": [25],
+      "timelineBranchesTo": [],
+      "stamina": 3,
+      "baseHP": 70,
+      "basePower": 70,
+      "baseDefense": 70,
+      "baseSpeed": 110,
+      "moveMap": {
+        "26": 12,
+        "35": 14,
+        "46": 15,
+        "49": 17,
+        "53": 18,
+        "62": 19
+      }
+    },
+    {
+      "id": 8,
+      "name": "Mace The Mechanist: Power augmentation",
+      "types": ["Red","Yellow"],
+      "race": "Enlightened",
+      "timelineBranchesFrom": [6],
+      "loreText": "In a world where strength dictates survival, Mace chose to amplify his might. With arms reinforced by mechanisms of unparalleled force, he grasped the very essence of raw power, making any resistance futile before his unstoppable wrath.",
+      "timelineBecomesAvailableAtLevel": [25],
+      "timelineBranchesTo": [],
+      "stamina": 2,
+      "baseHP": 70,
+      "basePower": 135,
+      "baseDefense": 70,
+      "baseSpeed": 70,
+      "moveMap": {
+        "32": 12,
+        "54": 13,
+        "58": 14,
+        "63": 16,
+        "66": 18,
+        "73": 19
+      }
+    },
+    {
+      "id": 9,
+      "name": "Mace The Mechanist: Resilience augmentation",
+      "types": ["Red","Yellow"],
+      "race": "Enlightened",
+      "timelineBranchesFrom": [6],
+      "loreText": "With layers of unyielding metal shielding his frame, Mace stood as an impenetrable fortress. The world's fiercest blows barely registered, each attack simply a testament to his unparalleled resilience.",
+      "timelineBecomesAvailableAtLevel": [25],
+      "timelineBranchesTo": [],
+      "stamina": 1,
+      "baseHP": 120,
+      "basePower": 70,
+      "baseDefense": 110,
+      "baseSpeed": 70,
+      "moveMap": {
+        "47": 11,
+        "55": 12,
+        "58": 13,
+        "63": 15,
+        "64": 17,
+        "80": 19
+      }
+    },
+    {
+      "id": 10,
+      "name": "Mace The Mechanist: Stamina augmentation",
+      "types": ["Red","Yellow"],
+      "race": "Enlightened",
+      "timelineBranchesFrom": [6],
+      "loreText": "Fatigue became a forgotten concept to Mace. Fueled by the Everburn Engine, his endurance knew no bounds, allowing him to outlast adversaries in prolonged confrontations, his spirit unyielding long after others would have faltered.",
+      "timelineBecomesAvailableAtLevel": [25],
+      "timelineBranchesTo": [],
+      "stamina": 4,
+      "baseHP": 75,
+      "basePower": 75,
+      "baseDefense": 70,
+      "baseSpeed": 75,
+      "moveMap": {
+        "33": 10,
+        "47": 12,
+        "65": 14,
+        "66": 15,
+        "80": 16,
+        "90": 17
+      }
+    },
+    {
+      "id": 11,
+      "name": "Mok Mona",
+      "types": ["Blue","Green"],
+      "race": "Reliquam",
+      "timelineBranchesFrom": [],
+      "loreText": "In the gloomy city of Le Green Grunge where the Damned roam, a beacon of defiance emerges, Mok Mona, a testament to the indomitable spirit of the Reliquam, brandishes her fathers great hammer, its blows echoing the fury of a race oppressed by the Enlightened. Every night she dances with the undead, her strokes a symphony of resistance and hope. Her legacy isn't just to be a warrior like her father, but to be the light for all Reliquam dreaming of a peaceful dawn.",
+      "timelineBecomesAvailableAtLevel": [],
+      "timelineBranchesTo": [12,13],
+      "stamina": 3,
+      "baseHP": 90,
+      "basePower": 90,
+      "baseDefense": 90,
+      "baseSpeed": 90,
+      "moveMap": {
+        "1": 0,
+        "17": 1,
+        "19": 2,
+        "27": 24,
+        "28": 28,
+        "29": 3,
+        "47": 4,
+        "61": 5,
+        "65": 6,
+        "70": 7,
+        "72": 8,
+        "77": 9
+      }
+    },
+    {
+      "id": 12,
+      "name": "Mok Mona: Way of the Defender",
+      "types": ["Blue","Green"],
+      "race": "Reliquam",
+      "timelineBranchesFrom": [11],
+      "loreText": "In the bustling heart of Le Green Grunge, while many sought refuge or escape from the looming oppression, Mok Mona decided to remain. She transformed every corner and alley into a haven, using her deep connection to the Reliquam spirit. Every gesture, every word, was a beacon, inspiring those around her to rally and hope. To her people, she became more than a defender; she was the embodiment of resilience, a constant reminder of the dawn that always follows the night.",
+      "timelineBecomesAvailableAtLevel": [36],
+      "timelineBranchesTo": [],
+      "stamina": 3,
+      "baseHP": 100,
+      "basePower": 90,
+      "baseDefense": 120,
+      "baseSpeed": 90,
+      "moveMap": {
+        "37": 0,
+        "53": 1,
+        "63": 3,
+        "65": 5,
+        "67": 7,
+        "87": 8
+      }
+    },
+    {
+      "id": 13,
+      "name": "Mok Mona: Way of Power",
+      "types": ["Blue","Green"],
+      "race": "Reliquam",
+      "timelineBranchesFrom": [11],
+      "loreText": "Beyond the boundaries of Le Green Grunge, Mok Mona felt a personal calling. Desiring to cultivate her own surge, she ventured into uncharted territories, seeking places of power and arcane rituals. It wasn't a quest for external strength, but an inner journey, a deep dive into her very essence. She believed that by mastering her surge, she could weave a new destiny, not just for herself, but to bring balance against the might of the Enlightened.",
+      "timelineBecomesAvailableAtLevel": [20],
+      "timelineBranchesTo": [],
+      "stamina": 3,
+      "baseHP": 90,
+      "basePower": 130,
+      "baseDefense": 90,
+      "baseSpeed": 90,
+      "moveMap": {
+        "23": 0,
+        "50": 1,
+        "62": 2,
+        "67": 3,
+        "75": 6,
+        "77": 9
+      }
+    },
+    {
+      "id": 14,
+      "name": "Zepp",
+      "types": ["White","Blue"],
+      "race": "Reliquam",
+      "timelineBranchesFrom": [],
+      "loreText": "Zepp, a master painter, once saw the world as his canvas, capturing its essence with every stroke. However, his introspective nature led him to look beyond the tangible, delving deep into the canvas of his own mind. In this realm of dreamy psychedelic imagery, he found a universe waiting to be painted, where the boundaries of reality and imagination blur.",
+      "timelineBecomesAvailableAtLevel": [],
+      "timelineBranchesTo": [15,16,17],
+      "stamina": 3,
+      "baseHP": 60,
+      "basePower": 60,
+      "baseDefense": 60,
+      "baseSpeed": 60,
+      "moveMap": {
+        "1": 0,
+        "2": 1,
+        "24": 17,
+        "47": 2,
+        "48": 20,
+        "51": 21,
+        "52": 22,
+        "63": 23,
+        "67": 24,
+        "76": 25,
+        "78": 3,
+        "82": 4
+      }
+    },
+    {
+      "id": 15,
+      "name": "Zepp: Like Clockwork Dreams",
+      "types": ["Blue","Yellow"],
+      "race": "Reliquam",
+      "timelineBranchesFrom": [14],
+      "loreText": "While exploring an abandoned clock tower in Le Green Grunge, Zepp stumbled upon a peculiar, ancient timepiece. As he touched its hands, he was transported to a realm where time bends and swirls like liquid. In this city of sentient clockwork creatures, Zepp paints the ever-shifting sands of time, capturing moments that last eons and eons that flicker in a moment.",
+      "timelineBecomesAvailableAtLevel": [30],
+      "timelineBranchesTo": [],
+      "stamina": 3,
+      "baseHP": 60,
+      "basePower": 60,
+      "baseDefense": 60,
+      "baseSpeed": 60,
+      "moveMap": {
+        "50": 15,
+        "57": 16,
+        "61": 17,
+        "78": 18,
+        "80": 2,
+        "85": 3
+      }
+    },
+    {
+        "id": 16,
+        "name": "Zepp: On the Other Side",
+        "types": [
+          "Red"
+        ],
+        "race": "Reliquam",
+        "timelineBranchesFrom": [
+          14
+        ],
+        "loreText": "One evening, as Zepp painted a surreal landscape of a reversed world in Le Green Grunge, the painting began to ripple. Drawn into the very world he had depicted, where the sky is beneath his feet and stars sprout from the ground, Zepp becomes the maestro of an orchestra of floating fish and singing clouds, creating symphonies that color the inverted horizon.",
+        "timelineBecomesAvailableAtLevel": [
+          32
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 60,
+        "basePower": 60,
+        "baseDefense": 60,
+        "baseSpeed": 60,
+        "moveMap": {
+          "45": 10,
+          "51": 11,
+          "64": 12,
+          "65": 13,
+          "70": 14,
+          "74": 24
+        }
+      },
+      {
+        "id": 17,
+        "name": "Zepp: Forgotten Echoes",
+        "types": [
+          "Black",
+          "Blue"
+        ],
+        "race": "Reliquam",
+        "timelineBranchesFrom": [
+          14
+        ],
+        "loreText": "In a secluded corner of Le Green Grunge, Zepp discovered a forgotten grove with a shimmering pond. As he dipped his brush into the water, the ripples transformed into portals, leading him to a silent forest of luminescent mushrooms and trees with heartbeats. Here, Zepp communicates with ancient echoes, forgotten voices that share tales of realms where dreams are the currency and thoughts blossom into reality.",
+        "timelineBecomesAvailableAtLevel": [
+          34
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 60,
+        "basePower": 60,
+        "baseDefense": 60,
+        "baseSpeed": 60,
+        "moveMap": {
+          "53": 0,
+          "73": 1,
+          "78": 2,
+          "88": 26,
+          "89": 29,
+          "90": 4
+        }
+      },
+      {
+        "id": 18,
+        "name": "Nobo",
+        "types": [
+          "Green"
+        ],
+        "race": "Burm",
+        "timelineBranchesFrom": [],
+        "loreText": "Nobo, a young Burm with a spirit as vibrant as the forests he hails from, possesses a unique gift. His youth grants him a malleability, allowing him to transform his body into myriad forms. From the mightiest of weapons to the simplest of tools, his adaptability is a testament to his boundless creativity and resilience. With a heart full of adventure and a spirit reminiscent of legendary heroes like Luffy and Gon, Nobo is ever eager to explore the world and its many challenges.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [
+          19
+        ],
+        "stamina": 3,
+        "baseHP": 100,
+        "basePower": 75,
+        "baseDefense": 80,
+        "baseSpeed": 70,
+        "moveMap": {
+          "1": 10,
+          "9": 8,
+          "10": 14,
+          "11": 16,
+          "16": 23,
+          "23": 27,
+          "39": 29,
+          "49": 4,
+          "53": 5,
+          "74": 6,
+          "81": 7,
+          "90": 9
+        }
+      },
+      {
+        "id": 19,
+        "name": "Nobo: Awakening",
+        "types": [
+          "Green"
+        ],
+        "race": "Burm",
+        "timelineBranchesFrom": [
+          18
+        ],
+        "loreText": "In the early days, Nobo experienced a profound awakening. As he played and experimented with his form, he began to grasp the martial potential of his transformative abilities. From creating shields out of his limbs to fashioning bladed extensions, Nobo realized he was not just a creature of the forest, but a force to be reckoned with. This newfound understanding marked the beginning of his journey, setting the stage for the warrior he could become.",
+        "timelineBecomesAvailableAtLevel": [
+          20
+        ],
+        "timelineBranchesTo": [
+          20,
+          21,
+          22
+        ],
+        "stamina": 3,
+        "baseHP": 100,
+        "basePower": 85,
+        "baseDefense": 80,
+        "baseSpeed": 80,
+        "moveMap": {
+          "33": 23,
+          "36": 5,
+          "44": 6,
+          "46": 7,
+          "54": 8,
+          "59": 9
+        }
+      },
+      {
+        "id": 20,
+        "name": "Nobo: Verdant Vanguard",
+        "types": [
+          "Green",
+          "Red"
+        ],
+        "race": "Burm",
+        "timelineBranchesFrom": [
+          19
+        ],
+        "loreText": "In a world where conflict rages, Nobo discovers the true potential of his transformative abilities. Becoming a living arsenal, he aids those in need, defending the weak and challenging oppressors with his ever-changing armaments.",
+        "timelineBecomesAvailableAtLevel": [
+          32
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 100,
+        "basePower": 130,
+        "baseDefense": 90,
+        "baseSpeed": 80,
+        "moveMap": {
+          "45": 10,
+          "46": 12,
+          "53": 13,
+          "62": 14,
+          "67": 7,
+          "82": 8
+        }
+      },
+      {
+        "id": 21,
+        "name": "Nobo: Tranquil Tempest",
+        "types": [
+          "Green",
+          "White"
+        ],
+        "race": "Burm",
+        "timelineBranchesFrom": [
+          19
+        ],
+        "loreText": "Realizing the impact of his powers, Nobo chose to transform into weapons that protected rather than harmed. He became a symbol of peace, using his abilities to mediate conflicts and bring warring factions to the negotiation table.",
+        "timelineBecomesAvailableAtLevel": [
+          32
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 2,
+        "baseHP": 115,
+        "basePower": 120,
+        "baseDefense": 100,
+        "baseSpeed": 90,
+        "moveMap": {
+          "45": 20,
+          "58": 22,
+          "62": 24,
+          "65": 5,
+          "69": 6,
+          "86": 9
+        }
+      },
+      {
+        "id": 22,
+        "name": "Nobo: Horizon Hunter",
+        "types": [
+          "Green",
+          "Yellow"
+        ],
+        "race": "Burm",
+        "timelineBranchesFrom": [
+          19
+        ],
+        "loreText": "With an insatiable curiosity, Nobo embarked on journeys to uncharted territories. Using his transformative abilities to adapt to various environments, from the deepest oceans to the highest peaks, he uncovered secrets of the world, one adventure at a time.",
+        "timelineBecomesAvailableAtLevel": [
+          32
+        ],
+        "timelineBranchesTo": [
+          23
+        ],
+        "stamina": 4,
+        "baseHP": 100,
+        "basePower": 100,
+        "baseDefense": 95,
+        "baseSpeed": 80,
+        "moveMap": {
+          "37": 15,
+          "55": 16,
+          "67": 17,
+          "76": 18,
+          "79": 5,
+          "89": 7
+        }
+      },
+      {
+        "id": 23,
+        "name": "Nobo: Celestial Seeker",
+        "types": [
+          "Green",
+          "Black"
+        ],
+        "race": "Burm",
+        "timelineBranchesFrom": [
+          22
+        ],
+        "loreText": "Nobo's explorations led him to the vastness of space. Adapting to the cosmic environment, he discovered celestial wonders and interacted with otherworldly beings, further expanding his understanding of existence.",
+        "timelineBecomesAvailableAtLevel": [
+          42
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 4,
+        "baseHP": 100,
+        "basePower": 85,
+        "baseDefense": 100,
+        "baseSpeed": 90,
+        "moveMap": {
+          "45": 28,
+          "72": 29,
+          "73": 5,
+          "75": 6,
+          "83": 7,
+          "86": 9
+        }
+      },
+      {
+        "id": 24,
+        "name": "Noyaba",
+        "types": [
+          "Green",
+          "White"
+        ],
+        "race": "Burm",
+        "timelineBranchesFrom": [],
+        "loreText": "In the chronicles of Burm history, Noyaba shone with unparalleled radiance. Unlike any other Burm, she emanated an ethereal glow, her very presence a testament to divinity. As legends told, the forests whispered her name, and the winds sang her praises. Her transformative abilities went beyond mere physical changes; she could influence the very essence of life around her. To the Burms, she wasn't just one of them; she was their guiding light, a deity in their midst, leading them towards harmony and enlightenment.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 2,
+        "baseHP": 200,
+        "basePower": 50,
+        "baseDefense": 180,
+        "baseSpeed": 20,
+        "moveMap": {
+          "1": 12,
+          "2": 21,
+          "10": 15,
+          "16": 20,
+          "22": 22,
+          "24": 23,
+          "26": 24,
+          "31": 5,
+          "36": 6,
+          "68": 7,
+          "71": 8,
+          "86": 9
+        }
+      },
+      {
+        "id": 25,
+        "name": "Zueso",
+        "types": [
+          "Yellow"
+        ],
+        "race": "Half Reliquam",
+        "timelineBranchesFrom": [],
+        "loreText": "In the bustling markets of Queens, Zeuso was known as a shrewd merchant, always ready with a witty remark or a sly deal. But beneath this facade, he was a master swordsman, his skills honed to perfection. Yet, he wore this mastery lightly, often indulging in long naps, gambling sprees, and the occasional pub scuffle. For Zeuso, life was a game, and he played it with a nonchalant flair.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [
+          26
+        ],
+        "stamina": 4,
+        "baseHP": 50,
+        "basePower": 180,
+        "baseDefense": 30,
+        "baseSpeed": 100,
+        "moveMap": {
+          "1": 10,
+          "3": 15,
+          "7": 20,
+          "8": 5,
+          "15": 12,
+          "23": 13,
+          "37": 16,
+          "50": 17,
+          "52": 18,
+          "65": 19,
+          "70": 25,
+          "90": 8
+        }
+      },
+      {
+        "id": 26,
+        "name": "Zueso: Blood Pact",
+        "types": [
+          "Yellow",
+          "Black"
+        ],
+        "race": "Half Reliquam",
+        "timelineBranchesFrom": [
+          25
+        ],
+        "loreText": "Tempted by promises of unparalleled power and wealth, Zeuso struck a dark bargain with a demon. The pact granted him riches beyond imagination and strength that made him nearly invincible. But every deal has its price, and Zeuso soon found himself ensnared in the demon's malevolent plans, his soul teetering on the edge of darkness.",
+        "timelineBecomesAvailableAtLevel": [
+          20
+        ],
+        "timelineBranchesTo": [
+          27,
+          28
+        ],
+        "stamina": 4,
+        "baseHP": 70,
+        "basePower": 120,
+        "baseDefense": 70,
+        "baseSpeed": 100,
+        "moveMap": {
+          "32": 16,
+          "44": 17,
+          "55": 18,
+          "66": 26,
+          "67": 27,
+          "87": 29
+        }
+      },
+      {
+        "id": 27,
+        "name": "Zueso: Salvation",
+        "types": [
+          "Yellow"
+        ],
+        "race": "Half Reliquam",
+        "timelineBranchesFrom": [
+          26
+        ],
+        "loreText": "As the weight of the demonic contract bore down on him, Zeuso's indomitable spirit refused to be shackled. Using his unparalleled swordsmanship and cunning, he devised a daring plan to break free from the demon's grasp. Through a series of intricate maneuvers and battles, Zeuso managed to sever the chains of the pact, reclaiming his soul and freedom. However, the scars of the ordeal remained, serving as a constant reminder of the dangers of unchecked ambition.",
+        "timelineBecomesAvailableAtLevel": [
+          36
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 4,
+        "baseHP": 75,
+        "basePower": 120,
+        "baseDefense": 80,
+        "baseSpeed": 100,
+        "moveMap": {
+          "37": 15,
+          "45": 16,
+          "51": 17,
+          "75": 18,
+          "81": 19,
+          "85": 24
+        }
+      },
+      {
+        "id": 28,
+        "name": "Zueso: The Demon Swordsman",
+        "types": [
+          "Yellow",
+          "Black"
+        ],
+        "race": "Demon",
+        "timelineBranchesFrom": [
+          26
+        ],
+        "loreText": "The allure of demonic power proved too intoxicating for Zeuso. Over time, the boundaries between him and the demon blurred, until one fateful night, he fully succumbed to the darkness. Zeuso transformed, his form and essence merging with the demon's. The once nonchalant swordsman now roamed the realms as a formidable demon, his blade thirsting for souls, his heart consumed by the abyss.",
+        "timelineBecomesAvailableAtLevel": [
+          50
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 4,
+        "baseHP": 50,
+        "basePower": 145,
+        "baseDefense": 50,
+        "baseSpeed": 130,
+        "moveMap": {
+          "60": 17,
+          "67": 18,
+          "73": 19,
+          "74": 25,
+          "78": 28,
+          "89": 29
+        }
+      },
+      {
+        "id": 29,
+        "name": "Diamond",
+        "types": [
+          "Red",
+          "Blue"
+        ],
+        "race": "Enlightened",
+        "timelineBranchesFrom": [],
+        "loreText": "Within the grimy walls of Le Green Grunge, Diamond was a beacon. As the city's finest mechanic, she mended more than just machinery. Rooming with Mok Mona and Zepp, her life was a tapestry of challenges and triumphs. Her journey, both as a trans woman and a part-android, inspired many, proving that identity and purpose could be forged amidst adversity.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [
+          30
+        ],
+        "stamina": 3,
+        "baseHP": 60,
+        "basePower": 60,
+        "baseDefense": 60,
+        "baseSpeed": 70,
+        "moveMap": {
+          "1": 0,
+          "14": 1,
+          "26": 10,
+          "30": 11,
+          "32": 12,
+          "34": 13,
+          "45": 14,
+          "47": 2,
+          "50": 25,
+          "61": 3,
+          "86": 4,
+          "89": 7
+        }
+      },
+      {
+        "id": 30,
+        "name": "Diamond: Uprising",
+        "types": [
+          "Red",
+          "Blue"
+        ],
+        "race": "Enlightened",
+        "timelineBranchesFrom": [
+          29
+        ],
+        "loreText": "Diamond's reputation grew, and with it, her influence. She became a symbol of hope for both the trans and android communities. But her rise wasn't without enemies. The city's power players, threatened by her influence, sought to control her. Yet, Diamond resisted, using her mechanical genius to rally and empower those who felt marginalized, turning the city's underbelly into a battleground for identity and freedom.",
+        "timelineBecomesAvailableAtLevel": [
+          18
+        ],
+        "timelineBranchesTo": [
+          31
+        ],
+        "stamina": 3,
+        "baseHP": 60,
+        "basePower": 70,
+        "baseDefense": 60,
+        "baseSpeed": 60,
+        "moveMap": {
+          "65": 1,
+          "77": 11,
+          "85": 12,
+          "86": 13,
+          "88": 3,
+          "90": 4
+        }
+      },
+      {
+        "id": 31,
+        "name": "Diamond: Sanctuary",
+        "types": [
+          "Red",
+          "Blue"
+        ],
+        "race": "Enlightened",
+        "timelineBranchesFrom": [
+          30
+        ],
+        "loreText": "Seeking to create a haven for those like her, Diamond established a sanctuary within Le Green Grunge. A place where one's past didn't define them, and where the future was crafted with one's own hands. Here, she taught the art of mechanics, ensuring that knowledge became the ultimate tool for empowerment. But the sanctuary also became a target, and Diamond found herself defending not just a place, but an ideal.",
+        "timelineBecomesAvailableAtLevel": [
+          34
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 70,
+        "basePower": 60,
+        "baseDefense": 60,
+        "baseSpeed": 60,
+        "moveMap": {
+          "57": 1,
+          "61": 10,
+          "67": 11,
+          "69": 13,
+          "76": 14,
+          "90": 4
+        }
+      },
+      {
+        "id": 32,
+        "name": "Steele wing shaman",
+        "types": [
+          "White",
+          "Red"
+        ],
+        "race": "Steele Wing",
+        "timelineBranchesFrom": [],
+        "loreText": "Within the Steele Wing Tribe, shamans held a revered place. Their role was not of dominance but of guidance. With feathers marked by sacred symbols and chants echoing the tribe's history, each shaman was a vessel of ancient knowledge. They led ceremonies, invoked blessings, and healed using the power of the land and spirits. As custodians of rituals, they ensured that the tribe's spiritual essence remained vibrant, weaving the threads of tradition into the fabric of everyday life.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 4,
+        "baseHP": 40,
+        "basePower": 55,
+        "baseDefense": 40,
+        "baseSpeed": 90,
+        "moveMap": {
+          "1": 10,
+          "14": 11,
+          "18": 12,
+          "24": 13,
+          "26": 14,
+          "36": 17,
+          "41": 20,
+          "50": 21,
+          "62": 22,
+          "74": 23,
+          "82": 24,
+          "84": 8
+        }
+      },
+      {
+        "id": 33,
+        "name": "Norobattus",
+        "types": [
+          "Red"
+        ],
+        "race": "Colossal",
+        "timelineBranchesFrom": [],
+        "loreText": "In an era where pride and honor dictated one's path, Norobbuts stood as a beacon of unyielding pride. As chief, he believed his tribe to be invincible, leading them into wars against monumental adversaries. On the day of their greatest battle, the skies darkened, and the earth trembled. Norobbuts could only watch in horror as his warriors fell one by one. After pulling his axe from the last enemy he realized he was alone. The aftermath was a wasteland of sorrow and regret. He wandered the desolate lands, haunted by the ghosts of his kin, their accusing eyes a constant reminder of his tragic arrogance. Every rustling leaf, every whisper of the wind, seemed to echo their disappointed cries.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 2,
+        "baseHP": 100,
+        "basePower": 150,
+        "baseDefense": 100,
+        "baseSpeed": 60,
+        "moveMap": {
+          "1": 10,
+          "4": 14,
+          "18": 11,
+          "25": 12,
+          "36": 13,
+          "40": 15,
+          "47": 2,
+          "48": 20,
+          "52": 21,
+          "67": 25,
+          "77": 5,
+          "86": 9
+        }
+      },
+      {
+        "id": 34,
+        "name": "Etsul",
+        "types": [
+          "White"
+        ],
+        "race": "Colossal",
+        "timelineBranchesFrom": [],
+        "loreText": "Etsul, with her ethereal beauty, was both a blessing and a curse. Her hands held the power to heal both flesh and souls, but each act of healing demanded a sacrifice from her own body. As she moved through society, her allure drew both admiration and jealousy in equal measure. Her body, both a gift and a tool, ensnared countless hearts, leading to passionate affairs and deadly rivalries. On a moonlit night, a violent confrontation between her admirers painted the streets red with blood. Emerging from the chaos, Etsul found herself isolated, her once-adored form now a haunting symbol of tragedy and scandal. She roamed the realms, torn between her past sins and the healing touch she still possessed, her journey a perpetual struggle between seeking redemption and battling the shadows of her past.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 2,
+        "baseHP": 140,
+        "basePower": 70,
+        "baseDefense": 140,
+        "baseSpeed": 60,
+        "moveMap": {
+          "1": 17,
+          "4": 21,
+          "5": 23,
+          "6": 24,
+          "17": 19,
+          "28": 2,
+          "30": 20,
+          "49": 22,
+          "65": 26,
+          "75": 27,
+          "76": 28,
+          "90": 3
+        }
+      },
+      {
+        "id": 35,
+        "name": "Yvne",
+        "types": [
+          "Green"
+        ],
+        "race": "Colossal",
+        "timelineBranchesFrom": [],
+        "loreText": "Yvne's life was a twisted tale of envy and lost identity. Obsessed with the mighty Norobbuts, he abandoned his responsibilities, leaving his tribe vulnerable. Years passed, and when he finally returned, he found ruins. His tribe had been decimated by invaders, their homes razed, their legacy erased. The weight of his envy and neglect bore down on him, and he roamed the wilderness, a broken soul. Every stone and tree seemed to mock him, reminding him of the chief he tried and failed to emulate. His heart became a prison of regret, haunted by the faces of those he had betrayed.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 2,
+        "baseHP": 110,
+        "basePower": 110,
+        "baseDefense": 110,
+        "baseSpeed": 80,
+        "moveMap": {
+          "1": 0,
+          "4": 29,
+          "8": 9,
+          "11": 10,
+          "18": 13,
+          "29": 14,
+          "31": 19,
+          "32": 26,
+          "49": 5,
+          "60": 6,
+          "67": 7,
+          "70": 8
+        }
+      },
+      {
+        "id": 36,
+        "name": "Deerg",
+        "types": [
+          "Yellow"
+        ],
+        "race": "Colossal",
+        "timelineBranchesFrom": [],
+        "loreText": "Deerg's legend was one of ambition and insatiable greed. With each conquest, his desire grew, leading his tribe and his treasured human concubines on quests for forbidden treasures. Tales spoke of a final quest, a treasure so grand it promised power beyond imagination. But it was a trap. As they ventured deep into a cursed cavern, the walls closed in, sealing their fate. Deerg emerged, the lone survivor, his once-proud stature now a symbol of hubris. He wandered the lands, haunted by the anguished cries of his tribe and the betrayed whispers of his concubines, their spirits forever bound to the cursed treasure.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 2,
+        "baseHP": 160,
+        "basePower": 110,
+        "baseDefense": 60,
+        "baseSpeed": 80,
+        "moveMap": {
+          "1": 0,
+          "8": 9,
+          "11": 10,
+          "13": 14,
+          "26": 15,
+          "31": 16,
+          "43": 17,
+          "56": 18,
+          "59": 19,
+          "61": 21,
+          "64": 26,
+          "67": 5
+        }
+      },
+      {
+        "id": 37,
+        "name": "Regna",
+        "types": [
+          "Black"
+        ],
+        "race": "Colossal",
+        "timelineBranchesFrom": [],
+        "loreText": "Regna, once a revered leader, became the embodiment of wrath's destructive power. A disagreement turned deadly, and in a blind rage, he unleashed devastation upon his tribe. When the storm of his anger subsided, he found himself amidst a silent village, its life extinguished by his hand. The chilling silence was shattered only by his own ragged breaths and the haunting lullabies of the wind. Regna was left to wander the lands, a lone figure tormented by the ghosts of his past, every step a painful journey through the memories of that cursed day.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 80,
+        "basePower": 130,
+        "baseDefense": 80,
+        "baseSpeed": 110,
+        "moveMap": {
+          "1": 0,
+          "11": 13,
+          "32": 17,
+          "35": 18,
+          "43": 21,
+          "45": 25,
+          "52": 26,
+          "57": 27,
+          "63": 28,
+          "72": 29,
+          "88": 3,
+          "89": 9
+        }
+      },
+      {
+        "id": 38,
+        "name": "Ynot Tulg",
+        "types": [
+          "Yellow",
+          "Red"
+        ],
+        "race": "Colossal",
+        "timelineBranchesFrom": [],
+        "loreText": "Inot Tulg's tribe was a testament to the horrors of unchecked gluttony. Their feasts were tales of legend, but as resources dwindled, their celebrations turned grotesque. One fateful night, as hunger gnawed at their sanity, they turned on each other in a macabre dance of death. Amidst the grotesque banquet, Inot Tulg, the last man standing, was left with the haunting taste of blood and betrayal. He wandered the lands, a cursed soul, every rustling leaf and shadow a reminder of the tribe's final, tragic feast.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 1,
+        "baseHP": 170,
+        "basePower": 100,
+        "baseDefense": 145,
+        "baseSpeed": 20,
+        "moveMap": {
+          "1": 10,
+          "11": 11,
+          "36": 12,
+          "39": 13,
+          "40": 14,
+          "41": 15,
+          "42": 16,
+          "57": 17,
+          "70": 18,
+          "71": 19,
+          "72": 5,
+          "79": 8
+        }
+      },
+      {
+        "id": 39,
+        "name": "Tholas",
+        "types": [
+          "Blue"
+        ],
+        "race": "Colossal",
+        "timelineBranchesFrom": [],
+        "loreText": "Tholas and his tribe lived in a land of abundance, but their hearts were shackled by sloth. Days turned into nights, seasons changed, but they remained stagnant, their spirits dulled by inaction. As the world moved around them, they withered away, too lethargic to seek sustenance. Tholas, waking up from his stupor too late, found himself amidst a silent wasteland, the remnants of his tribe scattered like fallen leaves. The weight of his neglect bore heavily on his shoulders. He wandered the vast landscapes, haunted by the echoes of his tribe's languid cries, every gust of wind a chilling reminder of the paradise lost to indolence.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 1,
+        "baseHP": 100,
+        "basePower": 100,
+        "baseDefense": 100,
+        "baseSpeed": 40,
+        "moveMap": {
+          "1": 0,
+          "5": 22,
+          "17": 1,
+          "22": 11,
+          "29": 17,
+          "39": 18,
+          "46": 2,
+          "48": 21,
+          "51": 23,
+          "56": 3,
+          "62": 4,
+          "80": 6
+        }
+      },
+      {
+        "id": 40,
+        "name": "Sargo",
+        "types": [
+          "Blue"
+        ],
+        "race": "Enlightened / Beast",
+        "timelineBranchesFrom": [],
+        "loreText": "On the shores of the Sea King's Lagoon, Sargo awoke to a new reality. His once-human form now melded with that of a serpent, creating a striking hybrid. The Sea King's Heart pulsed within him, its glow a haunting reminder of his encounter with the Lost One. As he gazed upon his reflection in the water, he grappled with the duality of his existence.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [
+          41,
+          42
+        ],
+        "stamina": 3,
+        "baseHP": 115,
+        "basePower": 100,
+        "baseDefense": 95,
+        "baseSpeed": 90,
+        "moveMap": {
+          "1": 0,
+          "7": 4,
+          "16": 1,
+          "19": 10,
+          "31": 12,
+          "33": 13,
+          "34": 16,
+          "39": 2,
+          "47": 22,
+          "55": 29,
+          "64": 3,
+          "90": 7
+        }
+      },
+      {
+        "id": 41,
+        "name": "Sargo: Search for Answers",
+        "types": [
+          "Blue"
+        ],
+        "race": "Enlightened / Beast",
+        "timelineBranchesFrom": [
+          40
+        ],
+        "loreText": "Determined to understand his transformation, Sargo delved into the mysteries of the deep. Navigating ancient underwater ruins and seeking wisdom from the oldest creatures of the sea, he hoped to find a way to reconcile his dual nature. Each revelation brought him closer to the truth, but also unveiled the weight of the responsibility the Sea King's Heart bestowed upon him.",
+        "timelineBecomesAvailableAtLevel": [
+          25
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 4,
+        "baseHP": 90,
+        "basePower": 100,
+        "baseDefense": 95,
+        "baseSpeed": 90,
+        "moveMap": {
+          "29": 0,
+          "38": 1,
+          "53": 2,
+          "59": 23,
+          "63": 3,
+          "76": 4
+        }
+      },
+      {
+        "id": 42,
+        "name": "Sargo: Dual Reign",
+        "types": [
+          "Blue"
+        ],
+        "race": "Enlightened / Beast",
+        "timelineBranchesFrom": [
+          40
+        ],
+        "loreText": "Embracing both facets of his being, Sargo established a dominion where man and sea creature coexisted. His rule was just, and his hybrid nature became a symbol of unity. Yet, the Sea King's Lagoon held memories of his past life, a bittersweet reminder of the pirate captain he once was and the guardian he had become.",
+        "timelineBecomesAvailableAtLevel": [
+          30
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 100,
+        "basePower": 115,
+        "baseDefense": 95,
+        "baseSpeed": 90,
+        "moveMap": {
+          "48": 0,
+          "57": 1,
+          "58": 18,
+          "85": 2,
+          "87": 3,
+          "89": 4
+        }
+      },
+      {
+        "id": 43,
+        "name": "Commander Valight",
+        "types": [
+          "Green",
+          "Black"
+        ],
+        "race": "Damned",
+        "timelineBranchesFrom": [],
+        "loreText": "\"In the shadowy realms where the Damned roamed, one figure rose to prominence: Commander Valight. With an iron will and unmatched strategic acumen, Valight united the disparate factions of the Damned, molding them into a formidable army. Under his leadership, the Damned became a force to be reckoned with, their march echoing with the promise of conquest and dominion.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [
+          44
+        ],
+        "stamina": 2,
+        "baseHP": 120,
+        "basePower": 120,
+        "baseDefense": 120,
+        "baseSpeed": 40,
+        "moveMap": {
+          "1": 2,
+          "27": 21,
+          "33": 25,
+          "34": 26,
+          "43": 27,
+          "48": 28,
+          "62": 29,
+          "63": 5,
+          "65": 6,
+          "78": 7,
+          "82": 8,
+          "85": 9
+        }
+      },
+      {
+        "id": 44,
+        "name": "Commander Valight: Redemption",
+        "types": [
+          "Green",
+          "Black"
+        ],
+        "race": "Damned",
+        "timelineBranchesFrom": [
+          43
+        ],
+        "loreText": "As the Damned army's influence spread, whispers of dissent began to surface. A series of events led Commander Valight to question the purpose of their endless conquests. Encounters with souls who spoke of redemption and second chances planted seeds of doubt. Torn between his duty to the Damned and a newfound desire for redemption, Valight stood at a crossroads, his next choice promising to reshape the fate of the underworld.",
+        "timelineBecomesAvailableAtLevel": [
+          30
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 2,
+        "baseHP": 110,
+        "basePower": 140,
+        "baseDefense": 110,
+        "baseSpeed": 40,
+        "moveMap": {
+          "33": 25,
+          "43": 26,
+          "49": 27,
+          "53": 28,
+          "59": 29,
+          "62": 5
+        }
+      },
+      {
+        "id": 45,
+        "name": "Klackix: Birth of the Puppet Soul",
+        "types": [
+          "Green"
+        ],
+        "race": "Unknown",
+        "timelineBranchesFrom": [],
+        "loreText": "In the labyrinthine alleys of a forgotten realm, the Lost One stumbled upon a discarded puppet, its strings severed, and its wooden form lifeless. Moved by a sense of melancholy, the Lost One channeled the power of surge, crafting a makeshift soul from the very essence of the universe. Imbuing the puppet with this new soul, Klackix was born. No longer a mere plaything, Klackix ventured forth, a unique being with a heart crafted from compassion and magic.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [
+          46
+        ],
+        "stamina": 2,
+        "baseHP": 50,
+        "basePower": 40,
+        "baseDefense": 50,
+        "baseSpeed": 50,
+        "moveMap": {
+          "1": 1,
+          "11": 10,
+          "13": 11,
+          "21": 12,
+          "23": 18,
+          "52": 21,
+          "55": 23,
+          "60": 5,
+          "68": 6,
+          "69": 7,
+          "77": 8,
+          "82": 9
+        }
+      },
+      {
+        "id": 46,
+        "name": "Klackix",
+        "types": [
+          "Green"
+        ],
+        "race": "Unknown",
+        "timelineBranchesFrom": [
+          45
+        ],
+        "loreText": "With a soul unlike any other, Klackix grappled with questions of existence and purpose. The world around him was vast and filled with wonders, yet he often felt adrift, a puppet in search of meaning. Drawn to places of magic and lore, Klackix embarked on a journey, seeking to understand his place in the grand tapestry of life and the true nature of the soul bestowed upon him by the Lost One.",
+        "timelineBecomesAvailableAtLevel": [
+          12
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 77,
+        "basePower": 81,
+        "baseDefense": 75,
+        "baseSpeed": 124,
+        "moveMap": {
+          "17": 23,
+          "31": 5,
+          "47": 6,
+          "48": 7,
+          "51": 8,
+          "86": 9
+        }
+      },
+      {
+        "id": 47,
+        "name": "Damned Soldier",
+        "types": [
+          "Black"
+        ],
+        "race": "Damned",
+        "timelineBranchesFrom": [],
+        "loreText": "Once a proud warrior of a forgotten kingdom, the Damned Soldier now marches in the endless ranks of the damned army, pillaging Le Green Grunge every night. Stripped of memories and bound by chains of regret, he serves as a relentless raider, his blade forever stained with the sorrow of his past.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 60,
+        "basePower": 75,
+        "baseDefense": 90,
+        "baseSpeed": 50,
+        "moveMap": {
+          "1": 13,
+          "3": 15,
+          "33": 17,
+          "51": 21,
+          "53": 25,
+          "60": 26,
+          "67": 27,
+          "73": 28,
+          "75": 29,
+          "77": 5,
+          "81": 8,
+          "84": 9
+        }
+      },
+      {
+        "id": 48,
+        "name": "Queens Merchant",
+        "types": [
+          "Yellow"
+        ],
+        "race": "Half Reliquam",
+        "timelineBranchesFrom": [],
+        "loreText": "Navigating the bustling markets of Queens, this savvy Half Reliquam merchant trades in rare artifacts and whispered secrets. With a keen eye for value and a network of informants, the Queens Merchant thrives amidst the chaos, always one step ahead of competitors.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 2,
+        "baseHP": 50,
+        "basePower": 50,
+        "baseDefense": 50,
+        "baseSpeed": 50,
+        "moveMap": {
+          "1": 0,
+          "3": 15,
+          "9": 9,
+          "13": 14,
+          "36": 16,
+          "40": 17,
+          "45": 18,
+          "47": 19,
+          "54": 25,
+          "66": 28,
+          "68": 3,
+          "83": 5
+        }
+      },
+      {
+        "id": 49,
+        "name": "Enlightened Guard",
+        "types": [
+          "White"
+        ],
+        "race": "Enlightened",
+        "timelineBranchesFrom": [],
+        "loreText": "Standing sentinel at the gates of the Enlightened cities, this guard is the embodiment of discipline and duty. Trained in ancient martial arts and versed in the ways of the Enlightened, he serves as both protector and symbol of the order's ideals.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 2,
+        "baseHP": 100,
+        "basePower": 40,
+        "baseDefense": 100,
+        "baseSpeed": 30,
+        "moveMap": {
+          "1": 0,
+          "4": 22,
+          "15": 13,
+          "18": 17,
+          "21": 18,
+          "26": 19,
+          "27": 2,
+          "32": 20,
+          "37": 21,
+          "60": 23,
+          "88": 24,
+          "90": 29
+        }
+      },
+      {
+        "id": 50,
+        "name": "Magma Homunculus",
+        "types": [
+          "Red"
+        ],
+        "race": "Elemental",
+        "timelineBranchesFrom": [],
+        "loreText": "Born from the fiery chasms of the world's core, the Magma Homunculus is a creature of heat and rage. With a body of molten rock and eyes that burn with intensity, it roams the land, a living testament to the raw power of the elements.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 60,
+        "basePower": 100,
+        "baseDefense": 50,
+        "baseSpeed": 50,
+        "moveMap": {
+          "1": 0,
+          "12": 10,
+          "19": 11,
+          "21": 12,
+          "36": 13,
+          "45": 14,
+          "67": 21,
+          "74": 22,
+          "76": 23,
+          "80": 5,
+          "87": 6,
+          "89": 7
+        }
+      },
+      {
+        "id": 51,
+        "name": "Seaking",
+        "types": [
+          "Blue"
+        ],
+        "race": "Beast",
+        "timelineBranchesFrom": [],
+        "loreText": "Ruler of the oceanic depths, Seaking commands the respect of all marine life. With a crown of coral and scales that shimmer like precious gems, he ensures harmony beneath the waves, his roar a call that resonates through the vast blue expanse.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 4,
+        "baseHP": 120,
+        "basePower": 112,
+        "baseDefense": 60,
+        "baseSpeed": 80,
+        "moveMap": {
+          "1": 0,
+          "3": 17,
+          "16": 1,
+          "29": 14,
+          "31": 18,
+          "33": 19,
+          "53": 2,
+          "54": 23,
+          "62": 27,
+          "70": 3,
+          "71": 4,
+          "84": 7
+        }
+      },
+      {
+        "id": 52,
+        "name": "Demi Demon",
+        "types": [
+          "Yellow",
+          "Black"
+        ],
+        "race": "Demon",
+        "timelineBranchesFrom": [],
+        "loreText": "Straddling the line between the mortal realm and the infernal abyss, the Demi Demon is a creature of duality. Torn between dark urges and a quest for redemption, it wanders the land, seeking a balance that often eludes it.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 60,
+        "basePower": 60,
+        "baseDefense": 50,
+        "baseSpeed": 100,
+        "moveMap": {
+          "1": 14,
+          "6": 25,
+          "7": 29,
+          "12": 15,
+          "18": 16,
+          "19": 17,
+          "51": 18,
+          "57": 19,
+          "60": 26,
+          "64": 27,
+          "65": 28,
+          "82": 4
+        }
+      },
+      {
+        "id": 53,
+        "name": "Haru",
+        "types": [
+          "Green",
+          "Yellow"
+        ],
+        "race": "Half Burm",
+        "timelineBranchesFrom": [],
+        "loreText": "Haru, with roots in both the Burm and another mysterious lineage, stands as a bridge between worlds. With a keen intellect and a spirit attuned to nature, Haru seeks to understand the complexities of his heritage and the potential it holds.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 2,
+        "baseHP": 80,
+        "basePower": 20,
+        "baseDefense": 100,
+        "baseSpeed": 20,
+        "moveMap": {
+          "1": 13,
+          "7": 8,
+          "10": 15,
+          "12": 16,
+          "17": 17,
+          "18": 18,
+          "40": 19,
+          "42": 22,
+          "43": 5,
+          "53": 6,
+          "68": 7,
+          "85": 9
+        }
+      },
+      {
+        "id": 54,
+        "name": "Reliquam Dancer",
+        "types": [
+          "Red",
+          "White"
+        ],
+        "race": "Reliquam",
+        "timelineBranchesFrom": [],
+        "loreText": "Grace personified, the Reliquam Dancer moves with a rhythm that echoes the heartbeat of her people. Through dance, she tells tales of the Reliquam's struggles and dreams, her every step a testament to their indomitable spirit.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 5,
+        "baseHP": 40,
+        "basePower": 20,
+        "baseDefense": 40,
+        "baseSpeed": 100,
+        "moveMap": {
+          "1": 10,
+          "5": 21,
+          "10": 11,
+          "12": 12,
+          "31": 13,
+          "44": 14,
+          "46": 20,
+          "59": 22,
+          "70": 23,
+          "76": 24,
+          "89": 25,
+          "90": 4
+        }
+      },
+      {
+        "id": 55,
+        "name": "Shashara: God of War and Coin",
+        "types": [
+          "Yellow"
+        ],
+        "race": "Demon",
+        "timelineBranchesFrom": [],
+        "loreText": "From the primal chaos of a nascent world, Shashara arose, embodying the fierce spirit of war and the relentless pursuit of wealth. Kingdoms bowed, either by the edge of the sword or the weight of gold, to his dual dominion. His temples, magnificent in gold and obsidian, stood as symbols of his unyielding power. Yet, whispers spoke of a prophecy, a reckoning where Shashara would face the culmination of his own deeds. As the world watches, an epic confrontation brews on the horizon.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 120,
+        "basePower": 120,
+        "baseDefense": 120,
+        "baseSpeed": 60,
+        "moveMap": {
+          "1": 1,
+          "6": 21,
+          "10": 15,
+          "14": 16,
+          "29": 17,
+          "40": 18,
+          "46": 19,
+          "67": 22,
+          "69": 28,
+          "73": 29,
+          "81": 4,
+          "83": 8
+        }
+      },
+      {
+        "id": 56,
+        "name": "Lester",
+        "types": [
+          "White"
+        ],
+        "race": "Human",
+        "timelineBranchesFrom": [],
+        "loreText": "Suddenly thrust from the sterile environment of his lab into an alien realm, Lester's world was upended. As he navigated this new reality, he was mentored by Noyaba, an ancestor of Nobo, who introduced him to the ethereal melodies of the windmaster and the martial ways of the Burms. Amidst his rapid adaptation, whispers of a mysterious figure known as the Lost One reached his ears, a presence that felt both distant and strangely familiar.",
+        "timelineBecomesAvailableAtLevel": [],
+        "timelineBranchesTo": [
+          57
+        ],
+        "stamina": 2,
+        "baseHP": 70,
+        "basePower": 20,
+        "baseDefense": 50,
+        "baseSpeed": 40,
+        "moveMap": {
+          "1": 0,
+          "6": 23,
+          "9": 8,
+          "16": 13,
+          "29": 20,
+          "46": 21,
+          "52": 22,
+          "64": 24,
+          "80": 27,
+          "81": 28,
+          "87": 29,
+          "90": 9
+        }
+      },
+      {
+        "id": 57,
+        "name": "Lester: Dimensional Odyssey",
+        "types": [
+          "White"
+        ],
+        "race": "Human",
+        "timelineBranchesFrom": [
+          56
+        ],
+        "loreText": "With the skills and insights gained from Noyaba, Lester embarked on a journey to explore the intersections of this world's magic and the scientific principles he knew. Each dimension he ventured into, each mystery he unraveled, deepened his connection to this realm, solidifying his role as a bridge between worlds.",
+        "timelineBecomesAvailableAtLevel": [
+          22
+        ],
+        "timelineBranchesTo": [
+          58
+        ],
+        "stamina": 3,
+        "baseHP": 100,
+        "basePower": 60,
+        "baseDefense": 70,
+        "baseSpeed": 60,
+        "moveMap": {
+          "22": 20,
+          "33": 21,
+          "57": 22,
+          "65": 23,
+          "72": 24,
+          "81": 3
+        }
+      },
+      {
+        "id": 58,
+        "name": "Lester: Nexus of Realities",
+        "types": [
+          "White"
+        ],
+        "race": "Human",
+        "timelineBranchesFrom": [
+          57
+        ],
+        "loreText": "In a short span, Lester became a beacon for those seeking to understand the confluence of magic and science. His adventures, though brief in time, were vast in impact. With every discovery, he felt an increasing resonance with the universe, realizing that his journey was not just about exploration, but also about understanding the intricate tapestry of existence.",
+        "timelineBecomesAvailableAtLevel": [
+          38
+        ],
+        "timelineBranchesTo": [],
+        "stamina": 3,
+        "baseHP": 100,
+        "basePower": 120,
+        "baseDefense": 90,
+        "baseSpeed": 90,
+        "moveMap": {
+          "38": 16,
+          "53": 20,
+          "62": 21,
+          "66": 22,
+          "70": 23,
+          "90": 24
+        }
+      }
+   ]
