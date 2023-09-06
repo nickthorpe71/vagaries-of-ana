@@ -1,3 +1,51 @@
+type Game = {
+    id: string;
+    players: Player[];
+    board: Board;
+    currentTurnPlayer: Player;
+    vagaryTurnQueue: InGameVagary[];
+    gameTime: number;
+    turnSpeedTIme: number;
+    gameStarted: boolean;
+    gameEnded: boolean;
+    winner: Player | null;
+    loser: Player | null;
+};
+
+type Player = {
+    id: string;
+    name: string;
+    vagaries: OwnedVagary[];
+};
+
+type Board = {
+    tiles: Tile[][];
+};
+
+type Tile = {
+    x: number;
+    y: number;
+    vagary: InGameVagary | null;
+};
+
+type InGameVagary = {
+    ownedVagary: OwnedVagary;
+    currentHP: number;
+    currentPower: number;
+    currentDefense: number;
+    currentSpeed: number;
+    currentStamina: number;
+    position: [number, number];
+};
+
+type OwnedVagary = {
+    id: string;
+    owner: Player;
+    baseVagary: Vagary;
+    experience: number;
+    abilities: Ability[];
+};
+
 type Vagary = {
     id: number;
     name: string;
