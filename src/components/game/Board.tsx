@@ -1,6 +1,7 @@
 "use client";
 
 import React, { FC, useState, useRef } from "react";
+import { cn } from "@/lib/utils";
 
 interface BoardProps {
     initialTiles: Tile[][];
@@ -56,6 +57,7 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                 }
                 onDragOver={() => handleDragOver(rowIndex, colIndex)}
                 onDragEnd={handleDragEnd}
+                onClick={() => console.log(tile.vagary)}
                 className={`p-4 rounded ${
                     tile ? "bg-blue-500 text-white cursor-move" : "bg-gray-200"
                 }`}
@@ -67,9 +69,11 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
 
     return (
         <div
-            className={`w-${initialTiles[0].length * 20} h-${
-                initialTiles.length * 20
-            } grid grid-cols-${initialTiles[0].length} gap-2 p-4`}
+            className={cn(
+                "grid gap-2 p-4 w-full h-full back",
+                `grid-cols-${initialTiles[0].length}`,
+                `grid-rows-${initialTiles.length}`
+            )}
         >
             {tiles.map((row: Tile[], rowIndex: number) =>
                 row.map((tile: Tile, colIndex: number) =>
