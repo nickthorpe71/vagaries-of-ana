@@ -1,21 +1,21 @@
 import { ReactNode } from "react";
-import { getServerSession } from "next-auth";
+// import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
 // lib
-import { authOptions } from "@/lib/auth";
+// import { authOptions } from "@/lib/auth";
 import { Icons, Icon } from "@/components/Icons";
 
 // components
 import SignOutButton from "@/components/SignOutButton";
 import FriendRequestSidebarOptions from "@/components/FriendRequestSidebarOptions";
 import SidebarChatList from "@/components/SidebarChatList";
-import MobileChatLayout from "@/components/MobileChatLayout";
+// import MobileChatLayout from "@/components/MobileChatLayout";
 
 // helpers
-import { fetchRedis } from "@/helpers/redis";
+// import { fetchRedis } from "@/helpers/redis";
 import { getFriendsByUserId } from "@/helpers/get-friends-by-user-id";
 
 interface SidebarLayoutProps {
@@ -45,29 +45,29 @@ const sidebarOptions: SidebarOption[] = [
 ];
 
 const SidebarLayout = async ({ children }: SidebarLayoutProps) => {
-    const session = await getServerSession(authOptions);
-    if (!session) return notFound();
+    // const session = await getServerSession(authOptions);
+    // if (!session) return notFound();
 
-    const friends = await getFriendsByUserId(session.user.id);
+    // const friends = await getFriendsByUserId(session.user.id);
 
     // since this is a server component we can interact with the database directly
-    const unseenRequestCount = (
-        (await fetchRedis(
-            "smembers",
-            `user:${session.user.id}:incoming_friend_requests`
-        )) as User[]
-    ).length;
+    // const unseenRequestCount = (
+    //     (await fetchRedis(
+    //         "smembers",
+    //         // `user:${session.user.id}:incoming_friend_requests`
+    //     )) as User[]
+    // ).length;
 
     return (
         <div className='w-full flex h-screen'>
-            <div className='md:hidden'>
+            {/* <div className='md:hidden'>
                 <MobileChatLayout
                     friends={friends}
                     session={session}
                     sidebarOptions={sidebarOptions}
                     unseenRequestCount={unseenRequestCount}
                 />
-            </div>
+            </div> */}
 
             <div className='hidden md:flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6'>
                 <Link
@@ -77,20 +77,20 @@ const SidebarLayout = async ({ children }: SidebarLayoutProps) => {
                     <Icons.Logo />
                 </Link>
 
-                {friends.length > 0 ? (
+                {/* {friends.length > 0 ? (
                     <div className='text-xs font-semibold leading-6 text-gray-400'>
                         Your chats
                     </div>
-                ) : null}
+                ) : null} */}
 
                 <nav className='flex flex-1 flex-col'>
                     <ul role='list' className='flex flex-1 flex-col gap-y-7'>
-                        <li>
+                        {/* <li>
                             <SidebarChatList
                                 sessionUserId={session.user.id}
                                 friends={friends}
                             />
-                        </li>
+                        </li> */}
                         <li>
                             <div className='text-xs font-semibold leading-6 text-gray-400'>
                                 Overview
@@ -117,20 +117,20 @@ const SidebarLayout = async ({ children }: SidebarLayoutProps) => {
                                     );
                                 })}
 
-                                <li>
+                                {/* <li>
                                     <FriendRequestSidebarOptions
                                         sessionUserId={session.user.id}
                                         initialUnseenRequestCount={
                                             unseenRequestCount
                                         }
                                     />
-                                </li>
+                                </li> */}
                             </ul>
                         </li>
 
                         <li className='-mx-6 mt-auto flex items-center'>
                             <div className='flex flex-1 items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900'>
-                                <div className='relative h-8 w-8 bg-gray-50'>
+                                {/* <div className='relative h-8 w-8 bg-gray-50'>
                                     <Image
                                         fill
                                         sizes='(max-width: 2rem) 2rem'
@@ -139,9 +139,9 @@ const SidebarLayout = async ({ children }: SidebarLayoutProps) => {
                                         src={session.user.image || ""}
                                         alt='Your profile picture'
                                     />
-                                </div>
+                                </div> */}
 
-                                <span className='sr-only'>Your profile</span>
+                                {/* <span className='sr-only'>Your profile</span>
                                 <div className='flex flex-col'>
                                     <span aria-hidden='true'>
                                         {session.user.name}
@@ -152,7 +152,7 @@ const SidebarLayout = async ({ children }: SidebarLayoutProps) => {
                                     >
                                         {session.user.email}
                                     </span>
-                                </div>
+                                </div> */}
                             </div>
 
                             <SignOutButton className='h-full aspect-square' />
