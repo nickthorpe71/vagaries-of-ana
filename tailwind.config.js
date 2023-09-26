@@ -19,6 +19,18 @@ module.exports = {
                 "gradient-conic":
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
             },
+            keyframes: {
+                staticEffect: {
+                    "0%": { backgroundPosition: "0% 0%" },
+                    "25%": { backgroundPosition: "50% 50%" },
+                    "50%": { backgroundPosition: "100% 0%" },
+                    "75%": { backgroundPosition: "50% 100%" },
+                    "100%": { backgroundPosition: "100% 100%" },
+                },
+            },
+            animation: {
+                static: "staticEffect 0.1s infinite",
+            },
             colors: {
                 gray: {
                     1: "#131313",

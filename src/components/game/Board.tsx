@@ -1,7 +1,12 @@
 "use client";
 
 import React, { FC, useState, useRef } from "react";
+
+// utils
 import { cn } from "@/lib/utils";
+
+// components
+import Tile from "@/components/game/Tile";
 
 interface BoardProps {
     initialTiles: Tile[][];
@@ -68,18 +73,17 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
     };
 
     return (
-        <div
-            className={cn(
-                "grid gap-2 p-4 w-full h-full back",
-                `grid-cols-${initialTiles[0].length}`,
-                `grid-rows-${initialTiles.length}`
-            )}
-        >
-            {tiles.map((row: Tile[], rowIndex: number) =>
-                row.map((tile: Tile, colIndex: number) =>
-                    renderVagary(tile, rowIndex, colIndex)
-                )
-            )}
+        <div className='flex flex-wrap w-full '>
+            {tiles.map((row: Tile[], rowIndex: number) => (
+                <div
+                    key={`board-row--${rowIndex}`}
+                    className='flex w-full justify-center'
+                >
+                    {row.map((tile: Tile) => (
+                        <Tile key={`tile--${tile.x}-${tile.y}`} tile={tile} />
+                    ))}
+                </div>
+            ))}
         </div>
     );
 };
