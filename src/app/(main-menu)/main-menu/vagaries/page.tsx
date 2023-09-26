@@ -65,23 +65,13 @@ const RequestPage = async () => {
         position: [0, 0],
     };
 
-    const initialTiles: Tile[][] = [
-        [
-            { x: 0, y: 0, vagary: exampleVagary },
-            { x: 1, y: 0, vagary: null },
-            { x: 2, y: 0, vagary: null },
-        ],
-        [
-            { x: 0, y: 1, vagary: null },
-            { x: 1, y: 1, vagary: null },
-            { x: 2, y: 1, vagary: null },
-        ],
-        [
-            { x: 0, y: 2, vagary: null },
-            { x: 1, y: 2, vagary: null },
-            { x: 2, y: 2, vagary: null },
-        ],
-    ];
+    const initialTiles: Tile[][] = Array.from({ length: 7 }, (_, y) =>
+        Array.from({ length: 7 }, (_, x) => ({
+            x: x,
+            y: y,
+            vagary: x === 0 && y === 0 ? exampleVagary : null,
+        }))
+    );
 
     return (
         <main className='flex h-full flex-1 flex-col gap-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch'>
