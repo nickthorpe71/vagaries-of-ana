@@ -46,6 +46,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.199",
     "prettier": "^3.0.3"
   }
 }
