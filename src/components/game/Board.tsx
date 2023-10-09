@@ -1,13 +1,15 @@
 "use client";
 
-import React, { FC, useState, useRef, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { cloneDeep } from "lodash";
 
-// utils
-import { cn } from "@/lib/utils";
+// lib
+import { getTileHemispheres } from "@/modules/board";
+import { BOARD_DIM, TILE_DIM } from "@/lib/const";
 
 // components
 import Tile from "@/components/game/Tile";
+import VagarySelectMenu from "./VagarySelectMenu";
 
 interface BoardProps {
     initialTiles: Tile[][];
@@ -16,10 +18,6 @@ interface BoardProps {
 const Board: FC<BoardProps> = ({ initialTiles }) => {
     const [tiles, setTiles] = useState<Tile[][]>(initialTiles);
     const [selectedTile, setSelectedTile] = useState<Tile | null>(null);
-
-    useEffect(() => {
-        console.log(selectedTile?.vagary?.ownedVagary.baseVagary.name);
-    }, [selectedTile]);
 
     function onClickTile(tile: Tile) {
         const clickedTile = cloneDeep(tile);
@@ -48,18 +46,18 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
             return;
         } else if (clickedTile.vagary) {
             setSelectedTile(clickedTile);
-            // show menu
-            //      if click move show movement pattern
-            //      if click attack show attack pattern
-            //      if click stats show stats
-            //      if click cancel close menu
+            // [x] show menu
+            //     [ ] if click move show movement pattern
+            //     [ ] if click attack show attack pattern
+            //     [ ] if click stats show stats
+            //     [ ] if click cancel close menu
         }
 
         // console.log(tile);
     }
 
     return (
-        <div className='flex flex-wrap w-full '>
+        <div className={`flex flex-wrap relative w-board h-board`}>
             {tiles.map((row: Tile[], rowIndex: number) => (
                 <div
                     key={`board-row--${rowIndex}`}
@@ -81,6 +79,9 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                     ))}
                 </div>
             ))}
+            {selectedTile ? (
+                <VagarySelectMenu selectedTile={selectedTile} />
+            ) : null}
         </div>
     );
 };

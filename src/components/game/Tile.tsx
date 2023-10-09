@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import Image from "next/image";
 
 // lib
-import { CARD_DIM } from "@/lib/const";
+import { TILE_DIM } from "@/lib/const";
 import { cn } from "@/lib/utils";
 
 interface TileProps {
@@ -16,7 +16,7 @@ const Tile: FC<TileProps> = ({ tile, isSelected, onClick }) => {
 
     function getClassName(): string {
         return cn(
-            "relative overflow-hidden flex items-center justify-center w-24 h-24 border border-green-500 bg-green-700 hover:bg-green-500 transition-all duration-500 transform",
+            "relative overflow-hidden flex items-center justify-center w-tile h-tile border border-green-500 bg-green-700 hover:bg-green-500 transition-all duration-500 transform",
             isActive ? `bg-green-900 bg-transparent animate-static` : "",
             isSelected ? "border-green-300 border-4" : ""
         );
@@ -31,9 +31,8 @@ const Tile: FC<TileProps> = ({ tile, isSelected, onClick }) => {
                 <Image
                     src={`/card-images/${imgPath}`}
                     alt={`in-play-${name}--${owner}`}
-                    className='w-24 h-24'
-                    width={CARD_DIM.width}
-                    height={CARD_DIM.height}
+                    width={TILE_DIM.width}
+                    height={TILE_DIM.height}
                 />
             </div>
         );

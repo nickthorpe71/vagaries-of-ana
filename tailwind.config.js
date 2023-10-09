@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import { BOARD_DIM, TILE_DIM } from "./src/lib/const";
+
 module.exports = {
     content: [
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,6 +16,14 @@ module.exports = {
             },
         },
         extend: {
+            width: {
+                board: `${BOARD_DIM.width * TILE_DIM.width}px`,
+                tile: `${TILE_DIM.width}px`,
+            },
+            height: {
+                board: `${BOARD_DIM.height * TILE_DIM.height}px`,
+                tile: `${TILE_DIM.height}px`,
+            },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic":

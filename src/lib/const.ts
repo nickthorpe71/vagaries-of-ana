@@ -1,4 +1,4 @@
-export const CARD_DIM = {
+export const TILE_DIM = {
     width: 96,
     height: 96,
 };

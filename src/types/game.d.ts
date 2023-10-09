@@ -19,8 +19,6 @@ type Player = {
 };
 
 type Board = {
-    width: number;
-    height: number;
     tiles: Tile[][];
 };
 
