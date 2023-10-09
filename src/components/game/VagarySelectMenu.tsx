@@ -6,9 +6,19 @@ import { BOARD_DIM, TILE_DIM } from "@/lib/const";
 
 interface VagarySelectMenuProps {
     selectedTile: Tile;
+    onMoveClick: () => void;
+    onAttackClick: () => void;
+    onStatsClick: () => void;
+    onCancelClick: () => void;
 }
 
-const VagarySelectMenu: FC<VagarySelectMenuProps> = ({ selectedTile }) => {
+const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
+    selectedTile,
+    onMoveClick,
+    onAttackClick,
+    onStatsClick,
+    onCancelClick,
+}) => {
     const { hemisphereNS, hemisphereEW } = getTileHemispheres(
         BOARD_DIM.height,
         BOARD_DIM.width,
@@ -53,22 +63,34 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({ selectedTile }) => {
         >
             <ul className='flex flex-col gap-2'>
                 <li>
-                    <button className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'>
+                    <button
+                        className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'
+                        onClick={onMoveClick}
+                    >
                         Move
                     </button>
                 </li>
                 <li>
-                    <button className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'>
+                    <button
+                        className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'
+                        onClick={onAttackClick}
+                    >
                         Attack
                     </button>
                 </li>
                 <li>
-                    <button className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'>
+                    <button
+                        className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'
+                        onClick={onStatsClick}
+                    >
                         Stats
                     </button>
                 </li>
                 <li>
-                    <button className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'>
+                    <button
+                        className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'
+                        onClick={onCancelClick}
+                    >
                         Cancel
                     </button>
                 </li>

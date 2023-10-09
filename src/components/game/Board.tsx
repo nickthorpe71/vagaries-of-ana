@@ -56,6 +56,22 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
         // console.log(tile);
     }
 
+    const handleMenuMoveClick = () => {
+        console.log("move");
+    };
+
+    const handleMenuAttackClick = () => {
+        console.log("attack");
+    };
+
+    const handleMenuStatsClick = () => {
+        console.log("stats");
+    };
+
+    const handleMenuCancelClick = () => {
+        setSelectedTile(null);
+    };
+
     return (
         <div className={`flex flex-wrap relative w-board h-board`}>
             {tiles.map((row: Tile[], rowIndex: number) => (
@@ -80,7 +96,13 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                 </div>
             ))}
             {selectedTile ? (
-                <VagarySelectMenu selectedTile={selectedTile} />
+                <VagarySelectMenu
+                    selectedTile={selectedTile}
+                    onMoveClick={handleMenuMoveClick}
+                    onAttackClick={handleMenuAttackClick}
+                    onStatsClick={handleMenuStatsClick}
+                    onCancelClick={handleMenuCancelClick}
+                />
             ) : null}
         </div>
     );
