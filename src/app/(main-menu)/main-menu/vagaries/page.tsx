@@ -9,6 +9,7 @@ import Board from "@/components/game/Board";
 import baseCards from "@/data/base-cards.json";
 
 // lib
+import { BOARD_DIM } from "@/lib/const";
 import { authOptions } from "@/lib/auth";
 
 const RequestPage = async () => {
@@ -65,12 +66,14 @@ const RequestPage = async () => {
         position: [0, 0],
     };
 
-    const initialTiles: Tile[][] = Array.from({ length: 7 }, (_, y) =>
-        Array.from({ length: 7 }, (_, x) => ({
-            x: x,
-            y: y,
-            vagary: x === 0 && y === 0 ? exampleVagary : null,
-        }))
+    const initialTiles: Tile[][] = Array.from(
+        { length: BOARD_DIM.height },
+        (_, y) =>
+            Array.from({ length: BOARD_DIM.width }, (_, x) => ({
+                x: x,
+                y: y,
+                vagary: x === 0 && y === 0 ? exampleVagary : null,
+            }))
     );
 
     return (

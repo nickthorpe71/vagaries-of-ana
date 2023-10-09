@@ -1,7 +1,8 @@
 import { FC, useState } from "react";
 import Image from "next/image";
 
-// utils
+// lib
+import { CARD_DIM } from "@/lib/const";
 import { cn } from "@/lib/utils";
 
 interface TileProps {
@@ -31,8 +32,8 @@ const Tile: FC<TileProps> = ({ tile, isSelected, onClick }) => {
                     src={`/card-images/${imgPath}`}
                     alt={`in-play-${name}--${owner}`}
                     className='w-24 h-24'
-                    width={96}
-                    height={96}
+                    width={CARD_DIM.width}
+                    height={CARD_DIM.height}
                 />
             </div>
         );
