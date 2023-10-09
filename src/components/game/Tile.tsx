@@ -3,20 +3,23 @@ import { FC, useState } from "react";
 // utils
 import { cn } from "@/lib/utils";
 
+// components
+import InPlayVagary from "../vagaries/InPlayVagary";
+
 interface TileProps {
     tile: Tile;
+    isSelected: boolean;
     onClick: (tile: Tile) => void;
 }
 
-const Tile: FC<TileProps> = ({ tile, onClick }) => {
+const Tile: FC<TileProps> = ({ tile, isSelected, onClick }) => {
     const [isActive, setIsActive] = useState<boolean>(false);
 
     function getClassName(): string {
         return cn(
-            "relative overflow-hidden flex items-center justify-center w-24 h-24 border border-green-500 bg-green-700 hover:bg-green-500 transition-all duration-100 transform",
-            isActive
-                ? `rounded bg-green-900 scale-105 bg-transparent animate-static`
-                : ""
+            "relative overflow-hidden flex items-center justify-center w-24 h-24 border border-green-500 bg-green-700 hover:bg-green-500 transition-all duration-500 transform",
+            isActive ? `bg-green-900 bg-transparent animate-static` : "",
+            isSelected ? "border-green-300 border-4" : ""
         );
     }
 
@@ -38,9 +41,7 @@ const Tile: FC<TileProps> = ({ tile, onClick }) => {
             onMouseLeave={() => setIsActive(false)}
             className={getClassName()}
         >
-            <span className='relative z-10'>
-                {tile?.vagary?.ownedVagary.baseVagary.name || "\u00A0"}
-            </span>
+            {tile.vagary ? <InPlayVagary data={tile.vagary} /> : null}
         </button>
     );
 };

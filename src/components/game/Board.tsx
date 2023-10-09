@@ -69,6 +69,13 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                         <Tile
                             key={`tile--${tile.x}-${tile.y}`}
                             tile={tile}
+                            isSelected={
+                                !!(
+                                    selectedTile &&
+                                    selectedTile.x === tile.x &&
+                                    selectedTile.y === tile.y
+                                )
+                            }
                             onClick={onClickTile}
                         />
                     ))}
