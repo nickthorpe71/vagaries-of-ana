@@ -5,12 +5,13 @@ import { cn } from "@/lib/utils";
 
 interface TileProps {
     tile: Tile;
+    onClick: (tile: Tile) => void;
 }
 
-const Tile: FC<TileProps> = ({ tile }) => {
+const Tile: FC<TileProps> = ({ tile, onClick }) => {
     const [isActive, setIsActive] = useState<boolean>(false);
 
-    function getClassName(tile: Tile): string {
+    function getClassName(): string {
         return cn(
             "relative overflow-hidden flex items-center justify-center w-24 h-24 border border-green-500 bg-green-700 hover:bg-green-500 transition-all duration-100 transform",
             isActive
@@ -31,11 +32,11 @@ const Tile: FC<TileProps> = ({ tile }) => {
                 opacity: isActive ? 0.6 : 1,
             }}
             key={`tile--${tile.x}-${tile.y}`}
-            onClick={() => console.log(tile)}
+            onClick={() => onClick(tile)}
             onMouseDown={() => setIsActive(true)}
             onMouseUp={() => setIsActive(false)}
             onMouseLeave={() => setIsActive(false)}
-            className={getClassName(tile)}
+            className={getClassName()}
         >
             <span className='relative z-10'>
                 {tile?.vagary?.ownedVagary.baseVagary.name || "\u00A0"}

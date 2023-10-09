@@ -1,6 +1,7 @@
 "use client";
 
-import React, { FC, useState, useRef } from "react";
+import React, { FC, useState, useRef, useEffect } from "react";
+import { cloneDeep } from "lodash";
 
 // utils
 import { cn } from "@/lib/utils";
@@ -14,63 +15,48 @@ interface BoardProps {
 
 const Board: FC<BoardProps> = ({ initialTiles }) => {
     const [tiles, setTiles] = useState<Tile[][]>(initialTiles);
-    const [draggingItem, setDraggingItem] = useState<InGameVagary | null>(null);
-    const dragOverCell = useRef<{ row: number; col: number } | null>(null);
+    const [selectedTile, setSelectedTile] = useState<Tile | null>(null);
 
-    const handleDragStart = (vagary: InGameVagary) => {
-        setDraggingItem(vagary);
-    };
+    useEffect(() => {
+        console.log(selectedTile?.vagary?.ownedVagary.baseVagary.name);
+    }, [selectedTile]);
 
-    const handleDragOver = (row: number, col: number) => {
-        dragOverCell.current = { row, col };
-
-        if (draggingItem) {
-            const newTiles = tiles.map((row) => row.slice()); // Clone the grid
-
-            // Find and remove the dragging item from its current position
-            for (let r = 0; r < initialTiles.length; r++) {
-                for (let c = 0; c < initialTiles[r].length; c++) {
-                    if (
-                        newTiles[r][c] &&
-                        newTiles[r][c]!.vagary?.ownedVagary.id ===
-                            draggingItem.ownedVagary.id
-                    ) {
-                        newTiles[r][c].vagary = null;
-                    }
-                }
+    function onClickTile(tile: Tile) {
+        const clickedTile = cloneDeep(tile);
+        if (selectedTile) {
+            // check if currently selected tile is clicked again
+            if (
+                selectedTile.x === clickedTile.x &&
+                selectedTile.y === clickedTile.y
+            ) {
+                setSelectedTile(null);
+                return;
             }
 
-            // Place the dragging item in the new position
-            newTiles[row][col].vagary = draggingItem;
+            // TODO:
+            // if selectedTile is in movement state make sure the clicked tile is in the movement pattern
+            //      prevent tile from moving onto tiles that are occupied by other vagaries
+            // if selectedTile is in attack state make sure the clicked tile is in the attack pattern
+            //      if clicked tile is in attack pattern, attack it
 
+            const newTiles = [...tiles];
+            newTiles[clickedTile.y][clickedTile.x].vagary = selectedTile.vagary;
+            newTiles[selectedTile.y][selectedTile.x].vagary =
+                clickedTile.vagary;
             setTiles(newTiles);
+            setSelectedTile(null);
+            return;
+        } else if (clickedTile.vagary) {
+            setSelectedTile(clickedTile);
+            // show menu
+            //      if click move show movement pattern
+            //      if click attack show attack pattern
+            //      if click stats show stats
+            //      if click cancel close menu
         }
-    };
 
-    const handleDragEnd = () => {
-        setDraggingItem(null);
-        dragOverCell.current = null;
-    };
-
-    const renderVagary = (tile: Tile, rowIndex: number, colIndex: number) => {
-        return (
-            <div
-                key={`${rowIndex}-${colIndex}`}
-                draggable={!!tile}
-                onDragStart={() =>
-                    tile && tile.vagary && handleDragStart(tile.vagary)
-                }
-                onDragOver={() => handleDragOver(rowIndex, colIndex)}
-                onDragEnd={handleDragEnd}
-                onClick={() => console.log(tile.vagary)}
-                className={`p-4 rounded ${
-                    tile ? "bg-blue-500 text-white cursor-move" : "bg-gray-200"
-                }`}
-            >
-                {tile?.vagary?.ownedVagary.baseVagary.name}
-            </div>
-        );
-    };
+        // console.log(tile);
+    }
 
     return (
         <div className='flex flex-wrap w-full '>
@@ -80,7 +66,11 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                     className='flex w-full justify-center'
                 >
                     {row.map((tile: Tile) => (
-                        <Tile key={`tile--${tile.x}-${tile.y}`} tile={tile} />
+                        <Tile
+                            key={`tile--${tile.x}-${tile.y}`}
+                            tile={tile}
+                            onClick={onClickTile}
+                        />
                     ))}
                 </div>
             ))}
