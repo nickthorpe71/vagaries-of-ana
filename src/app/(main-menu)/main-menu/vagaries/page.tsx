@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import FullViewVagary from "@/components/vagaries/FullViewVagary";
 import Board from "@/components/game/Board";
 
+// enums
+import { TileState } from "@/enums/game";
+
 // data
 import baseCards from "@/data/base-cards.json";
 
@@ -72,6 +75,7 @@ const RequestPage = async () => {
             Array.from({ length: BOARD_DIM.width }, (_, x) => ({
                 x: x,
                 y: y,
+                state: TileState.DEFAULT,
                 vagary: x === 0 && y === 0 ? exampleVagary : null,
             }))
     );

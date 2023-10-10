@@ -25,6 +25,7 @@ type Board = {
 type Tile = {
     x: number;
     y: number;
+    state: TileState;
     vagary: InGameVagary | null;
 };
 

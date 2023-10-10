@@ -7,7 +7,7 @@ import { BOARD_DIM, TILE_DIM } from "@/lib/const";
 interface VagarySelectMenuProps {
     selectedTile: Tile;
     onMoveClick: () => void;
-    onAttackClick: () => void;
+    onAbilitiesClick: () => void;
     onStatsClick: () => void;
     onCancelClick: () => void;
 }
@@ -15,7 +15,7 @@ interface VagarySelectMenuProps {
 const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
     selectedTile,
     onMoveClick,
-    onAttackClick,
+    onAbilitiesClick,
     onStatsClick,
     onCancelClick,
 }) => {
@@ -58,7 +58,7 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
 
     return (
         <div
-            className='z-50 absolute bg-green-800 border-2 border-green-500 rounded-lg shadow-lg p-4'
+            className='z-50 absolute bg-green-800 border-2 border-green-500 shadow-lg p-4'
             style={calculatePosition()}
         >
             <ul className='flex flex-col gap-2'>
@@ -73,9 +73,9 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
                 <li>
                     <button
                         className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'
-                        onClick={onAttackClick}
+                        onClick={onAbilitiesClick}
                     >
-                        Attack
+                        Abilities
                     </button>
                 </li>
                 <li>

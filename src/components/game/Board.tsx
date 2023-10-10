@@ -1,11 +1,10 @@
 "use client";
 
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState } from "react";
 import { cloneDeep } from "lodash";
 
-// lib
-import { getTileHemispheres } from "@/modules/board";
-import { BOARD_DIM, TILE_DIM } from "@/lib/const";
+// enums
+import { TileState } from "@/enums/game";
 
 // components
 import Tile from "@/components/game/Tile";
@@ -27,6 +26,7 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                 selectedTile.x === clickedTile.x &&
                 selectedTile.y === clickedTile.y
             ) {
+                clickedTile.state = TileState.DEFAULT;
                 setSelectedTile(null);
                 return;
             }
@@ -34,8 +34,8 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
             // TODO:
             // if selectedTile is in movement state make sure the clicked tile is in the movement pattern
             //      prevent tile from moving onto tiles that are occupied by other vagaries
-            // if selectedTile is in attack state make sure the clicked tile is in the attack pattern
-            //      if clicked tile is in attack pattern, attack it
+            // if selectedTile is in Abilities state make sure the clicked tile is in the Abilities pattern
+            //      if clicked tile is in Abilities pattern, Abilities it
 
             const newTiles = [...tiles];
             newTiles[clickedTile.y][clickedTile.x].vagary = selectedTile.vagary;
@@ -48,7 +48,7 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
             setSelectedTile(clickedTile);
             // [x] show menu
             //     [ ] if click move show movement pattern
-            //     [ ] if click attack show attack pattern
+            //     [ ] if click Abilities show Abilities pattern
             //     [ ] if click stats show stats
             //     [ ] if click cancel close menu
         }
@@ -56,21 +56,21 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
         // console.log(tile);
     }
 
-    const handleMenuMoveClick = () => {
+    function handleMenuMoveClick() {
         console.log("move");
-    };
+    }
 
-    const handleMenuAttackClick = () => {
-        console.log("attack");
-    };
+    function handleMenuAbilitiesClick() {
+        console.log("Abilities");
+    }
 
-    const handleMenuStatsClick = () => {
+    function handleMenuStatsClick() {
         console.log("stats");
-    };
+    }
 
-    const handleMenuCancelClick = () => {
+    function handleMenuCancelClick() {
         setSelectedTile(null);
-    };
+    }
 
     return (
         <div className={`flex flex-wrap relative w-board h-board`}>
@@ -99,7 +99,7 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                 <VagarySelectMenu
                     selectedTile={selectedTile}
                     onMoveClick={handleMenuMoveClick}
-                    onAttackClick={handleMenuAttackClick}
+                    onAbilitiesClick={handleMenuAbilitiesClick}
                     onStatsClick={handleMenuStatsClick}
                     onCancelClick={handleMenuCancelClick}
                 />
