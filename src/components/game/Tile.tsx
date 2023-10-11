@@ -21,9 +21,6 @@ const Tile: FC<TileProps> = ({ tile, isSelected, onClick }) => {
         return cn(
             "relative overflow-hidden flex items-center justify-center w-tile h-tile border transition-all duration-500 transform",
             isActive ? `bg-green-900 bg-transparent animate-static` : "",
-            isSelected
-                ? "border-yellow-300 border-2 bg-green-700 hover:bg-green-500"
-                : "",
             tile.state === TileState.DEFAULT
                 ? "border-green-500 bg-green-700 hover:bg-green-500"
                 : "",
@@ -32,7 +29,8 @@ const Tile: FC<TileProps> = ({ tile, isSelected, onClick }) => {
                 : "",
             tile.state === TileState.ABILITY_TARGET
                 ? "bg-red-500 hover:bg-red-300 border-red-300"
-                : ""
+                : "",
+            isSelected ? "border-yellow-300 border-2" : ""
         );
     }
 
