@@ -61,9 +61,7 @@ type Vagary = {
     basePower: number;
     baseDefense: number;
     baseSpeed: number;
-    moveMap: {
-        [key: string]: number;
-    };
+    moveMap: Partial<Record<string, number>>;
     imgPath: string;
 };
 
