@@ -72,7 +72,10 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
                     .name} - Lvl:${calculateCurrentLevel(
                     selectedTile.vagary?.ownedVagary.experience || 0
                 )}`}</li>
-                <li className='w-full text-white font-bold'>{`HP: ${selectedTile.vagary?.currentHP}/${selectedTile.vagary?.ownedVagary.baseVagary.baseHP}`}</li>
+                <li className='w-full text-white font-bold flex justify-between gap-8'>
+                    <span>{`HP: ${selectedTile.vagary?.currentHP}/${selectedTile.vagary?.ownedVagary.baseVagary.baseHP}`}</span>
+                    <span>{`Stamina: ${selectedTile.vagary?.currentStamina}/${selectedTile.vagary?.ownedVagary.baseVagary.stamina}`}</span>
+                </li>
                 <li>
                     <button
                         className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'
