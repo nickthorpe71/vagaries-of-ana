@@ -30,10 +30,16 @@ interface SidebarOption {
 }
 
 const sidebarOptions: SidebarOption[] = [
+    // {
+    //     id: 1,
+    //     name: "Add friend",
+    //     href: "/main-menu/add",
+    //     Icon: "UserPlus",
+    // },
     {
         id: 1,
-        name: "Add friend",
-        href: "/main-menu/add",
+        name: "Play Demo",
+        href: "/main-menu/demo",
         Icon: "UserPlus",
     },
     {
@@ -117,14 +123,14 @@ const SidebarLayout = async ({ children }: SidebarLayoutProps) => {
                                     );
                                 })}
 
-                                <li>
+                                {/* <li>
                                     <FriendRequestSidebarOptions
                                         sessionUserId={session.user.id}
                                         initialUnseenRequestCount={
                                             unseenRequestCount
                                         }
                                     />
-                                </li>
+                                </li> */}
                             </ul>
                         </li>
 
