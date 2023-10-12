@@ -1,8 +1,11 @@
 import { FC } from "react";
 
 // lib
-import { getTileHemispheres } from "@/modules/board";
 import { BOARD_DIM, TILE_DIM } from "@/lib/const";
+
+// modules
+import { getTileHemispheres } from "@/modules/board";
+import { calculateCurrentLevel } from "@/modules/vagary";
 
 interface VagarySelectMenuProps {
     selectedTile: Tile;
@@ -56,12 +59,20 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
         };
     }
 
+    console.log(selectedTile);
+
     return (
         <div
-            className='z-50 absolute bg-green-800 border-2 border-green-500 shadow-lg p-4'
+            className='z-50 absolute bg-green-800 opacity-90 border-2 border-green-500 shadow-lg p-4'
             style={calculatePosition()}
         >
             <ul className='flex flex-col gap-2'>
+                <li className='w-full text-white font-bold'>{`${selectedTile
+                    .vagary?.ownedVagary.baseVagary
+                    .name} - Lvl:${calculateCurrentLevel(
+                    selectedTile.vagary?.ownedVagary.experience || 0
+                )}`}</li>
+                <li className='w-full text-white font-bold'>{`HP: ${selectedTile.vagary?.currentHP}/${selectedTile.vagary?.ownedVagary.baseVagary.baseHP}`}</li>
                 <li>
                     <button
                         className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'

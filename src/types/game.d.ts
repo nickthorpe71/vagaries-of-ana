@@ -36,7 +36,6 @@ type InGameVagary = {
     currentDefense: number;
     currentSpeed: number;
     currentStamina: number;
-    position: [number, number];
 };
 
 type OwnedVagary = {

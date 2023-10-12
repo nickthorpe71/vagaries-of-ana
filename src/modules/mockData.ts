@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 // data
 import baseCards from "@/data/base-cards.json";
+import abilities from "@/data/abilities.json";
 
 // modules
 import { randInt, range } from "./number";
@@ -14,8 +15,12 @@ export function createMockPlayer(): Player {
     };
 }
 
+export function createMockAbility(): Ability {
+    return abilities[randInt(0, abilities.length - 1)] as Ability;
+}
+
 export function createMockBaseVagary(): Vagary {
-    return baseCards[randInt(0, baseCards.length - 1)];
+    return baseCards[randInt(0, baseCards.length - 1)] as Vagary;
 }
 
 export function createMockOwnedVagary(
@@ -29,7 +34,21 @@ export function createMockOwnedVagary(
         owner: owner || createMockPlayer(),
         baseVagary: baseVagary || createMockBaseVagary(),
         experience: experience || randInt(0, 100),
-        abilities: abilities || [],
+        abilities: abilities || range(randInt(1, 4)).map(createMockAbility),
+    };
+}
+
+export function createMockInGameVagary(owner: Player): InGameVagary {
+    const ownedVagary = owner
+        ? createMockOwnedVagary(owner)
+        : createMockOwnedVagary();
+    return {
+        ownedVagary: createMockOwnedVagary(),
+        currentHP: ownedVagary.baseVagary.baseHP,
+        currentPower: ownedVagary.baseVagary.basePower,
+        currentDefense: ownedVagary.baseVagary.baseDefense,
+        currentSpeed: ownedVagary.baseVagary.baseSpeed,
+        currentStamina: ownedVagary.baseVagary.stamina,
     };
 }
 
