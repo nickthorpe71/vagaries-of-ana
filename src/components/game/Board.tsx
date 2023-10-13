@@ -15,6 +15,7 @@ import { applyTileState } from "@/modules/board";
 // components
 import Tile from "@/components/game/Tile";
 import VagarySelectMenu from "./VagarySelectMenu";
+import AbilitiesMenu from "./AbilitiesMenu";
 
 interface BoardProps {
     initialTiles: Tile[][];
@@ -24,6 +25,7 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
     const [tiles, setTiles] = useState<Tile[][]>(initialTiles);
     const [selectedTile, setSelectedTile] = useState<Tile | null>(null);
     const [showMenu, setShowMenu] = useState<boolean>(false);
+    const [showAbilitiesMenu, setShowAbilitiesMenu] = useState<boolean>(false);
 
     function onClickTile(tile: Tile) {
         const clickedTile = cloneDeep(tile);
@@ -125,25 +127,29 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
         }
 
         setTiles(newTiles);
-        setShowMenu(false);
+        clearMenus();
     }
 
     function handleMenuAbilitiesClick() {
-        console.log("Abilities");
-        setShowMenu(false);
+        clearMenus();
+        setShowAbilitiesMenu(true);
+    }
+
+    function handleAbilitySelect(ability: Ability) {
+        console.log(ability);
     }
 
     function handleMenuStatsClick() {
         console.log("stats");
-        setShowMenu(false);
+        clearMenus();
     }
 
     function handleMenuCancelClick() {
         setSelectedTile(null);
-        setShowMenu(false);
+        clearMenus();
     }
 
-    const resetTileStates = () => {
+    function resetTileStates() {
         const newTiles = [...tiles];
         newTiles.forEach((row) => {
             row.forEach((tile) => {
@@ -151,10 +157,17 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
             });
         });
         setTiles(newTiles);
-    };
+    }
+
+    function clearMenus() {
+        setShowMenu(false);
+        setShowAbilitiesMenu(false);
+    }
 
     return (
-        <div className={`flex flex-wrap relative w-board h-board`}>
+        <div
+            className={`flex flex-wrap relative md:w-board md:h-board w-boardMobile h-boardMobile`}
+        >
             {tiles.map((row: Tile[], rowIndex: number) => (
                 <div
                     key={`board-row--${rowIndex}`}
@@ -183,6 +196,16 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                     onAbilitiesClick={handleMenuAbilitiesClick}
                     onStatsClick={handleMenuStatsClick}
                     onCancelClick={handleMenuCancelClick}
+                />
+            ) : null}
+            {showAbilitiesMenu && selectedTile && selectedTile.vagary ? (
+                <AbilitiesMenu
+                    tile={selectedTile}
+                    onBackClick={() => {
+                        setShowAbilitiesMenu(false);
+                        setShowMenu(true);
+                    }}
+                    onAbilityClick={handleAbilitySelect}
                 />
             ) : null}
         </div>
