@@ -19,11 +19,8 @@ const Tile: FC<TileProps> = ({ tile, isSelected, onClick }) => {
 
     function getClassName(): string {
         return cn(
-            "relative overflow-hidden flex items-center justify-center w-tile h-tile border transition-all duration-500 transform",
+            "relative overflow-hidden flex items-center justify-center w-tile h-tile border transition-all duration-1000 transform border-green-500 bg-green-700 hover:bg-green-500",
             isActive ? `bg-green-900 bg-transparent animate-static` : "",
-            tile.state === TileState.DEFAULT
-                ? "border-green-500 bg-green-700 hover:bg-green-500"
-                : "",
             tile.state === TileState.MOVEMENT
                 ? "bg-blue-500 hover:bg-blue-300 border-blue-300"
                 : "",

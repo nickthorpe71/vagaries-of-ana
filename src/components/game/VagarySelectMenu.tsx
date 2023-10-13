@@ -22,11 +22,15 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
     onStatsClick,
     onCancelClick,
 }) => {
+    if (!selectedTile.vagary) return null;
+
     const { hemisphereNS, hemisphereEW } = getTileHemispheres(
         BOARD_DIM.height,
         BOARD_DIM.width,
         selectedTile
     );
+
+    const hasStamina: boolean = selectedTile.vagary?.currentStamina > 0;
 
     function calculatePosition(): {
         top: string | number;
@@ -59,11 +63,18 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
         };
     }
 
-    console.log(selectedTile);
+    function buttonClass(disabled: boolean): string {
+        return `w-full font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-green-300 text-white
+        ${
+            disabled
+                ? "bg-gray-500 cursor-not-allowed"
+                : "bg-green-500 hover:bg-green-900"
+        }`;
+    }
 
     return (
         <div
-            className='z-50 absolute bg-green-800 opacity-90 border-2 border-green-500 shadow-lg p-4'
+            className='z-50 absolute bg-green-800 opacity-90 shadow-lg p-4'
             style={calculatePosition()}
         >
             <ul className='flex flex-col gap-2'>
@@ -78,23 +89,25 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
                 </li>
                 <li>
                     <button
-                        className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'
+                        className={buttonClass(!hasStamina)}
                         onClick={onMoveClick}
+                        disabled={!hasStamina}
                     >
                         Move
                     </button>
                 </li>
                 <li>
                     <button
-                        className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'
+                        className={buttonClass(!hasStamina)}
                         onClick={onAbilitiesClick}
+                        disabled={!hasStamina}
                     >
                         Abilities
                     </button>
                 </li>
                 <li>
                     <button
-                        className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'
+                        className={buttonClass(false)}
                         onClick={onStatsClick}
                     >
                         Stats
@@ -102,7 +115,7 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
                 </li>
                 <li>
                     <button
-                        className='w-full bg-green-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded border-2 border-green-900 focus:outline-none focus:ring focus:border-green-300'
+                        className={buttonClass(false)}
                         onClick={onCancelClick}
                     >
                         Cancel
