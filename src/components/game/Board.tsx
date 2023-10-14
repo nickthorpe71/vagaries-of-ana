@@ -11,6 +11,7 @@ import { TileState } from "@/enums/game";
 
 // modules
 import { applyTileState } from "@/modules/board";
+import { addVectors } from "@/modules/vector";
 
 // components
 import Tile from "@/components/game/Tile";
@@ -56,12 +57,12 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
             }
 
             // TODO:
-            // if selectedTile is in Ability_target state then attack that tile
+            // if selectedTile is in Ability_target state then use ability on that tile
         } else if (clickedTile.vagary) {
             setSelectedTile(clickedTile);
             setShowMenu(true);
             // [x] show menu
-            //     [ ] if click move show movement pattern
+            //     [x] if click move show movement pattern
             //     [ ] if click Abilities show Abilities pattern
             //     [ ] if click stats show stats
             //     [x] if click cancel close menu
@@ -136,7 +137,24 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
     }
 
     function handleAbilitySelect(ability: Ability) {
-        console.log(ability);
+        clearMenus();
+
+        if (!selectedTile || !selectedTile.vagary) return;
+
+        const castPositions: number[][] = ability.castPositions;
+
+        const newTiles: Tile[][] = [...tiles];
+        castPositions.forEach((position) => {
+            const [x, y] = addVectors(position, [
+                selectedTile.x,
+                selectedTile.y,
+            ]);
+            if (newTiles[y] && newTiles[y][x]) {
+                newTiles[y][x].state = TileState.ABILITY_TARGET;
+            }
+        });
+
+        setTiles(newTiles);
     }
 
     function handleMenuStatsClick() {

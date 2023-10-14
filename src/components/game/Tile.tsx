@@ -24,10 +24,10 @@ const Tile: FC<TileProps> = ({ tile, isSelected, onClick }) => {
             tile.state === TileState.MOVEMENT
                 ? "bg-blue-500 hover:bg-blue-300 border-blue-300"
                 : "",
+            isSelected ? "border-yellow-300 border-2" : "",
             tile.state === TileState.ABILITY_TARGET
                 ? "bg-red-500 hover:bg-red-300 border-red-300"
-                : "",
-            isSelected ? "border-yellow-300 border-2" : ""
+                : ""
         );
     }
 
@@ -36,7 +36,7 @@ const Tile: FC<TileProps> = ({ tile, isSelected, onClick }) => {
         const { name, imgPath } = tile.vagary.ownedVagary.baseVagary;
         const { owner } = tile.vagary.ownedVagary;
         return (
-            <div className='transition-opacity opacity-90 hover:opacity-100'>
+            <div className='transition-opacity opacity-80 hover:opacity-100'>
                 <Image
                     src={`/card-images/${imgPath}`}
                     alt={`in-play-${name}--${owner}`}

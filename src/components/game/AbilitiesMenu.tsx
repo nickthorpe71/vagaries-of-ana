@@ -28,10 +28,12 @@ const AbilitiesMenu: FC<AbilitiesMenuProps> = ({
             className='z-50 absolute bg-green-800 opacity-90 shadow-lg p-4'
             style={calcPosFromHemispheres(tile, screenSize)}
         >
-            <Button variant={"gameMenu"} onClick={onBackClick}>
-                {"<- Back"}
-            </Button>
-            <ul>
+            <ul className='flex flex-col gap-2'>
+                <li>
+                    <Button variant={"gameMenu"} onClick={onBackClick}>
+                        {"<- Back"}
+                    </Button>
+                </li>
                 {abilities.map((ability) => (
                     <li key={`ability--${ability.name}`}>
                         <Button

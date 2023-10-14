@@ -39,7 +39,6 @@ const Demo = async () => {
 
     return (
         <main className='flex h-full flex-1 flex-col gap-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch'>
-            <h1 className='font-bold text-5xl mb-8'>All Vagaries</h1>
             <h2>{mockPlayer1.name}</h2>
             <Board initialTiles={initialTiles} />
             <h2>{mockPlayer2.name}</h2>

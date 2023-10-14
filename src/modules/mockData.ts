@@ -5,7 +5,8 @@ import baseCards from "@/data/base-cards.json";
 import abilities from "@/data/abilities.json";
 
 // modules
-import { randInt, range } from "./number";
+import { randInt } from "./number";
+import { range } from "./array";
 
 export function createMockPlayer(): Player {
     return {

@@ -80,3 +80,5 @@ type Ability = {
     tooltip: string;
     flavorText: string;
 };
+
+type Color = "blue" | "green" | "black" | "red" | "yellow" | "white";
