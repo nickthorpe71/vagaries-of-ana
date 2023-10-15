@@ -15,6 +15,7 @@ type Game = {
 type Player = {
     id: string;
     name: string;
+    type: "human" | "ai";
     vagaries: OwnedVagary[];
 };
 
@@ -41,6 +42,11 @@ type InGameVagary = {
 type OwnedVagary = {
     id: string;
     owner: Player;
+    previousOwners: Array<{
+        player: Player;
+        acquiredDate: Date;
+        releaseDate: Date;
+    }>;
     baseVagary: Vagary;
     experience: number;
     abilities: Ability[];
