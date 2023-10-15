@@ -14,7 +14,10 @@ export function applyAbilityToVagary(
     caster: InGameVagary,
     target: InGameVagary,
     ability: Ability
-): InGameVagary {
+): {
+    logString: string;
+    updatedTarget: InGameVagary;
+} {
     // Get ability effect ranges
     const {
         health: healthRange,
@@ -33,8 +36,11 @@ export function applyAbilityToVagary(
     const staminaRoll = staminaRange ? calcStatMod(staminaRange) : 0;
 
     // Get caster stats
+    const casterLevel = calculateCurrentLevel(caster.ownedVagary.experience);
     const { currentPower: casterPower } = caster;
-    const casterTypes: string[] = caster.ownedVagary.baseVagary.types;
+    const casterTypes: Color[] = caster.ownedVagary.baseVagary.types.map(
+        (type) => type.toLowerCase() as Color
+    );
 
     // Get target stats
     const {
@@ -44,10 +50,14 @@ export function applyAbilityToVagary(
         currentSpeed: targetSpeed,
         currentStamina: targetStamina,
     } = target;
-    const targetTypes: string[] = target.ownedVagary.baseVagary.types;
+    const targetTypes: Color[] = target.ownedVagary.baseVagary.types.map(
+        (type) => type.toLowerCase() as Color
+    );
 
     // Calculate type modifiers
-    const sameTypeAttackBonus: number = casterTypes.includes(abilityColor)
+    const sameTypeAttackBonus: number = casterTypes.includes(
+        abilityColor.toLowerCase() as Color
+    )
         ? 1.5
         : 1;
     const typeEffectiveness: number = calcTypeEffectiveness(
@@ -57,6 +67,7 @@ export function applyAbilityToVagary(
 
     // Calculate ability effect
     const targetHPEffect = calcAbilityEffect(
+        casterLevel,
         healthRoll,
         targetDefense,
         casterPower,
@@ -64,6 +75,7 @@ export function applyAbilityToVagary(
         typeEffectiveness
     );
     const targetPowerEffect = calcAbilityEffect(
+        casterLevel,
         powerRoll,
         targetDefense,
         casterPower,
@@ -71,6 +83,7 @@ export function applyAbilityToVagary(
         typeEffectiveness
     );
     const targetDefenseEffect = calcAbilityEffect(
+        casterLevel,
         defenseRoll,
         targetDefense,
         casterPower,
@@ -78,6 +91,7 @@ export function applyAbilityToVagary(
         typeEffectiveness
     );
     const targetSpeedEffect = calcAbilityEffect(
+        casterLevel,
         speedRoll,
         targetDefense,
         casterPower,
@@ -85,6 +99,7 @@ export function applyAbilityToVagary(
         typeEffectiveness
     );
     const targetStaminaEffect = calcAbilityEffect(
+        casterLevel,
         staminaRoll,
         targetDefense,
         casterPower,
@@ -92,32 +107,67 @@ export function applyAbilityToVagary(
         typeEffectiveness
     );
 
+    let logString = `${caster.ownedVagary.baseVagary.name} used ${ability.name}!`;
+
+    if (targetHPEffect !== 0)
+        logString += ` ${target.ownedVagary.baseVagary.name} ${
+            targetHPEffect > 0 ? "gained" : "lost"
+        } ${targetHPEffect} HP!`;
+    if (targetPowerEffect !== 0)
+        logString += ` ${target.ownedVagary.baseVagary.name} ${
+            targetPowerEffect > 0 ? "gained" : "lost"
+        } ${targetPowerEffect} Power!`;
+    if (targetDefenseEffect !== 0)
+        logString += ` ${target.ownedVagary.baseVagary.name} ${
+            targetDefenseEffect > 0 ? "gained" : "lost"
+        } ${targetDefenseEffect} Defense!`;
+    if (targetSpeedEffect !== 0)
+        logString += ` ${target.ownedVagary.baseVagary.name} ${
+            targetSpeedEffect > 0 ? "gained" : "lost"
+        } ${targetSpeedEffect} Speed!`;
+    if (targetStaminaEffect !== 0)
+        logString += ` ${target.ownedVagary.baseVagary.name} ${
+            targetStaminaEffect > 0 ? "gained" : "lost"
+        } ${targetStaminaEffect} Stamina!`;
+
     return {
-        ...target,
-        currentHP: targetHP + targetHPEffect,
-        currentPower: targetPower + targetPowerEffect,
-        currentDefense: targetDefense + targetDefenseEffect,
-        currentSpeed: targetSpeed + targetSpeedEffect,
-        currentStamina: targetStamina + targetStaminaEffect,
+        logString,
+        updatedTarget: {
+            ...target,
+            currentHP: targetHP + targetHPEffect,
+            currentPower: targetPower + targetPowerEffect,
+            currentDefense: targetDefense + targetDefenseEffect,
+            currentSpeed: targetSpeed + targetSpeedEffect,
+            currentStamina: targetStamina + targetStaminaEffect,
+        },
     };
 }
 
 function calcAbilityEffect(
+    casterLevel: number,
     statRoll: number,
     targetDefense: number,
     casterPower: number,
     sameTypeAttackBonus: number,
     typeEffectiveness: number
 ): number {
+    const directionMod: number = statRoll < 0 ? -1 : statRoll > 0 ? 1 : 0;
+    const attackerBenefit: number = casterPower > targetDefense ? 1 : 0.5;
+    const defenderBenefit: number = casterPower < targetDefense ? 1 : 0.5;
     return Math.floor(
-        ((statRoll * (casterPower / targetDefense)) / 50) *
+        ((((2 * casterLevel) / 5 + 2) *
+            (statRoll * 8) *
+            ((casterPower * attackerBenefit) /
+                (targetDefense * defenderBenefit))) /
+            50) *
             sameTypeAttackBonus *
-            typeEffectiveness
+            typeEffectiveness +
+            2 * directionMod
     );
 }
 
 function calcStatMod(statRange: number[]): number {
-    const arr: number[] = range ? range(statRange[0], statRange[1]) : [0];
+    const arr: number[] = statRange ? range(statRange[0], statRange[1]) : [0];
     return arr[randInt(0, arr.length - 1)];
 }
 

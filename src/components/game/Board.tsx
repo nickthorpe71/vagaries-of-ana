@@ -12,6 +12,7 @@ import { TileState } from "@/enums/game";
 // modules
 import { applyTileState } from "@/modules/board";
 import { addVectors } from "@/modules/vector";
+import { applyAbilityToVagary } from "@/modules/vagary";
 
 // components
 import Tile from "@/components/game/Tile";
@@ -25,14 +26,18 @@ interface BoardProps {
 const Board: FC<BoardProps> = ({ initialTiles }) => {
     const [tiles, setTiles] = useState<Tile[][]>(initialTiles);
     const [selectedTile, setSelectedTile] = useState<Tile | null>(null);
+    const [selectedAbility, setSelectedAbility] = useState<Ability | null>(
+        null
+    );
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const [showAbilitiesMenu, setShowAbilitiesMenu] = useState<boolean>(false);
+    const [battleLog, setBattleLog] = useState<string[]>([]);
 
     function onClickTile(tile: Tile) {
         const clickedTile = cloneDeep(tile);
 
         if (selectedTile) {
-            // check if currently selected tile is clicked again
+            // If currently selected tile is clicked again
             if (
                 selectedTile.x === clickedTile.x &&
                 selectedTile.y === clickedTile.y
@@ -46,26 +51,21 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                 return;
             }
 
-            if (clickedTile.vagary) {
+            if (clickedTile.state === TileState.MOVEMENT) {
+                moveVagary(selectedTile, clickedTile);
+            } else if (
+                clickedTile.state === TileState.ABILITY_TARGET &&
+                selectedAbility
+            ) {
+                useAbilityOnTile(selectedTile, clickedTile, selectedAbility);
+            } else if (clickedTile.vagary) {
                 setSelectedTile(clickedTile);
                 resetTileStates();
                 return;
             }
-
-            if (clickedTile.state === TileState.MOVEMENT) {
-                moveVagary(selectedTile, clickedTile);
-            }
-
-            // TODO:
-            // if selectedTile is in Ability_target state then use ability on that tile
         } else if (clickedTile.vagary) {
             setSelectedTile(clickedTile);
             setShowMenu(true);
-            // [x] show menu
-            //     [x] if click move show movement pattern
-            //     [ ] if click Abilities show Abilities pattern
-            //     [ ] if click stats show stats
-            //     [x] if click cancel close menu
         }
 
         resetTileStates();
@@ -138,6 +138,7 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
 
     function handleAbilitySelect(ability: Ability) {
         clearMenus();
+        setSelectedAbility(ability);
 
         if (!selectedTile || !selectedTile.vagary) return;
 
@@ -155,6 +156,38 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
         });
 
         setTiles(newTiles);
+    }
+
+    function useAbilityOnTile(caster: Tile, target: Tile, ability: Ability) {
+        const newTiles = [...tiles];
+
+        // Calculate the amount of stamina used
+        const cost = ability.staminaCost;
+
+        // Subtract stamina from current caster
+        const casterVagary = cloneDeep(newTiles[caster.y][caster.x].vagary);
+        if (casterVagary) {
+            casterVagary.currentStamina -= cost;
+            newTiles[caster.y][caster.x].vagary = casterVagary;
+        }
+
+        // Apply ability to target
+        // TODO: need to apply the ability to all tiles in it's AoE not the clicked tile
+        // also need to show card colors on each card
+        const targetVagary = cloneDeep(newTiles[target.y][target.x].vagary);
+        if (targetVagary && casterVagary) {
+            const abilityRes = applyAbilityToVagary(
+                casterVagary,
+                targetVagary,
+                ability
+            );
+            newTiles[target.y][target.x].vagary = abilityRes.updatedTarget;
+            setBattleLog((prev) => [...prev, abilityRes.logString]);
+        }
+
+        setTiles(newTiles);
+        setSelectedTile(null);
+        setSelectedAbility(null);
     }
 
     function handleMenuStatsClick() {
@@ -183,49 +216,60 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
     }
 
     return (
-        <div
-            className={`flex flex-wrap relative md:w-board md:h-board w-boardMobile h-boardMobile`}
-        >
-            {tiles.map((row: Tile[], rowIndex: number) => (
-                <div
-                    key={`board-row--${rowIndex}`}
-                    className='flex w-full justify-center'
-                >
-                    {row.map((tile: Tile) => (
-                        <Tile
-                            key={`tile--${tile.x}-${tile.y}`}
-                            tile={tile}
-                            isSelected={
-                                !!(
-                                    selectedTile &&
-                                    selectedTile.x === tile.x &&
-                                    selectedTile.y === tile.y
-                                )
-                            }
-                            onClick={onClickTile}
-                        />
+        <div className='flex'>
+            <div
+                className={`flex flex-wrap relative md:w-board md:h-board w-boardMobile h-boardMobile`}
+            >
+                {tiles.map((row: Tile[], rowIndex: number) => (
+                    <div
+                        key={`board-row--${rowIndex}`}
+                        className='flex w-full justify-center'
+                    >
+                        {row.map((tile: Tile) => (
+                            <Tile
+                                key={`tile--${tile.x}-${tile.y}`}
+                                tile={tile}
+                                isSelected={
+                                    !!(
+                                        selectedTile &&
+                                        selectedTile.x === tile.x &&
+                                        selectedTile.y === tile.y
+                                    )
+                                }
+                                onClick={onClickTile}
+                            />
+                        ))}
+                    </div>
+                ))}
+                {showMenu && selectedTile && selectedTile.vagary ? (
+                    <VagarySelectMenu
+                        selectedTile={selectedTile}
+                        onMoveClick={handleMenuMoveClick}
+                        onAbilitiesClick={handleMenuAbilitiesClick}
+                        onStatsClick={handleMenuStatsClick}
+                        onCancelClick={handleMenuCancelClick}
+                    />
+                ) : null}
+                {showAbilitiesMenu && selectedTile && selectedTile.vagary ? (
+                    <AbilitiesMenu
+                        tile={selectedTile}
+                        onBackClick={() => {
+                            setShowAbilitiesMenu(false);
+                            setShowMenu(true);
+                        }}
+                        onAbilityClick={handleAbilitySelect}
+                    />
+                ) : null}
+            </div>
+            <div className='flex flex-col justify-center w-24'>
+                <ul className='list-disc list-inside'>
+                    {battleLog.map((log, index) => (
+                        <li key={`battle-log--${index}`}>
+                            <p>{log}</p>
+                        </li>
                     ))}
-                </div>
-            ))}
-            {showMenu && selectedTile && selectedTile.vagary ? (
-                <VagarySelectMenu
-                    selectedTile={selectedTile}
-                    onMoveClick={handleMenuMoveClick}
-                    onAbilitiesClick={handleMenuAbilitiesClick}
-                    onStatsClick={handleMenuStatsClick}
-                    onCancelClick={handleMenuCancelClick}
-                />
-            ) : null}
-            {showAbilitiesMenu && selectedTile && selectedTile.vagary ? (
-                <AbilitiesMenu
-                    tile={selectedTile}
-                    onBackClick={() => {
-                        setShowAbilitiesMenu(false);
-                        setShowMenu(true);
-                    }}
-                    onAbilityClick={handleAbilitySelect}
-                />
-            ) : null}
+                </ul>
+            </div>
         </div>
     );
 };
