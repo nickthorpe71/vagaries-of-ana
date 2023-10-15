@@ -8,10 +8,11 @@ import abilities from "@/data/abilities.json";
 import { randInt } from "./number";
 import { range } from "./array";
 
-export function createMockPlayer(): Player {
+export function createMockPlayer(type: "human" | "ai" = "ai"): Player {
     return {
         id: uuidv4(),
         name: randomNameGenerator(),
+        type,
         vagaries: [],
     };
 }
@@ -33,6 +34,7 @@ export function createMockOwnedVagary(
     return {
         id: uuidv4(),
         owner: owner || createMockPlayer(),
+        previousOwners: [],
         baseVagary: baseVagary || createMockBaseVagary(),
         experience: experience || randInt(0, 100),
         abilities: abilities || range(randInt(0, 3)).map(createMockAbility),
