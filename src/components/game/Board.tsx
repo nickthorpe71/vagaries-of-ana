@@ -57,7 +57,7 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                 clickedTile.state === TileState.ABILITY_TARGET &&
                 selectedAbility
             ) {
-                useAbilityOnTile(selectedTile, clickedTile, selectedAbility);
+                applyAbilityOnTile(selectedTile, clickedTile, selectedAbility);
             } else if (clickedTile.vagary) {
                 setSelectedTile(clickedTile);
                 resetTileStates();
@@ -158,7 +158,7 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
         setTiles(newTiles);
     }
 
-    function useAbilityOnTile(caster: Tile, target: Tile, ability: Ability) {
+    function applyAbilityOnTile(caster: Tile, target: Tile, ability: Ability) {
         const newTiles = [...tiles];
 
         // Calculate the amount of stamina used
