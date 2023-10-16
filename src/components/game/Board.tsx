@@ -47,6 +47,7 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                     TileState.DEFAULT
                 );
                 setSelectedTile(null);
+                clearMenus();
                 resetTileStates();
                 return;
             }
@@ -60,7 +61,9 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                 applyAbilityOnTile(selectedTile, clickedTile, selectedAbility);
             } else if (clickedTile.vagary) {
                 setSelectedTile(clickedTile);
+                clearMenus();
                 resetTileStates();
+                setShowMenu(true);
                 return;
             }
         } else if (clickedTile.vagary) {

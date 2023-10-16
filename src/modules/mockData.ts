@@ -36,7 +36,7 @@ export function createMockOwnedVagary(
         owner: owner || createMockPlayer(),
         previousOwners: [],
         baseVagary: baseVagary || createMockBaseVagary(),
-        experience: experience || randInt(0, 100),
+        experience: experience || randInt(0, 2000),
         abilities: abilities || range(randInt(0, 3)).map(createMockAbility),
     };
 }
