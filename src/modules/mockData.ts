@@ -46,7 +46,7 @@ export function createMockInGameVagary(owner: Player): InGameVagary {
         ? createMockOwnedVagary(owner)
         : createMockOwnedVagary();
     return {
-        ownedVagary: createMockOwnedVagary(),
+        ownedVagary: ownedVagary,
         currentHP: ownedVagary.baseVagary.baseHP,
         currentPower: ownedVagary.baseVagary.basePower,
         currentDefense: ownedVagary.baseVagary.baseDefense,
