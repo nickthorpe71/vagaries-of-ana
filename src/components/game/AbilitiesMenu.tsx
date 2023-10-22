@@ -34,8 +34,10 @@ const AbilitiesMenu: FC<AbilitiesMenuProps> = ({
                         {"<- Back"}
                     </Button>
                 </li>
-                {abilities.map((ability) => (
-                    <li key={`ability--${ability.name}`}>
+                {abilities.map((ability: Ability, index: number) => (
+                    <li
+                        key={`ability--${ability.name}-${index}${tile.x}${tile.y}`}
+                    >
                         <Button
                             variant={"gameMenu"}
                             onClick={() => onAbilityClick(ability)}

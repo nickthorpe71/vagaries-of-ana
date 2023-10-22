@@ -52,3 +52,12 @@ export function applyTileState(
         state,
     };
 }
+
+export function isWithinBoard(
+    boardHeight: number,
+    boardWidth: number,
+    position: number[]
+): boolean {
+    const [x, y] = position;
+    return x >= 0 && x < boardWidth && y >= 0 && y < boardHeight;
+}

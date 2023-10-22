@@ -10,7 +10,7 @@ import { BOARD_DIM } from "@/lib/const";
 import { TileState } from "@/enums/game";
 
 // modules
-import { applyTileState } from "@/modules/board";
+import { applyTileState, isWithinBoard } from "@/modules/board";
 import { addVectors } from "@/modules/vector";
 import { applyAbilityToVagary } from "@/modules/vagary";
 
@@ -40,7 +40,8 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
             // If currently selected tile is clicked again
             if (
                 selectedTile.x === clickedTile.x &&
-                selectedTile.y === clickedTile.y
+                selectedTile.y === clickedTile.y &&
+                !selectedAbility
             ) {
                 clickedTile.state = applyTileState(
                     selectedTile.state,
@@ -169,22 +170,36 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
 
         // Subtract stamina from current caster
         const casterVagary = cloneDeep(newTiles[caster.y][caster.x].vagary);
-        if (casterVagary) {
-            casterVagary.currentStamina -= cost;
-            newTiles[caster.y][caster.x].vagary = casterVagary;
+        if (!casterVagary || casterVagary.currentStamina < cost) {
+            setBattleLog((prev) => [...prev, "Not enough stamina!"]);
+            return;
         }
+        casterVagary.currentStamina -= cost;
+        newTiles[caster.y][caster.x].vagary = casterVagary;
 
-        // Apply ability to target
-        // TODO: need to apply the ability to all tiles in it's AoE not the clicked tile
-        // also need to show card colors on each card
-        const targetVagary = cloneDeep(newTiles[target.y][target.x].vagary);
-        if (targetVagary && casterVagary) {
+        const aoePattern: number[][] = ability.aoe;
+
+        const aoePositions: number[][] = aoePattern.map((position) =>
+            addVectors(position, [target.x, target.y])
+        );
+
+        for (let i = 0; i < aoePositions.length; i++) {
+            const targetPos: number[] = aoePositions[i];
+            const targetX = targetPos[0];
+            const targetY = targetPos[1];
+            if (
+                !targetPos ||
+                !isWithinBoard(BOARD_DIM.height, BOARD_DIM.width, targetPos)
+            )
+                continue;
+            const targetVagary = cloneDeep(newTiles[targetY][targetX].vagary);
+            if (!targetVagary) continue;
             const abilityRes = applyAbilityToVagary(
                 casterVagary,
                 targetVagary,
                 ability
             );
-            newTiles[target.y][target.x].vagary = abilityRes.updatedTarget;
+            newTiles[targetY][targetX].vagary = abilityRes.updatedTarget;
             setBattleLog((prev) => [...prev, abilityRes.logString]);
         }
 
@@ -264,11 +279,12 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                     />
                 ) : null}
             </div>
-            <div className='flex flex-col justify-center w-24'>
-                <ul className='list-disc list-inside'>
+            <div className='flex flex-col justify-center w-48'>
+                <ul>
                     {battleLog.map((log, index) => (
                         <li key={`battle-log--${index}`}>
                             <p>{log}</p>
+                            <p>--------------------</p>
                         </li>
                     ))}
                 </ul>
