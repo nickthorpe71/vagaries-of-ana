@@ -36,9 +36,9 @@ const Tile: FC<TileProps> = ({ localUserId, tile, isSelected, onClick }) => {
                 ? "bg-red-500 hover:bg-red-300 border-red-300"
                 : "",
             hoverColor === "g"
-                ? "hover:border-green-500 border-2"
+                ? "hover:border-green-500 border-green-700 border-2"
                 : hoverColor === "r"
-                ? "hover:border-red-500 border-2"
+                ? "hover:border-red-500 border-red-400 border-2"
                 : "hover:border-yellow-300"
         );
     }
