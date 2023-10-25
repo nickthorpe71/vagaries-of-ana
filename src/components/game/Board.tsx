@@ -20,10 +20,11 @@ import VagarySelectMenu from "./VagarySelectMenu";
 import AbilitiesMenu from "./AbilitiesMenu";
 
 interface BoardProps {
+    localUserId: string;
     initialTiles: Tile[][];
 }
 
-const Board: FC<BoardProps> = ({ initialTiles }) => {
+const Board: FC<BoardProps> = ({ localUserId, initialTiles }) => {
     const [tiles, setTiles] = useState<Tile[][]>(initialTiles);
     const [selectedTile, setSelectedTile] = useState<Tile | null>(null);
     const [selectedAbility, setSelectedAbility] = useState<Ability | null>(
@@ -246,6 +247,7 @@ const Board: FC<BoardProps> = ({ initialTiles }) => {
                         {row.map((tile: Tile) => (
                             <Tile
                                 key={`tile--${tile.x}-${tile.y}`}
+                                localUserId={localUserId}
                                 tile={tile}
                                 isSelected={
                                     !!(

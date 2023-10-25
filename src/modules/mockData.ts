@@ -8,9 +8,12 @@ import abilities from "@/data/abilities.json";
 import { randInt } from "./number";
 import { range } from "./array";
 
-export function createMockPlayer(type: "human" | "ai" = "ai"): Player {
+export function createMockPlayer(
+    type: "human" | "ai" = "ai",
+    id?: string
+): Player {
     return {
-        id: uuidv4(),
+        id: id || uuidv4(),
         name: randomNameGenerator(),
         type,
         vagaries: [],

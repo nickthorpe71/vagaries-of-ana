@@ -25,7 +25,7 @@ const AbilitiesMenu: FC<AbilitiesMenuProps> = ({
 
     return (
         <div
-            className='z-50 absolute bg-green-800 opacity-90 shadow-lg p-4'
+            className='z-50 absolute bg-slate-800 opacity-90 shadow-lg p-4'
             style={calcPosFromHemispheres(tile, screenSize)}
         >
             <ul className='flex flex-col gap-2'>

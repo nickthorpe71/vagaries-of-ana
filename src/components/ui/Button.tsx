@@ -13,7 +13,7 @@ export const buttonVariants = cva(
                 default: "bg-slate-900 text-white hover:bg-slate-800",
                 ghost: "bg-transparent hover:text-slate-900 hover:bg-slate-200",
                 gameMenu:
-                    "w-full font-bold text-sm md:text-base py-2 px-4 rounded focus:outline-none focus:ring focus:border-green-300 text-white disabled:bg-gray-500 disabled:cursor-not-allowed bg-green-500 hover:bg-green-900",
+                    "w-full font-bold text-sm md:text-base py-2 px-4 rounded focus:outline-none focus:ring focus:border-slate-300 text-white disabled:bg-gray-500 disabled:cursor-not-allowed bg-slate-500 hover:bg-slate-900",
             },
             size: {
                 default: "h-10 py-2 px-4",

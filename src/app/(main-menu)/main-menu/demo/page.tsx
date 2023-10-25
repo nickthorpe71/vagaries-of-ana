@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 
@@ -19,8 +18,10 @@ const Demo = async () => {
     const session = await getServerSession(authOptions);
     if (!session) notFound();
 
-    const mockPlayer1: Player = createMockPlayer();
-    const mockPlayer2: Player = createMockPlayer();
+    const { user } = session;
+
+    const mockPlayer1: Player = createMockPlayer("human", user.id);
+    const mockPlayer2: Player = createMockPlayer("ai");
 
     const initialTiles: Tile[][] = Array.from(
         { length: BOARD_DIM.height },
@@ -41,7 +42,7 @@ const Demo = async () => {
     return (
         <main className='flex h-full flex-1 flex-col gap-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch'>
             <h2>{mockPlayer1.name}</h2>
-            <Board initialTiles={initialTiles} />
+            <Board initialTiles={initialTiles} localUserId={user.id} />
             <h2>{mockPlayer2.name}</h2>
         </main>
     );

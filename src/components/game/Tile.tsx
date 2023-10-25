@@ -9,25 +9,37 @@ import { cn } from "@/lib/utils";
 import { TileState } from "@/enums/game";
 
 interface TileProps {
+    localUserId: string;
     tile: Tile;
     isSelected: boolean;
     onClick: (tile: Tile) => void;
 }
 
-const Tile: FC<TileProps> = ({ tile, isSelected, onClick }) => {
+const Tile: FC<TileProps> = ({ localUserId, tile, isSelected, onClick }) => {
     const [isActive, setIsActive] = useState<boolean>(false);
 
     function getClassName(): string {
+        const hoverColor = !tile.vagary
+            ? "y"
+            : localUserId === tile.vagary?.ownedVagary.owner.id
+            ? "g"
+            : "r";
+
         return cn(
-            "relative overflow-hidden flex items-center justify-center md:w-tile md:h-tile w-tileMobile h-tileMobile border transition-all duration-1000 transform border-green-500 bg-green-700 hover:bg-green-500",
-            isActive ? `bg-green-900 bg-transparent animate-static` : "",
+            "relative overflow-hidden flex items-center justify-center md:w-tile md:h-tile w-tileMobile h-tileMobile border transition-all duration-1000 transform border-slate-500 bg-slate-700 hover:bg-slate-500",
+            isActive ? `bg-slate-900 bg-transparent animate-static` : "",
             tile.state === TileState.MOVEMENT
                 ? "bg-blue-500 hover:bg-blue-300 border-blue-300"
                 : "",
             isSelected ? "border-yellow-300 border-2" : "",
             tile.state === TileState.ABILITY_TARGET
                 ? "bg-red-500 hover:bg-red-300 border-red-300"
-                : ""
+                : "",
+            hoverColor === "g"
+                ? "hover:border-green-500 border-2"
+                : hoverColor === "r"
+                ? "hover:border-red-500 border-2"
+                : "hover:border-yellow-300"
         );
     }
 
