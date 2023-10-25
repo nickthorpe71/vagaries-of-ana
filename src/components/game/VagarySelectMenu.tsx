@@ -11,6 +11,7 @@ import { calcPosFromHemispheres } from "@/modules/ui";
 import Button from "@/components/ui/Button";
 
 interface VagarySelectMenuProps {
+    localUserId: string;
     selectedTile: Tile;
     onMoveClick: () => void;
     onAbilitiesClick: () => void;
@@ -19,6 +20,7 @@ interface VagarySelectMenuProps {
 }
 
 const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
+    localUserId,
     selectedTile,
     onMoveClick,
     onAbilitiesClick,
@@ -34,6 +36,9 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
     const statsClass =
         "w-full text-white text-sm md:text-base font-bold flex justify-between md:gap-8 gap:4";
 
+    const isLocalPlayerVagary: boolean =
+        selectedTile.vagary?.ownedVagary.owner.id === localUserId;
+
     return (
         <div
             className='z-50 absolute bg-slate-800 opacity-90 shadow-lg p-4'
@@ -48,24 +53,28 @@ const VagarySelectMenu: FC<VagarySelectMenuProps> = ({
                     <span>{`HP: ${selectedTile.vagary?.currentHP}/${selectedTile.vagary?.ownedVagary.baseVagary.baseHP}`}</span>
                     <span>{`Stamina: ${selectedTile.vagary?.currentStamina}/${selectedTile.vagary?.ownedVagary.baseVagary.stamina}`}</span>
                 </li>
-                <li>
-                    <Button
-                        variant={"gameMenu"}
-                        onClick={onMoveClick}
-                        disabled={!hasStamina}
-                    >
-                        Move
-                    </Button>
-                </li>
-                <li>
-                    <Button
-                        variant={"gameMenu"}
-                        onClick={onAbilitiesClick}
-                        disabled={!hasStamina}
-                    >
-                        Abilities
-                    </Button>
-                </li>
+                {isLocalPlayerVagary ? (
+                    <>
+                        <li>
+                            <Button
+                                variant={"gameMenu"}
+                                onClick={onMoveClick}
+                                disabled={!hasStamina}
+                            >
+                                Move
+                            </Button>
+                        </li>
+                        <li>
+                            <Button
+                                variant={"gameMenu"}
+                                onClick={onAbilitiesClick}
+                                disabled={!hasStamina}
+                            >
+                                Abilities
+                            </Button>
+                        </li>
+                    </>
+                ) : null}
                 <li>
                     <Button variant={"gameMenu"} onClick={onStatsClick}>
                         Stats

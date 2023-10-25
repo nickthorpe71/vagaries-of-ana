@@ -263,6 +263,7 @@ const Board: FC<BoardProps> = ({ localUserId, initialTiles }) => {
                 ))}
                 {showMenu && selectedTile && selectedTile.vagary ? (
                     <VagarySelectMenu
+                        localUserId={localUserId}
                         selectedTile={selectedTile}
                         onMoveClick={handleMenuMoveClick}
                         onAbilitiesClick={handleMenuAbilitiesClick}
