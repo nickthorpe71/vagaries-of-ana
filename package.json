@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.0",
     "@headlessui/react": "^1.7.15",
     "@hookform/resolvers": "^3.1.1",
     "@next-auth/upstash-redis-adapter": "^3.0.4",

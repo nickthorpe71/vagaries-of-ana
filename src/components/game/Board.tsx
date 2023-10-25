@@ -1,7 +1,8 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, useState, useRef, useEffect } from "react";
 import { cloneDeep } from "lodash";
+import autoAnimate from "@formkit/auto-animate";
 
 // lib
 import { BOARD_DIM } from "@/lib/const";
@@ -33,6 +34,12 @@ const Board: FC<BoardProps> = ({ localUserId, initialTiles }) => {
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const [showAbilitiesMenu, setShowAbilitiesMenu] = useState<boolean>(false);
     const [battleLog, setBattleLog] = useState<string[]>([]);
+
+    const boardRef = useRef(null);
+
+    useEffect(() => {
+        boardRef.current && autoAnimate(boardRef.current);
+    }, [boardRef]);
 
     function onClickTile(tile: Tile) {
         const clickedTile = cloneDeep(tile);
@@ -235,7 +242,7 @@ const Board: FC<BoardProps> = ({ localUserId, initialTiles }) => {
     }
 
     return (
-        <div className='flex'>
+        <div className='flex' ref={boardRef}>
             <div
                 className={`flex flex-wrap relative md:w-board md:h-board w-boardMobile h-boardMobile`}
             >
